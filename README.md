@@ -6,8 +6,10 @@ Ein Tracker welcher erfasst, welche Lebensmittel sich im Haushalt befinden und i
 
 ## Realistisch umsetzbare Features
 - Eintragen von Lebensmitteln mit Haltbarkeitsdatum und eine Benachrichtigungs-Funktion, wenn das MhD bald erreicht ist / bereits erreicht ist...
+-> Speichern der Einträge in einer Datenbank
 - Markieren, wer welche Lebensmittel aufgebraucht hat
 - Möglichkeit einen Kaufpreis mit anzugeben, um die Lebensmittelausgaben im Blick behalten zu können
+- Graphische Benutzeroberflächen für eine anschauliche und einfache Bedienung (GUIs werden mit WPF erstellt)
 - Automatisches Erstellen einer Einkaufsliste anhand der noch vorrätigen Menge an Lebensmitteln
 
 ## Detaillierte Umsetzung
@@ -38,8 +40,3 @@ Ein Tracker welcher erfasst, welche Lebensmittel sich im Haushalt befinden und i
 
 ## Wunschfeatures, welche möglicherweise zu schwer sind umzusetzen
 - Einscannen von Barcodes der Lebensmittel mit Kamera
-- Speichern der Datenbank auf einem Server
-
-## Nutzung von Bibliotheken
-- Datenbanken
-- Einlesen von Barcodes
