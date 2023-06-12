@@ -11,3 +11,5 @@ Ein Tracker welcher erfasst, welche Lebensmittel sich im Haushalt befinden und i
 
 ## Wunschfeatures, welche möglicherweise zu schwer sind umzusetzen
 - Einscannen von Barcodes der Lebensmittel mit Kamera
+-------------------------------------------------------------------------------------------------------------------------------------------------
+GUIs werden mit Windows Presentation Foundation erstellt
