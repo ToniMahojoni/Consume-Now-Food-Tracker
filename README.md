@@ -40,3 +40,8 @@ Ein Tracker welcher erfasst, welche Lebensmittel sich im Haushalt befinden und i
 
 ## Wunschfeatures, welche möglicherweise zu schwer sind umzusetzen
 - Einscannen von Barcodes der Lebensmittel mit Kamera
+- Speichern der Datenbank auf einem Server
+
+## Nutzung von Bibliotheken
+- Datenbanken
+- Einlesen von Barcodes
