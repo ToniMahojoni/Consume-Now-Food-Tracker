@@ -8,4 +8,7 @@ public class AdvancedEntry : Entry {
     }
     public bool IsOpened {get;}
     public double? RemainingAmount {get;}
+    public override string ToString() {
+        return base.ToString()+","+Convert.ToString(IsOpened)+","+string.Format(System.Globalization.CultureInfo.InvariantCulture,"{0:0.00}",RemainingAmount);
+    }
 }

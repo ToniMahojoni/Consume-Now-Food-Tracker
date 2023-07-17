@@ -15,4 +15,8 @@ public class Entry {
     public DateOnly? BuyDate {get;}
     public uint Amount {get;}
     public double? Prize {get;}
+    public override string ToString() {
+        return Type+","+Name+","+Convert.ToString(BestBeforeDate)+","+Convert.ToString(BuyDate)+","+Convert.ToString(Amount)+","
+            +string.Format(System.Globalization.CultureInfo.InvariantCulture,"{0:0.00}",Prize);
+    }
 }
