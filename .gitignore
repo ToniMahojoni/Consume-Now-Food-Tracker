@@ -1,0 +1,6 @@
+bin/
+obj/
+App.xaml.cs
+AssemblyInfo.cs
+prototype.csproj.user
+*.vs
