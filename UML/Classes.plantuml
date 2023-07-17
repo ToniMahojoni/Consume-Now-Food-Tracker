@@ -1,0 +1,28 @@
+@startuml Classes
+class Entry {
+    +Type : string <<get>>
+    +Name : string <<get>>
+    +BestBeforeDate : DateOnly <<get>>
+    +BuyDate : DateOnly? <<get>>
+    +Amount : int <<get>>
+    +Prize : double? <<get>>
+}
+
+class AdvancedEntry {
+    +IsOpened : bool <<get>>
+    +RemainingAmount : double? <<get>>
+}
+
+class DatabaseIO {
+    +SaveToDatabase(entries:List<Entry>,path:string):void
+    +LoadFromDatabase(path:string):List<Entry>
+}
+
+class ManageDatabaseEntries {
+    +AddEntry(entry:Entry):void
+    +EditEntry(OldEntry:Entry,NewEntry:Entry):void
+    +DeleteEntry(entry:Entry):void
+}
+
+Entry <|-- AdvancedEntry
+@enduml
