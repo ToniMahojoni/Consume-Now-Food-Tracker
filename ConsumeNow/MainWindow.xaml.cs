@@ -15,14 +15,33 @@ using System.Windows.Shapes;
 
 namespace ConsumeNow
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ButtonClick(object sender, RoutedEventArgs e)
+        {
+            string senderName = (sender as Button).Name;
+            switch (senderName)
+            {
+                case "LebensmittelButton":
+                    CC.Content = new LebensmittelPage();
+                    break;
+                case "FinanzenButton":
+                    CC.Content = new FinanzenPage();
+                    break;
+                case "EinkaufslisteButton":
+                    CC.Content = new EinkaufslistePage();
+                    break;
+                case "EinstellungenButton":
+                    CC.Content = new EinstellungenPage();
+                    break;
+                default: break;
+
+            }
         }
     }
 }

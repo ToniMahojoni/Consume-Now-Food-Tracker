@@ -63,6 +63,13 @@
             </Button>
 
         </StackPanel>
+        
+        <!-- Content Control needed for opening the subpages on the right column -->
+        <ContentControl x:Name="CC" Grid.Column="1" >
+            <local:StartPage HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="650"/>
+        </ContentControl>
+
+
 
     </Grid>
 </Window>
