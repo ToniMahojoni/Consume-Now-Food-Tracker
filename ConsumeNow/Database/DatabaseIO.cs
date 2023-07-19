@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using System.Collections.Generic;
 public static class DatabaseIO {
     public static void SaveToDatabase(List<Entry> input, string path) {
         using (StreamWriter file = new StreamWriter(path)) {
