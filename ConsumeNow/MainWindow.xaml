@@ -1,0 +1,75 @@
+﻿<Window x:Class="ConsumeNow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConsumeNow"
+        mc:Ignorable="d"
+        Title="ConsumeNow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="SingleBorderWindow"
+        Background="#6E8B3D">
+    <Grid>
+
+        <!-- 
+        Creation of columns that divide the grid into the sidebar on the left
+        and the space for the subpages on the right.
+        -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="18.75*" Name="SideBar">
+            </ColumnDefinition>
+            <ColumnDefinition Width="81.25*" Name="Pages"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Creation of a panel for the menu buttons. -->
+        <StackPanel Background="#6E8B3D">
+            
+            <!-- Buttons on the sidebar-->
+            
+            <!-- Lebensmittel button-->
+            <Button x:Name="LebensmittelButton" Content="      Lebensmittel" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique" 
+                    Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
+                    BorderThickness="0,1,1,1" Click="ButtonClick">
+                <Button.Background>
+                    <ImageBrush Stretch="Uniform" AlignmentX="Left"/>
+                </Button.Background>
+            </Button>
+
+            <!-- Finanzen button-->
+            <Button Name="FinanzenButton" Content="  Finanzen" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
+                    Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
+                    BorderThickness="0,0,1,1" Click="ButtonClick">
+                <Button.Background>
+                    <ImageBrush AlignmentX="Left" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+
+            <!-- Einkaufsliste button-->
+            <Button Name="EinkaufslisteButton" Content="       Einkaufsliste" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
+                    Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
+                    BorderThickness="0,0,1,1" Click="ButtonClick">
+                <Button.Background>
+                    <ImageBrush Stretch="Uniform" AlignmentX="Left"/>
+                </Button.Background>
+            </Button>
+
+            <!-- Einstellungen button-->
+            <Button Name="EinstellungenButton" Content="       Einstellungen" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
+                    Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
+                    BorderThickness="0,0,1,1" Click="ButtonClick">
+                <Button.Background>
+                    <ImageBrush Stretch="Uniform" AlignmentX="Left"/>
+                </Button.Background>
+            </Button>
+
+        </StackPanel>
+        
+        <!-- Content Control needed for opening the subpages on the right column -->
+        <ContentControl x:Name="CC" Grid.Column="1" >
+            <local:StartPage HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="650"/>
+        </ContentControl>
+
+
+
+    </Grid>
+</Window>
