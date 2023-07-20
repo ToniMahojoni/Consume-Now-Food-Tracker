@@ -6,40 +6,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Compile Update="EinkaufslistePage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="EinstellungenPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="FinanzenPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="LebensmittelPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="StartPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="EinkaufslistePage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="EinstellungenPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="FinanzenPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="LebensmittelPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="StartPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

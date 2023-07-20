@@ -30,9 +30,6 @@ namespace ConsumeNow
                 case "LebensmittelButton":
                     CC.Content = new LebensmittelPage();
                     break;
-                case "FinanzenButton":
-                    CC.Content = new FinanzenPage();
-                    break;
                 case "EinkaufslisteButton":
                     CC.Content = new EinkaufslistePage();
                     break;
