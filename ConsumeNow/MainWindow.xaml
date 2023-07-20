@@ -23,45 +23,57 @@
         
         <!-- Creation of a panel for the menu buttons. -->
         <StackPanel Background="#6E8B3D">
+            
+            <!-- Logo image in the top left corner -->
 
-            <Image Height="50" Width="150" Source="/Logo.png"/>
-
+            <Viewbox Stretch="UniformToFill">
+                <Image Height="50" Width="150" Source="/Logo.png"/>
+            </Viewbox>
+            
             <!-- Buttons on the sidebar-->
 
             <!-- Lebensmittel button-->
-            <Button x:Name="LebensmittelButton" Content="      Lebensmittel" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique" 
+            <Viewbox Stretch="UniformToFill">
+                <Button x:Name="LebensmittelButton" Content="      Lebensmittel" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique" 
                     Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
                     BorderThickness="0,1,1,1" Click="ButtonClick">
-                <Button.Background>
-                    <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/menu.png"/>
-                </Button.Background>
-            </Button>
+                    <Button.Background>
+                        <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/menu.png"/>
+                    </Button.Background>
+                </Button>
+            </Viewbox>
 
             <!-- Einkaufsliste button-->
-            <Button Name="EinkaufslisteButton" Content="       Einkaufsliste" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
+            <Viewbox Stretch="UniformToFill">
+                <Button Name="EinkaufslisteButton" Content="       Einkaufsliste" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
                     Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
                     BorderThickness="0,0,1,1" Click="ButtonClick">
-                <Button.Background>
-                    <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/shoppingcart.png"/>
-                </Button.Background>
-            </Button>
+                    <Button.Background>
+                        <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/shoppingcart.png"/>
+                    </Button.Background>
+                </Button>
+            </Viewbox>
 
             <!-- Übersicht button-->
-            <Button Name="ÜbersichtButton" Content="   Übersicht" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
+            <Viewbox Stretch="UniformToFill">
+                <Button Name="ÜbersichtButton" Content="   Übersicht" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
                     Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
                     BorderThickness="0,0,1,1" Click="ButtonClick">
-                <Button.Background>
-                    <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/overview.png" />
-                </Button.Background>
-            </Button>
-            
+                    <Button.Background>
+                        <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/overview.png" />
+                    </Button.Background>
+                </Button>
+            </Viewbox>
+
 
 
         </StackPanel>
         
         <!-- Content Control needed for opening the subpages on the right column -->
         <ContentControl x:Name="CC" Grid.Column="1" >
-            <local:StartPage HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="650"/>
+            <Viewbox Stretch="UniformToFill">
+                <local:StartPage HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="650"/>
+            </Viewbox>
         </ContentControl>
 
 
