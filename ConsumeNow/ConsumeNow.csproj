@@ -7,4 +7,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Logo.png" />
+    <None Remove="menu.png" />
+    <None Remove="overview.png" />
+    <None Remove="shoppingcart.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Logo.png" />
+    <Resource Include="menu.png" />
+    <Resource Include="overview.png" />
+    <Resource Include="shoppingcart.png" />
+  </ItemGroup>
+
 </Project>

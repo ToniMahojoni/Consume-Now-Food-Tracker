@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ConsumeNow
 {
     /// <summary>
-    /// Interaction logic for EinstellungenPage.xaml
+    /// Interaction logic for ÜbersichtPage.xaml
     /// </summary>
-    public partial class EinstellungenPage : UserControl
+    public partial class ÜbersichtPage : UserControl
     {
-        public EinstellungenPage()
+        public ÜbersichtPage()
         {
             InitializeComponent();
         }

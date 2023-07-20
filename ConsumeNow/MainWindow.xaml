@@ -23,24 +23,17 @@
         
         <!-- Creation of a panel for the menu buttons. -->
         <StackPanel Background="#6E8B3D">
-            
+
+            <Image Height="50" Width="150" Source="/Logo.png"/>
+
             <!-- Buttons on the sidebar-->
-            
+
             <!-- Lebensmittel button-->
             <Button x:Name="LebensmittelButton" Content="      Lebensmittel" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique" 
                     Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
                     BorderThickness="0,1,1,1" Click="ButtonClick">
                 <Button.Background>
-                    <ImageBrush Stretch="Uniform" AlignmentX="Left"/>
-                </Button.Background>
-            </Button>
-
-            <!-- Finanzen button-->
-            <Button Name="FinanzenButton" Content="  Finanzen" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
-                    Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
-                    BorderThickness="0,0,1,1" Click="ButtonClick">
-                <Button.Background>
-                    <ImageBrush AlignmentX="Left" Stretch="Uniform"/>
+                    <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/menu.png"/>
                 </Button.Background>
             </Button>
 
@@ -49,18 +42,20 @@
                     Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
                     BorderThickness="0,0,1,1" Click="ButtonClick">
                 <Button.Background>
-                    <ImageBrush Stretch="Uniform" AlignmentX="Left"/>
+                    <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/shoppingcart.png"/>
                 </Button.Background>
             </Button>
 
-            <!-- Einstellungen button-->
-            <Button Name="EinstellungenButton" Content="       Einstellungen" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
+            <!-- Übersicht button-->
+            <Button Name="ÜbersichtButton" Content="   Übersicht" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
                     Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
                     BorderThickness="0,0,1,1" Click="ButtonClick">
                 <Button.Background>
-                    <ImageBrush Stretch="Uniform" AlignmentX="Left"/>
+                    <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/overview.png" />
                 </Button.Background>
             </Button>
+            
+
 
         </StackPanel>
         

@@ -33,8 +33,8 @@ namespace ConsumeNow
                 case "EinkaufslisteButton":
                     CC.Content = new EinkaufslistePage();
                     break;
-                case "EinstellungenButton":
-                    CC.Content = new EinstellungenPage();
+                case "ÜbersichtButton":
+                    CC.Content = new ÜbersichtPage();
                     break;
                 default: break;
 
