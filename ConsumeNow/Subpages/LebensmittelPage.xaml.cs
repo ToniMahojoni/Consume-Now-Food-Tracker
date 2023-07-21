@@ -31,7 +31,7 @@ namespace ConsumeNow
         public void FoodButtonClick(object sender, RoutedEventArgs e)
         {
             DataTable.Content = lebensmitteladdpage;
-            AddButton.Content = "";
+            AddButton.Visibility = Visibility.Collapsed;
         }
 
 
