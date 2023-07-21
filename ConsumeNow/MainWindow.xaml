@@ -20,7 +20,8 @@
             </ColumnDefinition>
             <ColumnDefinition Width="81.25*" Name="Pages"/>
         </Grid.ColumnDefinitions>
-        
+
+
         <!-- Creation of a panel for the menu buttons. -->
         <StackPanel Background="#6E8B3D">
             
@@ -68,7 +69,10 @@
 
 
         </StackPanel>
+
         
+
+
         <!-- Content Control needed for opening the subpages on the right column -->
         <ContentControl x:Name="CC" Grid.Column="1" >
             <Viewbox Stretch="UniformToFill">
