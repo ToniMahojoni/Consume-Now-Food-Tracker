@@ -27,7 +27,7 @@
             <!-- Logo image in the top left corner -->
 
             <Viewbox Stretch="UniformToFill">
-                <Image Height="50" Width="150" Source="/Logo.png"/>
+                <Image Height="50" Width="150" Source="/Images/Logo.png"/>
             </Viewbox>
             
             <!-- Buttons on the sidebar-->
@@ -38,7 +38,7 @@
                     Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
                     BorderThickness="0,1,1,1" Click="ButtonClick">
                     <Button.Background>
-                        <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/menu.png"/>
+                        <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/Images/menu.png"/>
                     </Button.Background>
                 </Button>
             </Viewbox>
@@ -49,7 +49,7 @@
                     Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
                     BorderThickness="0,0,1,1" Click="ButtonClick">
                     <Button.Background>
-                        <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/shoppingcart.png"/>
+                        <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/Images/shoppingcart.png"/>
                     </Button.Background>
                 </Button>
             </Viewbox>
@@ -60,7 +60,7 @@
                     Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
                     BorderThickness="0,0,1,1" Click="ButtonClick">
                     <Button.Background>
-                        <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/overview.png" />
+                        <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="Images/overview.png" />
                     </Button.Background>
                 </Button>
             </Viewbox>

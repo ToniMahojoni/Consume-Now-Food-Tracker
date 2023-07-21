@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\border.png" />
+    <None Remove="Images\icon.ico" />
+    <None Remove="Images\Logo.png" />
+    <None Remove="Images\menu.png" />
+    <None Remove="Images\overview.png" />
+    <None Remove="Images\shoppingcart.png" />
+    <None Remove="Images\StartseitePage.png" />
     <None Remove="Logo.png" />
     <None Remove="menu.png" />
     <None Remove="overview.png" />
@@ -15,10 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Logo.png" />
-    <Resource Include="menu.png" />
-    <Resource Include="overview.png" />
-    <Resource Include="shoppingcart.png" />
+    <Resource Include="Images\border.png" />
+    <Resource Include="Images\icon.ico" />
+    <Resource Include="Images\Logo.png" />
+    <Resource Include="Images\menu.png" />
+    <Resource Include="Images\overview.png" />
+    <Resource Include="Images\shoppingcart.png" />
+    <Resource Include="Images\StartseitePage.png" />
   </ItemGroup>
 
 </Project>
