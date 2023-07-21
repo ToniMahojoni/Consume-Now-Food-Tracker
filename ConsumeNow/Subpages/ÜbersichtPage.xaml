@@ -45,18 +45,24 @@
             </Border>
         </Viewbox>
 
+        <ContentControl x:Name="CCÜbersichtTable" Grid.Column="1" Grid.Row="1">
         <!-- data table with the Übersicht entries -->
 
         <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="1">
             <DataGrid Width="618" Height="338" Name="ÜbersichtTable"/>
         </Viewbox>
 
+        </ContentControl>
+
+        <ContentControl x:Name="CCCatAddButton" Grid.Column="1" Grid.Row="2">
         <!-- add button -->
 
         <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="2">
             <Button Name="AddCatButton" Content="Kategorie hinzufügen" Width="640"  Height="29" 
-                    FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold"/>
+                    FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold" Click="AddCatButton_Click"/>
         </Viewbox>
+
+        </ContentControl>
 
     </Grid>
 </UserControl>
