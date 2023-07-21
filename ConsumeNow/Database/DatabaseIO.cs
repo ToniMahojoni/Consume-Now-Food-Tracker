@@ -47,17 +47,29 @@ public static class DatabaseIO {
         }
         return result;    
     }
-    private static Entry GenerateEntryInstance(string[] input) {
+    private static void TestForValidEntryArguments(Entry entry) {
+        if (entry.BestBeforeDate < DateOnly.FromDateTime(DateTime.Today)) throw new ArgumentException();
+        if (entry.Prize != null & entry.Prize <= 0) throw new ArgumentException();
+        if (entry.BuyDate > DateOnly.FromDateTime(DateTime.Today)) throw new ArgumentException();
+        AdvancedEntry? AdvEntry = entry as AdvancedEntry;
+        if (AdvEntry != null) {
+            if (AdvEntry.RemainingAmount != null & (AdvEntry.RemainingAmount < 0 | AdvEntry.RemainingAmount > 1)) throw new ArgumentException();
+        } 
+    }
+    public static Entry GenerateEntryInstance(string[] input) {
+        Entry result;
         switch(input.Length) {
-            case 6: return new Entry(input[0],input[1],DateOnly.Parse(input[2]),DateOnly.Parse(input[3]),
-                                    Convert.ToUInt32(input[4]),ConvertToNullableDouble(input[5]));
-            case 8: return new AdvancedEntry(input[0],input[1],DateOnly.Parse(input[2]),DateOnly.Parse(input[3]),Convert.ToUInt32(input[4]),
-                                            ConvertToNullableDouble(input[5]),Convert.ToBoolean(input[6]),ConvertToNullableDouble(input[7]));
+            case 6: result = new Entry(input[0],input[1],DateOnly.Parse(input[2]),DateOnly.Parse(input[3]),
+                                    Convert.ToUInt32(input[4]),ConvertToNullableDouble(input[5])); break;
+            case 8: result =  new AdvancedEntry(input[0],input[1],DateOnly.Parse(input[2]),DateOnly.Parse(input[3]),Convert.ToUInt32(input[4]),
+                                    ConvertToNullableDouble(input[5]),Convert.ToBoolean(input[6]),ConvertToNullableDouble(input[7])); break;
             default: throw new FormatException();
         }
+        TestForValidEntryArguments(result);
+        return result;
         
     }
-    private static Type GenerateTypeInstance(string[] input) {
+    public static Type GenerateTypeInstance(string[] input) {
         if (input.Length == 6) {
             return new Type(input[0],input[1],ConvertToNullableDouble(input[2]),ConvertToNullableInt(input[3]),input[4].Split(';'),Convert.ToUInt32(input[5]));
         } else {
