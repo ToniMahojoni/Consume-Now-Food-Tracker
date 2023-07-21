@@ -193,7 +193,7 @@
         <!-- kann man öffnen CheckBox -->
 
         <Viewbox Stretch="UniformToFill" Grid.Column="4" Grid.Row="2">
-            <CheckBox Name="openable" Height="27" Width="72" Content="ja/nein" FontFamily="Cascadia Mono Semibold" Checked="OpenableChecked"/>
+            <CheckBox Name="openable" Height="27" Width="72" Content="ja/nein" FontFamily="Cascadia Mono Semibold" Click="OpenableChecked"/>
         </Viewbox>
 
         <!-- geöffnet CheckBox -->
