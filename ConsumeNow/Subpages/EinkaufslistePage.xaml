@@ -61,14 +61,14 @@
         <!-- add button -->
 
         <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="2">
-            <Button Name="AddButton" Content="Einkauf hinzufügen" Width="640"  Height="29" 
+            <Button Name="AddPurchaseButton" Content="Einkauf hinzufügen" Width="640"  Height="29" 
                     FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold"/>
         </Viewbox>
         
         <!-- auto generate button -->
 
         <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="3">
-            <Button Name="GenButton" Content="Einkaufsliste generieren" Width="640" Height="30"
+            <Button Name="GenerateButton" Content="Einkaufsliste generieren" Width="640" Height="30"
                     FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold"/>
         </Viewbox>
 

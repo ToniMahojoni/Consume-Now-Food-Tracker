@@ -54,7 +54,7 @@
         <!-- add button -->
 
         <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="2">
-            <Button Name="AddButton" Content="Lebensmittel hinzufügen" Width="640"  Height="29" 
+            <Button Name="AddFoodButton" Content="Lebensmittel hinzufügen" Width="640"  Height="29" 
                     FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold"/>
         </Viewbox>
 
