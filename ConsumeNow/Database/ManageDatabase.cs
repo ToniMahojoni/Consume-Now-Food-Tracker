@@ -30,6 +30,28 @@ public static class ManageDatabase {
         }
         throw new ArgumentException();
     }
+    public static void AddType(string[] input,List<Entry> entries) {
+        entries.Add(DatabaseIO.GenerateEntryInstance(input));
+    } 
+    public static void EditType(string[] input,List<Type> types,uint ID) {
+        Type type = SelectType(types,ID);
+        Type newType = DatabaseIO.GenerateTypeInstance(input);
+        type.SetValues(newType.Name,newType.StoreLocation,newType.WhenToAddToShoppingList,newType.BestBeforeDateChange,newType.Subnames,newType.AmountOnShoppinglist);
+    }
+    public static void DeleteType(List<Type> types,uint ID) {
+        Type type = SelectType(types,ID);
+        types.Remove(type);      
+    }
+    private static Type SelectType(List<Type> types,uint ID) {
+        var SelectedType = 
+            from type in types
+            where type.ID == ID
+            select type;
+        foreach (Type type in SelectedType) {
+            return type;
+        }
+        throw new ArgumentException();
+    }
 
 
 

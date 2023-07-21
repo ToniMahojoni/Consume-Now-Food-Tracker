@@ -69,7 +69,7 @@ public static class DatabaseIO {
         return result;
         
     }
-    private static Type GenerateTypeInstance(string[] input) {
+    public static Type GenerateTypeInstance(string[] input) {
         if (input.Length == 6) {
             return new Type(input[0],input[1],ConvertToNullableDouble(input[2]),ConvertToNullableInt(input[3]),input[4].Split(';'),Convert.ToUInt32(input[5]));
         } else {

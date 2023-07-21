@@ -10,14 +10,14 @@ public class Type {
         this.Subnames = Subnames;
         this.AmountOnShoppinglist = AmountOnShoppinglist;
     }
-    public int ID {get;}
-    private static int NextID = 0;
-    public string Name {get;}
-    public string StoreLocation {get;}
-    public double? WhenToAddToShoppingList {get;}
-    public int? BestBeforeDateChange {get;}
-    public string[] Subnames {get;}
-    public uint AmountOnShoppinglist {get;}
+    public uint ID {get;}
+    private static uint NextID = 0;
+    public string Name {get;private set;}
+    public string StoreLocation {get;private set;}
+    public double? WhenToAddToShoppingList {get;private set;}
+    public int? BestBeforeDateChange {get;private set;}
+    public string[] Subnames {get;private set;}
+    public uint AmountOnShoppinglist {get;private set;}
     private string PrintSubnames() {
         string result = "";
         for (int i = 0; i<Subnames.Length; i++) {
@@ -30,5 +30,13 @@ public class Type {
     {
         return Name+","+StoreLocation+","+Convert.ToString(WhenToAddToShoppingList,System.Globalization.CultureInfo.InvariantCulture)+","+
             Convert.ToString(BestBeforeDateChange)+","+PrintSubnames()+","+Convert.ToString(AmountOnShoppinglist);
+    }
+    public void SetValues(string Name,string StoreLocation,double? WhenToAddToShoppingList,int? BestBeforeDateChange,string[] Subnames,uint AmountOnShoppinglist) {
+        this.Name = Name;
+        this.StoreLocation = StoreLocation;
+        this.WhenToAddToShoppingList = WhenToAddToShoppingList;
+        this.BestBeforeDateChange = BestBeforeDateChange;
+        this.Subnames = Subnames;
+        this.AmountOnShoppinglist = AmountOnShoppinglist;
     }
 }
