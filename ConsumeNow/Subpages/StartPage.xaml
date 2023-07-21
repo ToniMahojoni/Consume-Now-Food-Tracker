@@ -6,8 +6,9 @@
              xmlns:local="clr-namespace:ConsumeNow"
              mc:Ignorable="d" 
              d:DesignHeight="434" d:DesignWidth="650"
-             Background="Orange">
+             Background="#6E8B3D">
     <Grid>
-        <TextBlock Text="Startseite" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="top"/>
+        <Image Source="/Images/border.png" Margin="0,0,648,0"/>
+        <Image Source="/Images/StartseitePage.png"/>
     </Grid>
 </UserControl>

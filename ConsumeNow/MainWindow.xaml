@@ -36,7 +36,7 @@
             <Viewbox Stretch="UniformToFill">
                 <Button x:Name="LebensmittelButton" Content="      Lebensmittel" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique" 
                     Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
-                    BorderThickness="0,1,1,1" Click="ButtonClick">
+                    BorderThickness="0,1,0,1" Click="ButtonClick">
                     <Button.Background>
                         <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/Images/menu.png"/>
                     </Button.Background>
@@ -47,7 +47,7 @@
             <Viewbox Stretch="UniformToFill">
                 <Button Name="EinkaufslisteButton" Content="       Einkaufsliste" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
                     Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
-                    BorderThickness="0,0,1,1" Click="ButtonClick">
+                    BorderThickness="0,0,0,1" Click="ButtonClick">
                     <Button.Background>
                         <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/Images/shoppingcart.png"/>
                     </Button.Background>
@@ -58,7 +58,7 @@
             <Viewbox Stretch="UniformToFill">
                 <Button Name="ÜbersichtButton" Content="   Übersicht" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
                     Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
-                    BorderThickness="0,0,1,1" Click="ButtonClick">
+                    BorderThickness="0,0,0,1" Click="ButtonClick">
                     <Button.Background>
                         <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="Images/overview.png" />
                     </Button.Background>
