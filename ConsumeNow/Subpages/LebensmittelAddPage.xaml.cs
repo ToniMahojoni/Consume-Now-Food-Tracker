@@ -29,12 +29,25 @@ namespace ConsumeNow.Subpages
         {
             if(OpenableChecked != null)
             {
-                VBopenedBox.Visibility = Visibility.Visible;
-                VBopenedText.Visibility = Visibility.Visible;
-                VBremainingBox.Visibility = Visibility.Visible;
-                VBremainingText.Visibility = Visibility.Visible;
+                CheckBox box = sender as CheckBox;
+
+                if(box.IsChecked ==  true)
+                {
+                    VBopenedBox.Visibility = Visibility.Visible;
+                    VBopenedText.Visibility = Visibility.Visible;
+                    VBremainingBox.Visibility = Visibility.Visible;
+                    VBremainingText.Visibility = Visibility.Visible;
+                } else if(box.IsChecked == false) 
+                    {
+                        VBopenedBox.Visibility = Visibility.Collapsed;
+                        VBopenedText.Visibility = Visibility.Collapsed;
+                        VBremainingBox.Visibility = Visibility.Collapsed;
+                        VBremainingText.Visibility = Visibility.Collapsed;
+                    }
+                }
+                
             }
             
         }
     }
-}
+
