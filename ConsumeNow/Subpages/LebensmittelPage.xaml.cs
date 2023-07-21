@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsumeNow.Subpages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,14 @@ namespace ConsumeNow
             InitializeComponent();
         }
 
-        
+        LebensmittelAddPage lebensmitteladdpage = new LebensmittelAddPage();
+
+        public void FoodButtonClick(object sender, RoutedEventArgs e)
+        {
+            DataTable.Content = lebensmitteladdpage;
+            AddButton.Content = "";
+        }
+
+
     }
 }

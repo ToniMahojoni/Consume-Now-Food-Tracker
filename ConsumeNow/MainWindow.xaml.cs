@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsumeNow.Subpages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,16 @@ namespace ConsumeNow
     {
         public MainWindow()
         {
+            this.Name = "appWindow";
             InitializeComponent();
         }
 
         LebensmittelPage lebensmittelpage = new LebensmittelPage();
         EinkaufslistePage einkaufslistepage = new EinkaufslistePage();
         ÜbersichtPage übersichtpage = new ÜbersichtPage();
+        LebensmittelAddPage lebensmitteladdpage = new LebensmittelAddPage();
 
-        private void ButtonClick(object sender, RoutedEventArgs e)
+        public void ButtonClick(object sender, RoutedEventArgs e)
         {
             string senderName = (sender as Button).Name;
             switch (senderName)
@@ -40,9 +43,13 @@ namespace ConsumeNow
                 case "ÜbersichtButton":
                     CC.Content = übersichtpage;
                     break;
+                case "AddFoodButton":
+                    CC.Content = lebensmitteladdpage;
+                    break;
                 default: break;
 
             }
+
         }
     }
 }
