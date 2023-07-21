@@ -20,53 +20,64 @@
             </ColumnDefinition>
             <ColumnDefinition Width="81.25*" Name="Pages"/>
         </Grid.ColumnDefinitions>
-        
+
+
         <!-- Creation of a panel for the menu buttons. -->
         <StackPanel Background="#6E8B3D">
             
-            <!-- Buttons on the sidebar-->
-            
-            <!-- Lebensmittel button-->
-            <Button x:Name="LebensmittelButton" Content="      Lebensmittel" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique" 
-                    Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
-                    BorderThickness="0,1,1,1" Click="ButtonClick">
-                <Button.Background>
-                    <ImageBrush Stretch="Uniform" AlignmentX="Left"/>
-                </Button.Background>
-            </Button>
+            <!-- Logo image in the top left corner -->
 
-            <!-- Finanzen button-->
-            <Button Name="FinanzenButton" Content="  Finanzen" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
+            <Viewbox Stretch="UniformToFill">
+                <Image Height="50" Width="150" Source="/Images/Logo.png"/>
+            </Viewbox>
+            
+            <!-- Buttons on the sidebar-->
+
+            <!-- Lebensmittel button-->
+            <Viewbox Stretch="UniformToFill">
+                <Button x:Name="LebensmittelButton" Content="      Lebensmittel" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique" 
                     Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
-                    BorderThickness="0,0,1,1" Click="ButtonClick">
-                <Button.Background>
-                    <ImageBrush AlignmentX="Left" Stretch="Uniform"/>
-                </Button.Background>
-            </Button>
+                    BorderThickness="0,1,0,1" Click="ButtonClick">
+                    <Button.Background>
+                        <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/Images/menu.png"/>
+                    </Button.Background>
+                </Button>
+            </Viewbox>
 
             <!-- Einkaufsliste button-->
-            <Button Name="EinkaufslisteButton" Content="       Einkaufsliste" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
+            <Viewbox Stretch="UniformToFill">
+                <Button Name="EinkaufslisteButton" Content="       Einkaufsliste" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
                     Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
-                    BorderThickness="0,0,1,1" Click="ButtonClick">
-                <Button.Background>
-                    <ImageBrush Stretch="Uniform" AlignmentX="Left"/>
-                </Button.Background>
-            </Button>
+                    BorderThickness="0,0,0,1" Click="ButtonClick">
+                    <Button.Background>
+                        <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="/Images/shoppingcart.png"/>
+                    </Button.Background>
+                </Button>
+            </Viewbox>
 
-            <!-- Einstellungen button-->
-            <Button Name="EinstellungenButton" Content="       Einstellungen" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
+            <!-- Übersicht button-->
+            <Viewbox Stretch="UniformToFill">
+                <Button Name="ÜbersichtButton" Content="   Übersicht" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
                     Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
-                    BorderThickness="0,0,1,1" Click="ButtonClick">
-                <Button.Background>
-                    <ImageBrush Stretch="Uniform" AlignmentX="Left"/>
-                </Button.Background>
-            </Button>
+                    BorderThickness="0,0,0,1" Click="ButtonClick">
+                    <Button.Background>
+                        <ImageBrush Stretch="Uniform" AlignmentX="Left" ImageSource="Images/overview.png" />
+                    </Button.Background>
+                </Button>
+            </Viewbox>
+
+
 
         </StackPanel>
+
         
+
+
         <!-- Content Control needed for opening the subpages on the right column -->
         <ContentControl x:Name="CC" Grid.Column="1" >
-            <local:StartPage HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="650"/>
+            <Viewbox Stretch="UniformToFill">
+                <local:StartPage HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="650"/>
+            </Viewbox>
         </ContentControl>
 
 

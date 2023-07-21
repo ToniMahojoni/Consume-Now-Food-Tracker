@@ -22,22 +22,23 @@ namespace ConsumeNow
             InitializeComponent();
         }
 
+        LebensmittelPage lebensmittelpage = new LebensmittelPage();
+        EinkaufslistePage einkaufslistepage = new EinkaufslistePage();
+        ÜbersichtPage übersichtpage = new ÜbersichtPage();
+
         private void ButtonClick(object sender, RoutedEventArgs e)
         {
             string senderName = (sender as Button).Name;
             switch (senderName)
             {
                 case "LebensmittelButton":
-                    CC.Content = new LebensmittelPage();
-                    break;
-                case "FinanzenButton":
-                    CC.Content = new FinanzenPage();
+                    CC.Content = lebensmittelpage;
                     break;
                 case "EinkaufslisteButton":
-                    CC.Content = new EinkaufslistePage();
+                    CC.Content = einkaufslistepage;
                     break;
-                case "EinstellungenButton":
-                    CC.Content = new EinstellungenPage();
+                case "ÜbersichtButton":
+                    CC.Content = übersichtpage;
                     break;
                 default: break;
 

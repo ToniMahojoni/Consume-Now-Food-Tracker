@@ -6,8 +6,57 @@
              xmlns:local="clr-namespace:ConsumeNow"
              mc:Ignorable="d" 
              d:DesignHeight="434" d:DesignWidth="650"
-             Background="blue">
+             Background="#6E8B3D">
     <Grid>
-        <TextBlock Text="Lebensmittel" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="350*" />
+            <RowDefinition Height="29*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="648*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- white bar in column 0 and row 0 -->
+
+        <Viewbox Stretch="UniformToFill" Grid.Column="0" Grid.Row="0">
+            <Image Source="/Images/border.png"/>
+        </Viewbox>
+
+        <!-- white bar in column 0 and row 1 -->
+
+        <Viewbox Stretch="UniformToFill" Grid.Column="0" Grid.Row="1">
+            <Image Source="/Images/border.png"/>
+        </Viewbox>
+
+        <!-- white in column 0 and row 2 -->
+
+        <Viewbox Stretch="UniformToFill" Grid.Column="0" Grid.Row="2">
+            <Image Source="/Images/border.png"/>
+        </Viewbox>
+        
+        <!-- Lebensmittel text label at the top -->
+
+        <Viewbox Stretch="UniformToFill" Grid.Row="0" Grid.Column="1">
+            <Border BorderBrush="White" BorderThickness="0,0,2,2" Margin="0,0,365,0" Grid.Row="0" Height="48" >
+                <Label Content="Lebensmittel"  FontFamily="Cascadia Mono Semibold" FontSize="38" Height="50" />
+            </Border>
+        </Viewbox>
+        
+        <!-- data table with the Lebensmittel entries -->
+        
+        <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="1">
+            <DataGrid Width="618" Height="338" Name="LebensmittelTable"/>
+        </Viewbox>
+        
+        <!-- add button -->
+
+        <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="2">
+            <Button Name="AddFoodButton" Content="Lebensmittel hinzufügen" Width="640"  Height="29" 
+                    FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold"/>
+        </Viewbox>
+
     </Grid>
 </UserControl>
