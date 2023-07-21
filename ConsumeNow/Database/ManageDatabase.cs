@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public static class ManageDatabase {
     public static void AddEntry(string[] input,List<Entry> entries) {
