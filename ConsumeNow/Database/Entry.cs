@@ -1,7 +1,8 @@
 ﻿using System;
 
 public class Entry {
-    public Entry(string Type, string Name, DateOnly BestBeforeDate, DateOnly? BuyDate, uint Amount, double? Prize) {
+    public Entry(string Type, string Name, DateOnly BestBeforeDate, DateOnly BuyDate, uint Amount, double? Prize) {
+        this.ID = NextID++;
         this.Type = Type;
         this.Name = Name;
         this.BestBeforeDate = BestBeforeDate;
@@ -9,10 +10,12 @@ public class Entry {
         this.Amount = Amount;
         this.Prize = Prize;
     }
+    public int ID {get;}
+    private static int NextID = 0;
     public string Type {get;}
     public string Name {get;}
     public DateOnly BestBeforeDate {get;}
-    public DateOnly? BuyDate {get;}
+    public DateOnly BuyDate {get;}
     public uint Amount {get;}
     public double? Prize {get;}
     public override string ToString() {

@@ -1,0 +1,10 @@
+Apfel,Kühlschrank,2,,roter Apfel;gelber Apfel;grüner Apfel,1
+Banane,Regal,,,,1
+Joghurt,Kühlschrank,1,,Zitronen-Joghurt;Vanille-Joghurt,2
+Wurst,Kühlschrank,0.5,3,Salami;Schinken,1
+Käse,Kühlschrank,0.5,3,Gouda;Butterkäse,1
+Aufstrich,Kühlschrank,0.25,14,Butter;Margarine,0
+Milch,Kühlschrank,,3,,0
+Saft,Regal,1,3,Orangensaft;Multivitaminsaft;Apfelsaft,2
+Brot,Regal,0.5,5,Dinkelbrot;Vollkornbrot;Buttertoast;Vollkorntoast,1
+Schokolade,Regal,0.25,-1,,0
