@@ -5,15 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ConsumeNow.Subpages"
              mc:Ignorable="d" 
-             d:DesignHeight="700" d:DesignWidth="1298"
+             d:DesignHeight="640" d:DesignWidth="1296"
              Background="#6E8B5C">
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50*" />
+            <RowDefinition Height="56*" />
+            <RowDefinition Height="62*" />
+            <RowDefinition Height="70*" />
             <RowDefinition Height="62*" />
             <RowDefinition Height="62*" />
-            <RowDefinition Height="60*" />
-            <RowDefinition Height="60*" />
             <RowDefinition Height="62*" />
 
 
@@ -22,7 +23,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2"/>
             <ColumnDefinition Width="77*"/>
-            <ColumnDefinition Width="154*"/>
+            <ColumnDefinition Width="77*"/>
+            <ColumnDefinition Width="77*"/>
             <ColumnDefinition Width="77*"/>
         </Grid.ColumnDefinitions>
 
@@ -80,7 +82,7 @@
         <!-- Menge text label -->
 
         <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="2">
-            <Border BorderBrush="Black" BorderThickness="1,1,2,1" Height="26" Width="69">
+            <Border BorderBrush="Black" BorderThickness="1,1,2,1" Height="25" Width="67">
                 <Label Content="  Menge" FontSize="11" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" Margin="0,0,-1,0"/>
             </Border>
         </Viewbox>
@@ -88,26 +90,29 @@
         <!-- SpeichernButton -->
 
         <Viewbox Stretch="UniformToFill" Grid.Column="4" Grid.Row="5">
-            <Button Height="26" Width="71" Content="SPEICHERN" FontSize="9" FontFamily="Cascadia Mono Semibold" Background="#6495ED" />
+            <Button Height="23" Width="70" Content="SPEICHERN" FontSize="9" FontFamily="Cascadia Mono Semibold" Background="#6495ED" />
         </Viewbox>
 
         <!-- AbbruchButton -->
 
         <Viewbox Stretch="UniformToFill" Grid.Column="4" Grid.Row="0">
-            <Button Height="20" Width="69" Content="ABBRECHEN" FontSize="9" FontFamily="Cascadia Mono Semibold" Background="#FF4040" />
+            <Button Height="21" Width="69" Content="ABBRECHEN" FontSize="9" FontFamily="Cascadia Mono Semibold" Background="#FF4040" />
         </Viewbox>
 
         <!-- Typ ComboBox -->
 
         <Viewbox Stretch="UniformToFill" Grid.Column="2" Grid.Row="1">
-            <ComboBox Width="47" Height="9"/>
+            <ComboBox Width="55" Height="21"/>
         </Viewbox>
 
         <!-- Menge TextBox -->
 
         <Viewbox Stretch="UniformToFill" Grid.Column="2" Grid.Row="2">
-            <TextBox Height="10" Width="55"/>
+            <TextBox Height="25" Width="67"/>
         </Viewbox>
 
     </Grid>
 </UserControl>
+
+
+   

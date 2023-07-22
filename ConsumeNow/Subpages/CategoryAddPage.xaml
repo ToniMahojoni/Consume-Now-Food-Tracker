@@ -12,8 +12,8 @@
             <RowDefinition Height="50*" />
             <RowDefinition Height="62*" />
             <RowDefinition Height="62*" />
-            <RowDefinition Height="60*" />
-            <RowDefinition Height="60*" />
+            <RowDefinition Height="62*" />
+            <RowDefinition Height="62*" />
             <RowDefinition Height="62*" />
 
 
@@ -22,7 +22,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2"/>
             <ColumnDefinition Width="77*"/>
-            <ColumnDefinition Width="154*"/>
+            <ColumnDefinition Width="77*"/>
+            <ColumnDefinition Width="77*"/>
             <ColumnDefinition Width="77*"/>
         </Grid.ColumnDefinitions>
 
@@ -62,7 +63,7 @@
             <Image Source="/Images/border.png"/>
         </Viewbox>
 
-        <!-- Einkauf hinzufügen text label at the top -->
+        <!-- Kategorie hinzufügen text label at the top -->
 
         <Viewbox Stretch="UniformToFill" Grid.Row="0" Grid.Column="1">
             <Border BorderBrush="White" BorderThickness="0,0,2,2" Grid.Row="0" Height="22" Width="72" >
@@ -70,29 +71,29 @@
             </Border>
         </Viewbox>
 
-        <!-- Typ text label -->
+        <!-- neuer Typ text label -->
         <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="1">
             <Border BorderBrush="Black" BorderThickness="1" Height="26" Width="69">
-                <Label Content="neuer Typ" FontSize="11" FontFamily="Cascadia Mono Semibold" Height="25" Width="68" Background="#E0EEEE"/>
+                <Label Content="neuer Typ" FontSize="10" FontFamily="Cascadia Mono Semibold" Height="25" Width="68" Background="#E0EEEE"/>
             </Border>
         </Viewbox>
 
         <!-- SpeichernButton -->
 
         <Viewbox Stretch="UniformToFill" Grid.Column="4" Grid.Row="5">
-            <Button Height="26" Width="71" Content="SPEICHERN" FontSize="9" FontFamily="Cascadia Mono Semibold" Background="#6495ED" />
+            <Button Height="27" Width="72" Content="SPEICHERN" FontSize="9" FontFamily="Cascadia Mono Semibold" Background="#6495ED" />
         </Viewbox>
 
         <!-- AbbruchButton -->
 
         <Viewbox Stretch="UniformToFill" Grid.Column="4" Grid.Row="0">
-            <Button Height="20" Width="69" Content="ABBRECHEN" FontSize="9" FontFamily="Cascadia Mono Semibold" Background="#FF4040" />
+            <Button Height="21" Width="69" Content="ABBRECHEN" FontSize="9" FontFamily="Cascadia Mono Semibold" Background="#FF4040" />
         </Viewbox>
 
-        <!-- Typ TextBox -->
+        <!-- neuer Typ TextBox -->
 
         <Viewbox Stretch="UniformToFill" Grid.Column="2" Grid.Row="1">
-            <TextBox Height="10" Width="52"/>
+            <TextBox Height="25" Width="67"/>
         </Viewbox>
 
     </Grid>
