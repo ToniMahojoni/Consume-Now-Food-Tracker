@@ -148,11 +148,7 @@
             <Button Height="28" Width="74" Content="SPEICHERN" FontSize="9" FontFamily="Cascadia Mono Semibold" Background="#6495ED" />
         </Viewbox>
 
-        <!-- AbbruchButton -->
-
-        <Viewbox Stretch="UniformToFill" Grid.Column="4" Grid.Row="0">
-            <Button Height="21" Width="69" Content="ABBRECHEN" FontSize="9" FontFamily="Cascadia Mono Semibold" Background="#FF4040" />
-        </Viewbox>
+        
 
         <!-- Typ ComboBox -->
 

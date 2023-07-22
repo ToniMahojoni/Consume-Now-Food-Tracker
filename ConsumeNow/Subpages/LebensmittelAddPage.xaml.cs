@@ -47,7 +47,11 @@ namespace ConsumeNow.Subpages
                 }
                 
             }
-            
+
+        private void LebensmittelAddPageClose(object sender, RoutedEventArgs e)
+        {
+
         }
+    }
     }
 

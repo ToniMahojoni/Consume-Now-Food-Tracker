@@ -26,14 +26,6 @@ namespace ConsumeNow
             InitializeComponent();
         }
 
-        LebensmittelAddPage lebensmitteladdpage = new LebensmittelAddPage();
-
-        public void FoodButtonClick(object sender, RoutedEventArgs e)
-        {
-            DataTable.Content = lebensmitteladdpage;
-            CCAddButton.Visibility = Visibility.Collapsed;
-        }
-
-
+        public LebensmittelAddPage lebensmitteladdpage = new LebensmittelAddPage();
     }
 }

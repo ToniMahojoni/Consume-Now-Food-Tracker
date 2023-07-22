@@ -55,13 +55,24 @@
         
         <!-- add button -->
 
-        <ContentControl x:Name="CCAddButton" Grid.Column="1" Grid.Row="2">
-        <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="2">
-            <Button Name="AddFoodButton" Content="Lebensmittel hinzufügen" Width="640"  Height="29" 
+        <ContentControl x:Name="CCAddButton" Grid.Column="1" Grid.Row="2" Visibility="Visible">
+            <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="2">
+                <Button Name="AddFoodButton" Content="Lebensmittel hinzufügen" Width="640"  Height="29" 
                     FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold"
-                    Click="FoodButtonClick"/>
-        </Viewbox>
+                    
+                        />
+            </Viewbox>
         </ContentControl>
+
+        <ContentControl x:Name="CCBackButton" Grid.Column="1" Grid.Row="2" Visibility="Collapsed">
+            <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="2">
+                <Button Name="BackButton" Content="Abbrechen" Width="640"  Height="29" 
+                    FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold"
+                    Background="Red"/>
+            </Viewbox>
+        </ContentControl>
+
+
 
     </Grid>
 </UserControl>

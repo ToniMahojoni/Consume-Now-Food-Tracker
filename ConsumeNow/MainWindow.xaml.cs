@@ -33,7 +33,7 @@ namespace ConsumeNow
             switch (senderName)
             {
                 case "LebensmittelButton":
-                    CC.Content = lebensmittelpage;
+                    CC.Content = lebensmittelpage;                 
                     break;
                 case "EinkaufslisteButton":
                     CC.Content = einkaufslistepage;

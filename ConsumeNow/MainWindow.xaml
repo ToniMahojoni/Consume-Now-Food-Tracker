@@ -25,13 +25,13 @@
 
         <!-- Creation of a panel for the menu buttons. -->
         <StackPanel Background="#6E8B3D">
-            
+
             <!-- Logo image in the top left corner -->
 
             <Viewbox Stretch="UniformToFill">
                 <Image Height="50" Width="150" Source="/Images/Logo.png"/>
             </Viewbox>
-            
+
             <!-- Buttons on the sidebar-->
 
             <!-- Lebensmittel button-->
@@ -67,11 +67,35 @@
                 </Button>
             </Viewbox>
 
+            <!-- Lebensmittel hinzufügen button-->
+            <Viewbox Stretch="UniformToFill">
+                <Button Name="AddLebensmittelButton" Content="Lebensmittel hinzufügen" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontSize="10.5"  
+                    Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Height="25" 
+                    BorderThickness="0,0,0,1" Click="ButtonClick" >
+                </Button>
+            </Viewbox>
+
+            <!-- Einkauf hinzufügen button-->
+            <Viewbox Stretch="UniformToFill">
+                <Button Name="AddEinkaufButton" Content="Einkauf hinzufügen" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontSize="10.5"  
+                    Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Height="25" 
+                    BorderThickness="0,0,0,1" Click="ButtonClick" >
+                </Button>
+            </Viewbox>
+
+            <!-- Typ hinzufügen button-->
+            <Viewbox Stretch="UniformToFill">
+                <Button Name="AddCategoryButton" Content="Typ hinzufügen" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontSize="10.5"  
+                    Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Height="25" 
+                    BorderThickness="0,0,0,1" Click="ButtonClick" >
+                </Button>
+            </Viewbox>
+
 
 
         </StackPanel>
 
-        
+
 
 
         <!-- Content Control needed for opening the subpages on the right column -->
