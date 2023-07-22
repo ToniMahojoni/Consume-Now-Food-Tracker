@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsumeNow.Subpages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace ConsumeNow
         public ÜbersichtPage()
         {
             InitializeComponent();
+        }
+
+        CategoryAddPage categoryaddpage = new CategoryAddPage();
+
+        private void AddCatButton_Click(object sender, RoutedEventArgs e)
+        {
+            CCÜbersichtTable.Content = categoryaddpage;
+            CCCatAddButton.Visibility = Visibility.Collapsed;
         }
     }
 }

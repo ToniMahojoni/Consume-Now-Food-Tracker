@@ -54,23 +54,34 @@
 
         <!-- data table with the Einkaufsliste entries -->
 
-        <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="1">
-            <DataGrid Width="618" Height="338" Name="EinkaufslisteTable"/>
-        </Viewbox>
+        <ContentControl x:Name="DataTable" Grid.Column="1" Grid.Row="1">
+            <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="1">
+                <DataGrid Width="618" Height="338" Name="EinkaufslisteTable"/>
+            </Viewbox>
+        </ContentControl>
 
-        <!-- add button -->
+        <ContentControl x:Name="CCAddButton" Grid.Column="1" Grid.Row="2">
 
-        <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="2">
-            <Button Name="AddPurchaseButton" Content="Einkauf hinzufügen" Width="640"  Height="29" 
+            <!-- add button -->
+
+            <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="2">
+                <Button Name="AddPurchaseButton" Content="Einkauf hinzufügen" Width="640"  Height="29" 
+                    FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold"
+                    Click="ShoppingButtonClick"/>
+            </Viewbox>
+
+        </ContentControl>
+
+        <ContentControl x:Name="CCGenButton" Grid.Column="1" Grid.Row="3">
+
+            <!-- auto generate button -->
+
+            <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="3">
+                <Button Name="GenerateButton" Content="Einkaufsliste generieren" Width="640" Height="30"
                     FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold"/>
-        </Viewbox>
-        
-        <!-- auto generate button -->
+            </Viewbox>
 
-        <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="3">
-            <Button Name="GenerateButton" Content="Einkaufsliste generieren" Width="640" Height="30"
-                    FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold"/>
-        </Viewbox>
+        </ContentControl>
 
     </Grid>
 </UserControl>

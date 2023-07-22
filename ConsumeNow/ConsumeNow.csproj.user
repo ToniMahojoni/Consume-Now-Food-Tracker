@@ -6,9 +6,28 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Update="Subpages\CategoryAddPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Subpages\EinkaufslisteAddPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Subpages\LebensmittelAddPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Subpages\CategoryAddPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Subpages\EinkaufslisteAddPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Subpages\LebensmittelAddPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

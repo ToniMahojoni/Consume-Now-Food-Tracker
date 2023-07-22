@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsumeNow.Subpages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +27,7 @@ namespace ConsumeNow
         EinkaufslistePage einkaufslistepage = new EinkaufslistePage();
         ÜbersichtPage übersichtpage = new ÜbersichtPage();
 
-        private void ButtonClick(object sender, RoutedEventArgs e)
+        public void ButtonClick(object sender, RoutedEventArgs e)
         {
             string senderName = (sender as Button).Name;
             switch (senderName)
@@ -41,8 +42,8 @@ namespace ConsumeNow
                     CC.Content = übersichtpage;
                     break;
                 default: break;
-
             }
+
         }
     }
 }

@@ -46,17 +46,22 @@
         </Viewbox>
         
         <!-- data table with the Lebensmittel entries -->
-        
+
+        <ContentControl x:Name="DataTable" Grid.Column="1" Grid.Row="1">
         <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="1">
             <DataGrid Width="618" Height="338" Name="LebensmittelTable"/>
         </Viewbox>
+        </ContentControl>
         
         <!-- add button -->
 
+        <ContentControl x:Name="CCAddButton" Grid.Column="1" Grid.Row="2">
         <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="2">
             <Button Name="AddFoodButton" Content="Lebensmittel hinzufügen" Width="640"  Height="29" 
-                    FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold"/>
+                    FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold"
+                    Click="FoodButtonClick"/>
         </Viewbox>
+        </ContentControl>
 
     </Grid>
 </UserControl>

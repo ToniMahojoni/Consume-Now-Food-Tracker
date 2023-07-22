@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsumeNow.Subpages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,15 @@ namespace ConsumeNow
         public EinkaufslistePage()
         {
             InitializeComponent();
+        }
+
+        EinkaufslisteAddPage einkaufslisteaddpage = new EinkaufslisteAddPage();
+
+        private void ShoppingButtonClick(object sender, RoutedEventArgs e)
+        {
+            DataTable.Content = einkaufslisteaddpage;
+            CCAddButton.Visibility = Visibility.Collapsed;
+            CCGenButton.Visibility = Visibility.Collapsed;
         }
     }
 }
