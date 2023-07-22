@@ -25,7 +25,6 @@ namespace ConsumeNow
         {
             InitializeComponent();
         }
-
-        public LebensmittelAddPage lebensmitteladdpage = new LebensmittelAddPage();
+ 
     }
 }

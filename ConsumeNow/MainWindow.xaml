@@ -85,7 +85,7 @@
 
             <!-- Typ hinzufügen button-->
             <Viewbox Stretch="UniformToFill">
-                <Button Name="AddCategoryButton" Content="Typ hinzufügen" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontSize="10.5"  
+                <Button Name="AddTypButton" Content="Typ hinzufügen" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontSize="10.5"  
                     Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Height="25" 
                     BorderThickness="0,0,0,1" Click="ButtonClick" >
                 </Button>

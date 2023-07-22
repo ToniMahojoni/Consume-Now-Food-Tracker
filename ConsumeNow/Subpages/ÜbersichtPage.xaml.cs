@@ -26,12 +26,5 @@ namespace ConsumeNow
             InitializeComponent();
         }
 
-        CategoryAddPage categoryaddpage = new CategoryAddPage();
-
-        private void AddCatButton_Click(object sender, RoutedEventArgs e)
-        {
-            CCÜbersichtTable.Content = categoryaddpage;
-            CCCatAddButton.Visibility = Visibility.Collapsed;
-        }
     }
 }

@@ -26,13 +26,5 @@ namespace ConsumeNow
             InitializeComponent();
         }
 
-        EinkaufslisteAddPage einkaufslisteaddpage = new EinkaufslisteAddPage();
-
-        private void ShoppingButtonClick(object sender, RoutedEventArgs e)
-        {
-            DataTable.Content = einkaufslisteaddpage;
-            CCAddButton.Visibility = Visibility.Collapsed;
-            CCGenButton.Visibility = Visibility.Collapsed;
-        }
     }
 }

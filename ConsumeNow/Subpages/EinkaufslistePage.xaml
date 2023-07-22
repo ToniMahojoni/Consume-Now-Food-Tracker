@@ -10,9 +10,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*" />
-            <RowDefinition Height="320*" />
-            <RowDefinition Height="29*"/>
-            <RowDefinition Height="30*"/>
+            <RowDefinition Height="379*" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -56,31 +54,8 @@
 
         <ContentControl x:Name="DataTable" Grid.Column="1" Grid.Row="1">
             <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="1">
-                <DataGrid Width="618" Height="338" Name="EinkaufslisteTable"/>
+                <DataGrid Width="563" Height="333" Name="EinkaufslisteTable"/>
             </Viewbox>
-        </ContentControl>
-
-        <ContentControl x:Name="CCAddButton" Grid.Column="1" Grid.Row="2">
-
-            <!-- add button -->
-
-            <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="2">
-                <Button Name="AddPurchaseButton" Content="Einkauf hinzufügen" Width="640"  Height="29" 
-                    FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold"
-                    Click="ShoppingButtonClick"/>
-            </Viewbox>
-
-        </ContentControl>
-
-        <ContentControl x:Name="CCGenButton" Grid.Column="1" Grid.Row="3">
-
-            <!-- auto generate button -->
-
-            <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="3">
-                <Button Name="GenerateButton" Content="Einkaufsliste generieren" Width="640" Height="30"
-                    FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold"/>
-            </Viewbox>
-
         </ContentControl>
 
     </Grid>

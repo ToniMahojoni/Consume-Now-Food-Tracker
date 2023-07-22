@@ -27,6 +27,10 @@ namespace ConsumeNow
         EinkaufslistePage einkaufslistepage = new EinkaufslistePage();
         ÜbersichtPage übersichtpage = new ÜbersichtPage();
 
+        LebensmittelAddPage lebensmitteladdpage = new LebensmittelAddPage();
+        EinkaufslisteAddPage einkaufslisteaddpage = new EinkaufslisteAddPage();
+        CategoryAddPage categoryaddpage = new CategoryAddPage();    
+
         public void ButtonClick(object sender, RoutedEventArgs e)
         {
             string senderName = (sender as Button).Name;
@@ -40,6 +44,15 @@ namespace ConsumeNow
                     break;
                 case "ÜbersichtButton":
                     CC.Content = übersichtpage;
+                    break;
+                case "AddLebensmittelButton":
+                    CC.Content = lebensmitteladdpage;
+                    break;
+                case "AddEinkaufButton":
+                    CC.Content = einkaufslisteaddpage;
+                    break;
+                case "AddTypButton":
+                    CC.Content = categoryaddpage;
                     break;
                 default: break;
             }
