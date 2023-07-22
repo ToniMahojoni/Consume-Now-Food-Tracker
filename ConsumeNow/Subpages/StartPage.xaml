@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ConsumeNow"
              mc:Ignorable="d" 
-             d:DesignHeight="434" d:DesignWidth="650"
+             d:DesignHeight="868" d:DesignWidth="1300"
              Background="#6E8B3D">
     <Grid>
         <Image Source="/Images/border.png" Margin="0,0,648,0"/>
