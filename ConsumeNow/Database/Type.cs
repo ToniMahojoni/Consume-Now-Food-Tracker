@@ -37,6 +37,11 @@ public class Type {
         this.WhenToAddToShoppingList = WhenToAddToShoppingList;
         this.BestBeforeDateChange = BestBeforeDateChange;
         this.Subnames = Subnames;
-        this.AmountOnShoppinglist = AmountOnShoppinglist;
+    }
+    public void AddToShoppingList(uint Amount) {
+        this.AmountOnShoppinglist += Amount;
+    }
+    public void RemoveFromShoppingList() {
+        this.AmountOnShoppinglist = 0;
     }
 }
