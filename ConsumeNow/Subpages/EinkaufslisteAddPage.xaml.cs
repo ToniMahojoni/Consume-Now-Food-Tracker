@@ -24,5 +24,8 @@ namespace ConsumeNow.Subpages
         {
             InitializeComponent();
         }
+
+        private void SaveButton(object sender, RoutedEventArgs e) { }
+
     }
 }

@@ -5,13 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ConsumeNow"
              mc:Ignorable="d" 
-             d:DesignHeight="434" d:DesignWidth="650"
+             d:DesignHeight="868" d:DesignWidth="1300"
              Background="#6E8B3D">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*" />
-            <RowDefinition Height="350*" />
-            <RowDefinition Height="29*"/>
+            <RowDefinition Height="379*" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -45,24 +44,10 @@
             </Border>
         </Viewbox>
 
-        <ContentControl x:Name="CCÜbersichtTable" Grid.Column="1" Grid.Row="1">
+        
         <!-- data table with the Übersicht entries -->
 
-        <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="1">
-            <DataGrid Width="618" Height="338" Name="ÜbersichtTable"/>
-        </Viewbox>
-
-        </ContentControl>
-
-        <ContentControl x:Name="CCCatAddButton" Grid.Column="1" Grid.Row="2">
-        <!-- add button -->
-
-        <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="2">
-            <Button Name="AddCatButton" Content="Kategorie hinzufügen" Width="640"  Height="29" 
-                    FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold" Click="AddCatButton_Click"/>
-        </Viewbox>
-
-        </ContentControl>
+        <DataGrid Name="ÜbersichtTable" Grid.Column="1" Margin="0,101,0,0" Grid.RowSpan="2" FontSize="26"/>
 
     </Grid>
 </UserControl>

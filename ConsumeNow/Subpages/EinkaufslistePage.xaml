@@ -5,14 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ConsumeNow"
              mc:Ignorable="d" 
-             d:DesignHeight="434" d:DesignWidth="650"
-             Background="#6E8B3D">
+             d:DesignHeight="868" d:DesignWidth="1300"
+             Background="#6E8B3D"
+             Loaded="Window_Loaded_EinkaufslistePage">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*" />
-            <RowDefinition Height="320*" />
-            <RowDefinition Height="29*"/>
-            <RowDefinition Height="30*"/>
+            <RowDefinition Height="379*" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -54,34 +53,9 @@
 
         <!-- data table with the Einkaufsliste entries -->
 
-        <ContentControl x:Name="DataTable" Grid.Column="1" Grid.Row="1">
-            <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="1">
-                <DataGrid Width="618" Height="338" Name="EinkaufslisteTable"/>
-            </Viewbox>
-        </ContentControl>
 
-        <ContentControl x:Name="CCAddButton" Grid.Column="1" Grid.Row="2">
-
-            <!-- add button -->
-
-            <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="2">
-                <Button Name="AddPurchaseButton" Content="Einkauf hinzufügen" Width="640"  Height="29" 
-                    FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold"
-                    Click="ShoppingButtonClick"/>
-            </Viewbox>
-
-        </ContentControl>
-
-        <ContentControl x:Name="CCGenButton" Grid.Column="1" Grid.Row="3">
-
-            <!-- auto generate button -->
-
-            <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="3">
-                <Button Name="GenerateButton" Content="Einkaufsliste generieren" Width="640" Height="30"
-                    FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold"/>
-            </Viewbox>
-
-        </ContentControl>
+        <DataGrid Name="EinkaufslisteTable" Grid.Column="1" Margin="0,101,0,0" Grid.RowSpan="2" FontSize="26"/>
+           
 
     </Grid>
 </UserControl>
