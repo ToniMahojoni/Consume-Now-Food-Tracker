@@ -91,12 +91,17 @@ namespace ConsumeNow.Subpages
                 EntryData = new string[6];
             }
 
-            EntryData[0] = TypCB.SelectedItem.ToString();
-            EntryData[1] = NameTB.Text.ToString();
-            EntryData[2] = HaltbarkeitTB.Text.ToString();
-            EntryData[3] = KaufdatumTB.Text.ToString();
-            EntryData[4] = MengeTB.Text.ToString();
-            EntryData[5] = PreisTB.Text.ToString();
+            if (!(TypCB.SelectedItem == null))
+            {
+                EntryData[0] = TypCB.SelectedItem.ToString();
+                EntryData[1] = NameTB.Text.ToString();
+                EntryData[2] = HaltbarkeitTB.Text.ToString();
+                EntryData[3] = KaufdatumTB.Text.ToString();
+                EntryData[4] = MengeTB.Text.ToString();
+                EntryData[5] = PreisTB.Text.ToString();
+            }
+            
+            
 
             if (EntryData.Length == 8)
             {
