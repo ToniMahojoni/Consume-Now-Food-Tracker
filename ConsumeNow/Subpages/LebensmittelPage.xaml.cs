@@ -1,4 +1,5 @@
-﻿using ConsumeNow.Subpages;
+﻿using ConsumeNow.Database;
+using ConsumeNow.Subpages;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -31,7 +32,7 @@ namespace ConsumeNow
         {    
             DataTable dt1 = new DataTable();
 
-            string[] ColumnNames1 = { "Name", "Typ", "Mindesthaltbarkeitsdatum", "Kaufdatum", "Menge", "Preis", "geöffnet", "verbleibend" };
+            string[] ColumnNames1 = { "ID", "Typ", "Name", "Mindesthaltbarkeitsdatum", "Kaufdatum", "Menge", "Preis", "geöffnet", "verbleibend" };
 
             foreach (string ColumnName in ColumnNames1)
             {
@@ -41,14 +42,35 @@ namespace ConsumeNow
 
             foreach (Entry element in MainWindow.entries)
             {
-              
-                dt1.Rows.Add(element.ToString().Split(','));
+                string[] rowcontent = element.ToString().Split(',');
+                Array.Resize(ref rowcontent, rowcontent.Length + 1);
+                Array.Copy(rowcontent, 0,rowcontent,1, rowcontent.Length-1);
+                rowcontent[0] = Convert.ToString(element.ID);
+                dt1.Rows.Add(rowcontent);
             }
 
 
             DataView dv1 = new DataView(dt1);
             LebensmittelTable.ItemsSource = dv1;
 
+        }
+
+        private void LöschenButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ManageDatabase.DeleteEntry(MainWindow.entries, Convert.ToUInt32(LöschenIDTB.Text.ToString()));
+                LöschenLabel.Content = String.Empty;
+                LöschenIDTB.Text = String.Empty;
+                Window_Loaded_LebensmittelPage(sender, e);
+
+            }
+            catch
+            {
+                LöschenLabel.Content = "fehlgeschlagen!";
+            }
+
+           
         }
     }
 }

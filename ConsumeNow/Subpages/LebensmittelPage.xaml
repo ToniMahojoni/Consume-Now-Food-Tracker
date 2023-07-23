@@ -20,47 +20,41 @@
             <ColumnDefinition Width="648*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- white bar in column 0 and row 0 -->
-
-        <Viewbox Stretch="UniformToFill" Grid.Column="0" Grid.Row="0">
-            <Image Source="/Images/border.png"/>
-        </Viewbox>
-
-        <!-- white bar in column 0 and row 1 -->
-
-        <Viewbox Stretch="UniformToFill" Grid.Column="0" Grid.Row="1">
-            <Image Source="/Images/border.png"/>
-        </Viewbox>
-
-        <!-- white in column 0 and row 2 -->
-
-        <Viewbox Stretch="UniformToFill" Grid.Column="0" Grid.Row="2">
-            <Image Source="/Images/border.png"/>
-        </Viewbox>
+        <Border BorderBrush="White" BorderThickness="2" Grid.RowSpan="2"/>
 
         <!-- Lebensmittel text label at the top -->
 
-        <Viewbox Stretch="UniformToFill" Grid.Row="0" Grid.Column="1">
-            <Border BorderBrush="White" BorderThickness="0,0,2,2" Margin="0,0,365,0" Grid.Row="0" Height="48" >
-                <Label Content="Lebensmittel"  FontFamily="Cascadia Mono Semibold" FontSize="38" Height="50" />
-            </Border>
-        </Viewbox>
+
+        <Border BorderBrush="White" BorderThickness="0,0,3,3"  Grid.Row="0" Margin="0,0,720,0" Grid.ColumnSpan="2" >
+            <Label Content="Lebensmittel"  FontFamily="Cascadia Mono Semibold" FontSize="80" Margin="0,0,0,-2" 
+                   VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" />
+        </Border>
+
 
         <!-- data table with the Lebensmittel entries -->
-        
-        <DataGrid Name="LebensmittelTable" Grid.Column="1" Margin="0,101,0,0" Grid.RowSpan="2" FontSize="26"/>
 
-        <!-- add button -->
+        <DataGrid Name="LebensmittelTable" Grid.Column="1" Margin="0,101,0,50" Grid.RowSpan="2" FontSize="25"/>
+
+        <!-- remove button -->
+
+        <Button Grid.Column="1" Content="LÖSCHEN" HorizontalAlignment="Left" Margin="0,717,0,0" Grid.Row="1" Name="LöschenButton"
+                VerticalAlignment="Top" Height="50" Width="212"
+                BorderThickness="3" Background="Red" FontSize="30" FontFamily="Cascadia Mono Semibold" 
+                HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="LöschenButton_Click"/>
+        <Label Grid.Column="1" Content="ID:" FontSize="35" FontFamily="Cascadia Mono Semibold" 
+               HorizontalAlignment="Left" Margin="212,717,0,0" Grid.Row="1"
+               VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+               VerticalAlignment="Top" Height="50" Width="65"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="277,717,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" FontSize="35" Name="LöschenIDTB"  
+                 BorderThickness="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                 VerticalAlignment="Top" Width="109" Height="50" />
+        <Label Grid.Column="1" Content="" FontSize="35" FontFamily="Cascadia Mono Semibold" Foreground="red" Name="LöschenLabel"
+            HorizontalAlignment="Left" Margin="386,717,0,0" Grid.Row="1"
+            VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+            VerticalAlignment="Top" Height="50" Width="312"/>
 
 
 
-        <ContentControl x:Name="CCBackButton" Grid.Column="1" Grid.Row="2" Visibility="Collapsed">
-            <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="2">
-                <Button Name="BackButton" Content="Abbrechen" Width="640"  Height="29" 
-                    FontFamily="Cascadia Mono SemiBold" FontSize="20" FontWeight="Bold"
-                    Background="Red"/>
-            </Viewbox>
-        </ContentControl>
 
 
 
