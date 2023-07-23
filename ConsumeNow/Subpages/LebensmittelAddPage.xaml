@@ -54,44 +54,44 @@
 
         <!-- Typ text label -->
 
-        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1"  Grid.Row="1">
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1"  Grid.Row="1" Name="TypTL">
             <Label Content="Lebensmitteltyp" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center"/>
         </Border>
 
 
         <!-- Name text label -->
 
-        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1"  Grid.Row="2">
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1"  Grid.Row="2" Visibility="Collapsed" Name="NameTL">
             <Label Content="Lebensmittelname" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" />
         </Border>
 
         <!-- Haltbarkeit text label -->
 
-        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1"  Grid.Row="3">
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1"  Grid.Row="3" Visibility="Collapsed" Name="HaltbarkeitTL">
             <Label Content="Haltbarkeit" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         </Border>
 
         <!-- Kaufdatum text label -->
 
-        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1"  Grid.Row="4">
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1"  Grid.Row="4" Visibility="Collapsed" Name="KaufdatumTL">
             <Label Content="Kaufdatum" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         </Border>
 
         <!-- Menge text label -->
 
-        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1"  Grid.Row="5">
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1"  Grid.Row="5" Visibility="Collapsed" Name="MengeTL">
             <Label Content="Menge" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         </Border>
 
         <!-- Preis text label -->
 
-        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="1">
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="1" Visibility="Collapsed" Name="PreisTL">
             <Label Content="Preis" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
         </Border>
 
         <!-- Kann man öffnen text label -->
 
-        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="2">
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="2" Visibility="Collapsed" Name="openableTL">
             <Label Content="kann man öffnen" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" />
         </Border>
 
@@ -109,36 +109,37 @@
 
         <!-- SpeichernButton -->
 
-        <Button Content="SPEICHERN" FontSize="50" FontFamily="Cascadia Mono Semibold" Background="#6495ED" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" Margin="323,0,0,0" BorderThickness="5" Click="SaveButton"/>
+        <Button Name="SpeichernButton" Content="SPEICHERN" FontSize="50" FontFamily="Cascadia Mono Semibold" Background="#6495ED" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" Margin="323,0,0,0" BorderThickness="5" Click="SaveButton" Visibility="Collapsed"/>
 
         <!-- Typ ComboBox -->
 
         <ComboBox Grid.Column="1" Grid.RowSpan="3" Margin="323,136,323,146" FontSize="50" BorderThickness="5" Grid.ColumnSpan="3" Name="TypCB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-        <!-- Name TextBox -->
+        <!-- Name ComboBox -->
 
-        <TextBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3" Margin="323,146,323,146" BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="NameTB"/>
+        <ComboBox Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Margin="323,136,323,146" FontSize="50" BorderThickness="5" Grid.ColumnSpan="3" Name="NameCB" HorizontalContentAlignment="Center" 
+                  VerticalContentAlignment="Center" Visibility="Collapsed"/>
 
         <!-- Haltbarkeitsdatum TextBox -->
 
-        <TextBox Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="323,0,323,146" BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="HaltbarkeitTB"/>
+        <TextBox Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="323,0,323,146" BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="HaltbarkeitTB" Visibility="Collapsed"/>
 
         <!-- Kaufdatum TextBox -->
 
-        <TextBox Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="323,0,323,146"  BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="KaufdatumTB"/>
+        <TextBox Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="323,0,323,146"  BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="KaufdatumTB" Visibility="Collapsed"/>
 
         <!-- Menge TextBox -->
 
-        <TextBox Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Margin="323,0,323,0"  BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="MengeTB"/>
+        <TextBox Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Margin="323,0,323,0"  BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="MengeTB" Visibility="Collapsed"/>
 
         <!-- Kaufpreis TextBox -->
 
-        <TextBox Grid.Column="3" Grid.Row="0"  Margin="323,136,0,146"  BorderThickness="5" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="3" FontSize="50" VerticalContentAlignment="Center" Name="PreisTB"/>
+        <TextBox Grid.Column="3" Grid.Row="0"  Margin="323,136,0,146"  BorderThickness="5" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="3" FontSize="50" VerticalContentAlignment="Center" Name="PreisTB" Visibility="Collapsed"/>
 
         <!-- kann man öffnen CheckBox -->
 
         <CheckBox Name="openableCB" Content="ja/nein" FontFamily="Cascadia Mono Semibold"  Click="OpenableChecked" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" Margin="323,0,0,146" Grid.RowSpan="2" 
-                  FontSize="8" VerticalContentAlignment="Center" >
+                  FontSize="8" VerticalContentAlignment="Center" Visibility="Collapsed">
             <CheckBox.LayoutTransform>
                 <ScaleTransform ScaleX="6" ScaleY="6" />
             </CheckBox.LayoutTransform>
@@ -164,8 +165,11 @@
         <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="5" Visibility="Collapsed" Name="SaveInfoBorder">
             <Label Content="" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" Name="SaveInfo"  HorizontalContentAlignment="Center" Foreground="Black"/>
         </Border>
+        
+        <!-- Bestätigen Button -->
 
-
+        <Button Name="BestätigenButton" Content="BESTÄTIGEN" FontSize="50" FontFamily="Cascadia Mono Semibold" Background="#6495ED" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" 
+                Margin="323,0,0,0" BorderThickness="5" Visibility="Visible" Click="BESTÄTIGENButtonClick"/>
 
 
 

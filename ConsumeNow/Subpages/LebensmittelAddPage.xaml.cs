@@ -30,22 +30,29 @@ namespace ConsumeNow.Subpages
         {
             if (OpenableChecked != null)
             {
+                
                 CheckBox box = sender as CheckBox;
 
-                if (box.IsChecked == true)
+                if (box != null)
                 {
-                    geöffnettextborder.Visibility = Visibility.Visible;
-                    verbleibendtextboder.Visibility = Visibility.Visible;
-                    openedCB.Visibility = Visibility.Visible;
-                    verbleibendTB.Visibility = Visibility.Visible;
+                    if (box.IsChecked == true)
+                    {
+                        geöffnettextborder.Visibility = Visibility.Visible;
+                        verbleibendtextboder.Visibility = Visibility.Visible;
+                        openedCB.Visibility = Visibility.Visible;
+                        verbleibendTB.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        geöffnettextborder.Visibility = Visibility.Collapsed;
+                        verbleibendtextboder.Visibility = Visibility.Collapsed;
+                        openedCB.Visibility = Visibility.Collapsed;
+                        verbleibendTB.Visibility = Visibility.Collapsed;
+                    }
                 }
-                else 
-                {
-                    geöffnettextborder.Visibility = Visibility.Collapsed;
-                    verbleibendtextboder.Visibility = Visibility.Collapsed;
-                    openedCB.Visibility = Visibility.Collapsed;
-                    verbleibendTB.Visibility = Visibility.Collapsed;
-                }
+                
+
+                
             }
 
 
@@ -59,10 +66,13 @@ namespace ConsumeNow.Subpages
             }
         }
 
+
+
+
         private void SuccessfullSave()
         {
             TypCB.SelectedItem = null;
-            NameTB.Text = string.Empty;
+            NameCB.SelectedItem = null;
             HaltbarkeitTB.Text = string.Empty;
             KaufdatumTB.Text = string.Empty;
             MengeTB.Text = string.Empty;
@@ -91,22 +101,22 @@ namespace ConsumeNow.Subpages
                 EntryData = new string[6];
             }
 
-            if (!(TypCB.SelectedItem == null))
+            if (TypCB.SelectedItem != null)
             {
                 EntryData[0] = TypCB.SelectedItem.ToString();
 
-                if (NameTB.Text == string.Empty)
+                if (NameCB.SelectedItem == null)
                 {
                     EntryData[1] = TypCB.SelectedItem.ToString();
                 }
                 else
                 {
-                    EntryData[1] = NameTB.Text.ToString();
+                    EntryData[1] = NameCB.SelectedItem.ToString();
                 }
-                
+
                 EntryData[2] = HaltbarkeitTB.Text.ToString();
 
-                if(KaufdatumTB.Text == string.Empty)
+                if (KaufdatumTB.Text == string.Empty)
                 {
                     EntryData[3] = DateOnly.FromDateTime(DateTime.Today).ToString();
                 }
@@ -115,12 +125,12 @@ namespace ConsumeNow.Subpages
                     EntryData[3] = KaufdatumTB.Text.ToString();
                 }
 
-                
+
                 EntryData[4] = MengeTB.Text.ToString();
                 EntryData[5] = PreisTB.Text.ToString();
             }
-            
-            
+
+
 
             if (EntryData.Length == 8)
             {
@@ -133,21 +143,63 @@ namespace ConsumeNow.Subpages
                 ManageDatabase.AddEntry(EntryData, MainWindow.entries);
                 SuccessfullSave();
             }
-            catch 
+            catch
             {
                 SaveInfoBorder.Visibility = Visibility.Visible;
                 SaveInfo.Content = "fehlgeschlagen!";
                 SaveInfo.Foreground = Brushes.Red;
             }
 
-            
+            OpenableChecked(sender, e);
 
             MainWindow.lebensmittelpage.Window_Loaded_LebensmittelPage(sender, e);
 
 
         }
+
+        private void BESTÄTIGENButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (TypCB.SelectedItem != null)
+            {
+                NameCB.Visibility = Visibility.Visible;
+                HaltbarkeitTB.Visibility = Visibility.Visible;
+                KaufdatumTB.Visibility = Visibility.Visible;
+                MengeTB.Visibility = Visibility.Visible;
+                PreisTB.Visibility = Visibility.Visible;
+                openableCB.Visibility = Visibility.Visible;
+
+                NameTL.Visibility = Visibility.Visible;
+                HaltbarkeitTL.Visibility = Visibility.Visible;
+                KaufdatumTL.Visibility = Visibility.Visible;
+                MengeTL.Visibility = Visibility.Visible;
+                PreisTL.Visibility = Visibility.Visible;
+                openableTL.Visibility = Visibility.Visible;
+
+                SpeichernButton.Visibility = Visibility.Visible;
+
+                TypCB.IsEnabled = false;
+                BestätigenButton.Visibility = Visibility.Collapsed;
+
+                var SelectedSubnames = 
+                    from type in MainWindow.types
+                    where type.Name == TypCB.SelectedItem.ToString() 
+                    select type.Subnames;
+
+                foreach( var subnames in SelectedSubnames )
+                {
+                    foreach (string subname in subnames)
+                    {
+                        NameCB.Items.Add(subname);
+                    }
+                }
+            }
+
+
+
+
+        }
     }
-    }
+}
     
 
         
