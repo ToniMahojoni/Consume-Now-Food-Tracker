@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:ConsumeNow"
              mc:Ignorable="d" 
              d:DesignHeight="868" d:DesignWidth="1300"
-             Background="#6E8B3D">
+             Background="#6E8B3D"
+             Loaded="Window_Loaded_EinkaufslistePage">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*" />
@@ -52,11 +53,9 @@
 
         <!-- data table with the Einkaufsliste entries -->
 
-        <ContentControl x:Name="DataTable" Grid.Column="1" Grid.Row="1">
-            <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="1">
-                <DataGrid Width="563" Height="333" Name="EinkaufslisteTable"/>
-            </Viewbox>
-        </ContentControl>
+
+        <DataGrid Name="EinkaufslisteTable" Grid.Column="1" Margin="0,101,0,0" Grid.RowSpan="2" FontSize="26"/>
+           
 
     </Grid>
 </UserControl>

@@ -47,8 +47,8 @@
         </Viewbox>
 
         <!-- data table with the Lebensmittel entries -->
-
-        <DataGrid Name="LebensmittelTable" Grid.Column="1" Margin="0,101,0,0" Grid.RowSpan="2"/>
+        
+        <DataGrid Name="LebensmittelTable" Grid.Column="1" Margin="0,101,0,0" Grid.RowSpan="2" FontSize="26"/>
 
         <!-- add button -->
 

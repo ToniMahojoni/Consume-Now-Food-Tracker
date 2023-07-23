@@ -29,25 +29,25 @@ namespace ConsumeNow
  
         public void Window_Loaded_LebensmittelPage(object sender, RoutedEventArgs e)
         {    
-            DataTable dt = new DataTable();
+            DataTable dt1 = new DataTable();
 
-            string[] ColumnNames = { "Name", "Typ", "Mindesthaltbarkeitsdatum", "Kaufdatum", "Menge", "Preis", "geöffnet", "verbleibend" };
+            string[] ColumnNames1 = { "Name", "Typ", "Mindesthaltbarkeitsdatum", "Kaufdatum", "Menge", "Preis", "geöffnet", "verbleibend" };
 
-            foreach (string ColumnName in ColumnNames)
+            foreach (string ColumnName in ColumnNames1)
             {
-                dt.Columns.Add(ColumnName, typeof(string));
+                dt1.Columns.Add(ColumnName, typeof(string));
             }
            
 
             foreach (Entry element in MainWindow.entries)
             {
               
-                dt.Rows.Add(element.ToString().Split(','));
+                dt1.Rows.Add(element.ToString().Split(','));
             }
 
 
-            DataView dv = new DataView(dt);
-            LebensmittelTable.ItemsSource = dv;
+            DataView dv1 = new DataView(dt1);
+            LebensmittelTable.ItemsSource = dv1;
 
         }
     }

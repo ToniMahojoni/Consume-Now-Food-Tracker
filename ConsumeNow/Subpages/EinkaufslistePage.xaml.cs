@@ -1,6 +1,7 @@
 ﻿using ConsumeNow.Subpages;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,21 @@ namespace ConsumeNow
         public EinkaufslistePage()
         {
             InitializeComponent();
+        }
+
+        public void Window_Loaded_EinkaufslistePage(object sender, RoutedEventArgs e)
+        {
+            System.Data.DataTable dt2 = new System.Data.DataTable();
+
+            string[] ColumnNames2 = { "Typ", "Menge" };
+
+            foreach (string ColumnName in ColumnNames2)
+            {
+                dt2.Columns.Add(ColumnName, typeof(string));
+            }
+
+            DataView dv2 = new DataView(dt2);
+            EinkaufslisteTable.ItemsSource = dv2;
         }
 
     }

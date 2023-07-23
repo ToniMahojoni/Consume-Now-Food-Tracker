@@ -44,14 +44,10 @@
             </Border>
         </Viewbox>
 
-        <ContentControl x:Name="CCÜbersichtTable" Grid.Column="1" Grid.Row="1">
+        
         <!-- data table with the Übersicht entries -->
 
-        <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="1">
-            <DataGrid Width="563" Height="333" Name="ÜbersichtTable"/>
-        </Viewbox>
-
-        </ContentControl>
+        <DataGrid Name="ÜbersichtTable" Grid.Column="1" Margin="0,101,0,0" Grid.RowSpan="2" FontSize="26"/>
 
     </Grid>
 </UserControl>
