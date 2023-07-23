@@ -75,6 +75,8 @@ namespace ConsumeNow.Subpages
             SaveInfo.Content = "gespeichert!";
             SaveInfo.Foreground = Brushes.Green;
 
+            DatabaseIO.SaveToDatabase<Entry>(MainWindow.entries, "../../../Database/Data/ExampleEntries.csv");
+
         }
 
         private void SaveButton(object sender, RoutedEventArgs e)
