@@ -6,12 +6,13 @@
              xmlns:local="clr-namespace:ConsumeNow"
              mc:Ignorable="d" 
              d:DesignHeight="868" d:DesignWidth="1300"
-             Background="#6E8B3D">
+             Background="#6E8B3D"
+             Loaded="Window_Loaded_LebensmittelPage">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*" />
             <RowDefinition Height="379*" />
-            
+
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -36,7 +37,7 @@
         <Viewbox Stretch="UniformToFill" Grid.Column="0" Grid.Row="2">
             <Image Source="/Images/border.png"/>
         </Viewbox>
-        
+
         <!-- Lebensmittel text label at the top -->
 
         <Viewbox Stretch="UniformToFill" Grid.Row="0" Grid.Column="1">
@@ -44,18 +45,14 @@
                 <Label Content="Lebensmittel"  FontFamily="Cascadia Mono Semibold" FontSize="38" Height="50" />
             </Border>
         </Viewbox>
-        
+
         <!-- data table with the Lebensmittel entries -->
 
-        <ContentControl x:Name="DataTable" Grid.Column="1" Grid.Row="1">
-        <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="1">
-            <DataGrid Width="551" Height="326" Name="LebensmittelTable"/>
-        </Viewbox>
-        </ContentControl>
-        
+        <DataGrid Name="LebensmittelTable" Grid.Column="1" Margin="0,101,0,0" Grid.RowSpan="2"/>
+
         <!-- add button -->
 
-        
+
 
         <ContentControl x:Name="CCBackButton" Grid.Column="1" Grid.Row="2" Visibility="Collapsed">
             <Viewbox Stretch="UniformToFill" Grid.Column="1" Grid.Row="2">
