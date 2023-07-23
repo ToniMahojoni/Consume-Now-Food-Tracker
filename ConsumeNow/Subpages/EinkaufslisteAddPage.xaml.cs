@@ -25,7 +25,10 @@ namespace ConsumeNow.Subpages
             InitializeComponent();
         }
 
-        private void SaveButton(object sender, RoutedEventArgs e) { }
+        private void SaveButton(object sender, RoutedEventArgs e) 
+        {
+            Convert.ToUInt32(MengeTB.Text);
+        }
 
     }
 }
