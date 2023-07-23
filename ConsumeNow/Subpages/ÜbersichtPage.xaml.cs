@@ -1,6 +1,8 @@
-﻿using ConsumeNow.Subpages;
+﻿using ConsumeNow.Database.Data;
+using ConsumeNow.Subpages;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +26,29 @@ namespace ConsumeNow
         public ÜbersichtPage()
         {
             InitializeComponent();
+        }
+
+        public void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            System.Data.DataTable dt4 = new System.Data.DataTable();
+
+            string[] ColumnNames3 = { "Name", "Lagerort", "Zur Einkaufsliste hinzufügen \n wenn Menge kleiner als", "Änderung des MhD \n bei Öffnung", "Produkte"};
+
+            foreach (string ColumnName in ColumnNames3)
+            {
+                dt4.Columns.Add(ColumnName, typeof(string));
+            }
+            
+            foreach (var type in MainWindow.types)
+            {
+                string[] rowData = type.ToString().Split(',');
+                Array.Resize(ref rowData,rowData.Length-1);
+                //Array.Copy(rowData, 0, rowData, 0, rowData.Length - 1);
+                dt4.Rows.Add(rowData);
+            }
+
+            DataView dv4 = new DataView(dt4);
+            ÜbersichtTable.ItemsSource = dv4;
         }
 
     }

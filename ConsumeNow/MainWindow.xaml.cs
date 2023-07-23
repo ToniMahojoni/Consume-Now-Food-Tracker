@@ -25,8 +25,8 @@ namespace ConsumeNow
         }
 
         public static LebensmittelPage lebensmittelpage = new LebensmittelPage();
-        EinkaufslistePage einkaufslistepage = new EinkaufslistePage();
-        ÜbersichtPage übersichtpage = new ÜbersichtPage();
+        public static EinkaufslistePage einkaufslistepage = new EinkaufslistePage();
+        public static ÜbersichtPage übersichtpage = new ÜbersichtPage();
 
         LebensmittelAddPage lebensmitteladdpage = new LebensmittelAddPage();
         EinkaufslisteAddPage einkaufslisteaddpage = new EinkaufslisteAddPage();
@@ -62,6 +62,7 @@ namespace ConsumeNow
                 case "AddEinkaufButton":
                     CC.Content = einkaufslisteaddpage;
                     lebensmitteladdpage.LebensmittelAddReset();
+                    einkaufslisteaddpage.EinkaufslisteAddReset();
                     break;
                 case "AddTypButton":
                     CC.Content = categoryaddpage;
