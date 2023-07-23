@@ -107,7 +107,7 @@
 
         <!-- SpeichernButton -->
 
-        <Button Content="SPEICHERN" FontSize="50" FontFamily="Cascadia Mono Semibold" Background="#6495ED" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" Margin="323,0,0,0" BorderThickness="5"/>
+        <Button Content="SPEICHERN" FontSize="50" FontFamily="Cascadia Mono Semibold" Background="#6495ED" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" Margin="323,0,0,0" BorderThickness="5" Click="SaveButton"/>
 
         <!-- Typ ComboBox -->
 

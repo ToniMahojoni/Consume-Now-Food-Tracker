@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Database\Data\ExampleEntries.csv" />
+    <None Remove="Database\Data\ExampleTypes.csv" />
     <None Remove="Images\border.png" />
     <None Remove="Images\icon.ico" />
     <None Remove="Images\Logo.png" />
@@ -22,6 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Database\Data\ExampleEntries.csv" />
+    <Resource Include="Database\Data\ExampleTypes.csv" />
     <Resource Include="Images\border.png" />
     <Resource Include="Images\icon.ico" />
     <Resource Include="Images\Logo.png" />

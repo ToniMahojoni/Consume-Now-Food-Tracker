@@ -29,7 +29,9 @@ namespace ConsumeNow
 
         LebensmittelAddPage lebensmitteladdpage = new LebensmittelAddPage();
         EinkaufslisteAddPage einkaufslisteaddpage = new EinkaufslisteAddPage();
-        CategoryAddPage categoryaddpage = new CategoryAddPage();    
+        CategoryAddPage categoryaddpage = new CategoryAddPage();   
+        
+        List<Entry> entries = new List<Entry>();
 
         public void ButtonClick(object sender, RoutedEventArgs e)
         {
