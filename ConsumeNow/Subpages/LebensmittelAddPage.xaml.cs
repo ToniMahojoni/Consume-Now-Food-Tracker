@@ -27,27 +27,33 @@ namespace ConsumeNow.Subpages
 
         private void OpenableChecked(object sender, RoutedEventArgs e)
         {
-            if(OpenableChecked != null)
+            if (OpenableChecked != null)
             {
                 CheckBox box = sender as CheckBox;
 
-                if(box.IsChecked ==  true)
+                if (box.IsChecked == true)
                 {
-                    VBopenedBox.Visibility = Visibility.Visible;
-                    VBopenedText.Visibility = Visibility.Visible;
-                    VBremainingBox.Visibility = Visibility.Visible;
-                    VBremainingText.Visibility = Visibility.Visible;
-                } else if(box.IsChecked == false) 
-                    {
-                        VBopenedBox.Visibility = Visibility.Collapsed;
-                        VBopenedText.Visibility = Visibility.Collapsed;
-                        VBremainingBox.Visibility = Visibility.Collapsed;
-                        VBremainingText.Visibility = Visibility.Collapsed;
-                    }
+                    geöffnettextborder.Visibility = Visibility.Visible;
+                    verbleibendtextboder.Visibility = Visibility.Visible;
+                    openedCB.Visibility = Visibility.Visible;
+                    verbleibendtextbox.Visibility = Visibility.Visible;
                 }
-                
+                else 
+                {
+                    geöffnettextborder.Visibility = Visibility.Collapsed;
+                    verbleibendtextboder.Visibility = Visibility.Collapsed;
+                    openedCB.Visibility = Visibility.Collapsed;
+                    verbleibendtextbox.Visibility = Visibility.Collapsed;
+                }
             }
 
+
+        }
+            
+        }
     }
-    }
+    
+
+        
+
 
