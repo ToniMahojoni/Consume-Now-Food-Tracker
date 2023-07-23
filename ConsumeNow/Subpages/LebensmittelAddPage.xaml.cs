@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -67,9 +68,7 @@ namespace ConsumeNow.Subpages
         }
 
 
-
-
-        private void SuccessfullSave()
+        private void EmptyData()
         {
             TypCB.SelectedItem = null;
             NameCB.SelectedItem = null;
@@ -80,12 +79,23 @@ namespace ConsumeNow.Subpages
             openedCB.IsChecked = false;
             openableCB.IsChecked = false;
             verbleibendTB.Text = string.Empty;
+        }
+
+        private void SuccessfullSave(object sender, RoutedEventArgs e)
+        {
+            EmptyData();
 
             SaveInfoBorder.Visibility = Visibility.Visible;
             SaveInfo.Content = "gespeichert!";
             SaveInfo.Foreground = Brushes.Green;
 
             DatabaseIO.SaveToDatabase<Entry>(MainWindow.entries, "../../../Database/Data/ExampleEntries.csv");
+
+            OpenableChecked(sender, e);
+
+            LebensmittelAddReset();
+
+            MainWindow.lebensmittelpage.Window_Loaded_LebensmittelPage(sender, e);
 
         }
 
@@ -141,7 +151,7 @@ namespace ConsumeNow.Subpages
             try
             {
                 ManageDatabase.AddEntry(EntryData, MainWindow.entries);
-                SuccessfullSave();
+                SuccessfullSave(sender, e);
             }
             catch
             {
@@ -149,12 +159,6 @@ namespace ConsumeNow.Subpages
                 SaveInfo.Content = "fehlgeschlagen!";
                 SaveInfo.Foreground = Brushes.Red;
             }
-
-            OpenableChecked(sender, e);
-
-            MainWindow.lebensmittelpage.Window_Loaded_LebensmittelPage(sender, e);
-
-
         }
 
         private void BESTÄTIGENButtonClick(object sender, RoutedEventArgs e)
@@ -179,6 +183,9 @@ namespace ConsumeNow.Subpages
 
                 TypCB.IsEnabled = false;
                 BestätigenButton.Visibility = Visibility.Collapsed;
+                SaveInfoBorder.Visibility = Visibility.Collapsed;
+
+
 
                 var SelectedSubnames = 
                     from type in MainWindow.types
@@ -193,10 +200,30 @@ namespace ConsumeNow.Subpages
                     }
                 }
             }
+        }
 
+        public void LebensmittelAddReset()
+        {
+            EmptyData();
 
+            NameCB.Visibility = Visibility.Collapsed;
+            HaltbarkeitTB.Visibility = Visibility.Collapsed;
+            KaufdatumTB.Visibility = Visibility.Collapsed;
+            MengeTB.Visibility = Visibility.Collapsed;
+            PreisTB.Visibility = Visibility.Collapsed;
+            openableCB.Visibility = Visibility.Collapsed;
 
+            NameTL.Visibility = Visibility.Collapsed;
+            HaltbarkeitTL.Visibility = Visibility.Collapsed;
+            KaufdatumTL.Visibility = Visibility.Collapsed;
+            MengeTL.Visibility = Visibility.Collapsed;
+            PreisTL.Visibility = Visibility.Collapsed;
+            openableTL.Visibility = Visibility.Collapsed;
+  
+            SpeichernButton.Visibility = Visibility.Collapsed;
 
+            TypCB.IsEnabled = true;
+            BestätigenButton.Visibility = Visibility.Visible;
         }
     }
 }

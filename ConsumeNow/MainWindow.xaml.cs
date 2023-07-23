@@ -44,22 +44,27 @@ namespace ConsumeNow
             switch (senderName)
             {
                 case "LebensmittelButton":
-                    CC.Content = lebensmittelpage;                 
+                    CC.Content = lebensmittelpage;
+                    lebensmitteladdpage.LebensmittelAddReset();
                     break;
                 case "EinkaufslisteButton":
                     CC.Content = einkaufslistepage;
+                    lebensmitteladdpage.LebensmittelAddReset();
                     break;
                 case "ÜbersichtButton":
                     CC.Content = übersichtpage;
+                    lebensmitteladdpage.LebensmittelAddReset();
                     break;
                 case "AddLebensmittelButton":
                     CC.Content = lebensmitteladdpage;
                     break;
                 case "AddEinkaufButton":
                     CC.Content = einkaufslisteaddpage;
+                    lebensmitteladdpage.LebensmittelAddReset();
                     break;
                 case "AddTypButton":
                     CC.Content = categoryaddpage;
+                    lebensmitteladdpage.LebensmittelAddReset();
                     break;
                 default: break;
             }
