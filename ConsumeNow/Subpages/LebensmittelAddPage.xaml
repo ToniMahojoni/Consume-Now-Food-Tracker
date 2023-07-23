@@ -48,7 +48,7 @@
         <Border BorderBrush="White" BorderThickness="1" Grid.Column="0" Grid.Row="5"/>
 
         <!-- hinzufügen Text label in the top left corner -->
-        <Border BorderBrush="White" BorderThickness="5" Grid.Column="1" Grid.Row="0">
+        <Border BorderBrush="White" BorderThickness="5" Grid.Column="1" Grid.Row="0" Name="hinzufügenLabel">
             <Label Content="hinzufügen" FontFamily="Cascadia Mono Semibold" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
 
@@ -103,7 +103,7 @@
 
         <!-- verbleibend text label -->
 
-        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="4" Name="verbleibendtextboder" Visibility="Collapsed">
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="4" Name="verbleibendtextborder" Visibility="Collapsed">
             <Label Content="verbleibend" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" Name="verbleibendtextlabel" HorizontalContentAlignment="Center" />
         </Border>
 
@@ -165,15 +165,32 @@
         <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="5" Visibility="Collapsed" Name="SaveInfoBorder">
             <Label Content="" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" Name="SaveInfo"  HorizontalContentAlignment="Center" Foreground="Black"/>
         </Border>
-        
+
         <!-- Bestätigen Button -->
 
         <Button Name="BestätigenButton" Content="BESTÄTIGEN" FontSize="50" FontFamily="Cascadia Mono Semibold" Background="#6495ED" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" 
                 Margin="323,0,0,0" BorderThickness="5" Visibility="Visible" Click="BESTÄTIGENButtonClick"/>
 
+        <!-- Editieren Button -->
 
+        <Button Name="EditierenButton" Content="EDITIEREN" FontSize="50" FontFamily="Cascadia Mono Semibold" Background="#6495ED" Grid.Column="3" Grid.Row="0" Grid.ColumnSpan="2" 
+                Margin="323,0,0,0" BorderThickness="5" Visibility="Visible" Click="EditierenButtonClick"/>
 
+        <!-- ID text label -->
 
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="1" Name="IDTL">
+            <Label Content="ID" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" 
+                   VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        </Border>
+
+        <!-- ID TextBox -->
+
+        <TextBox Grid.Column="4" Grid.RowSpan="3" Margin="1,136,1,146" BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="IDTB" RenderTransformOrigin="0.5,0.5" />
+
+        <!-- editieren Text label -->
+        <Border BorderBrush="White" BorderThickness="5" Grid.Column="3" Grid.Row="0" Name="editierenLabel">
+            <Label Content="editieren" FontFamily="Cascadia Mono Semibold" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        </Border>
 
     </Grid>
 </UserControl>

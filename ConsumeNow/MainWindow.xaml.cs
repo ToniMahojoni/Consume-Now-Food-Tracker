@@ -45,7 +45,7 @@ namespace ConsumeNow
             {
                 case "LebensmittelButton":
                     CC.Content = lebensmittelpage;
-                    lebensmitteladdpage.LebensmittelAddReset();
+                    lebensmitteladdpage.LebensmittelAddReset(); 
                     break;
                 case "EinkaufslisteButton":
                     CC.Content = einkaufslistepage;
@@ -57,6 +57,7 @@ namespace ConsumeNow
                     break;
                 case "AddLebensmittelButton":
                     CC.Content = lebensmitteladdpage;
+                    lebensmitteladdpage.SaveInfoBorder.Visibility = Visibility.Collapsed;
                     break;
                 case "AddEinkaufButton":
                     CC.Content = einkaufslisteaddpage;

@@ -31,7 +31,7 @@ namespace ConsumeNow.Database
                 Entry entry = SelectEntry(entries, ID);
                 entries.Remove(entry);
             }
-            private static Entry SelectEntry(List<Entry> entries, uint ID)
+            public static Entry SelectEntry(List<Entry> entries, uint ID)
             {
                 var SelectedEntry =
                     from entry in entries
