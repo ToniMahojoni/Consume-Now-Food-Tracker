@@ -38,7 +38,7 @@
         </Viewbox>
 
         <!-- white bar in column 0 and row 3 -->
-
+        
         <Viewbox Stretch="UniformToFill" Grid.Column="0" Grid.Row="3">
             <Image Source="/Images/border.png"/>
         </Viewbox>

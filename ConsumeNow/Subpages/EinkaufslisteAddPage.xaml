@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:ConsumeNow.Subpages"
              mc:Ignorable="d" 
              d:DesignHeight="868" d:DesignWidth="1300"
-             Background="#6E8B5C">
+             Background="#6E8B5C"
+             Loaded="Window_Loaded">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -61,10 +62,10 @@
 
         <!-- SaveInfo text label -->
 
-        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="5" Visibility="Collapsed" Name="SaveInfoBorder">
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="2"  Grid.Row="5" Visibility="Collapsed" Name="SaveInfoBorder">
             <Label Content="" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" Name="SaveInfo"  HorizontalContentAlignment="Center" Foreground="Black"/>
         </Border>
-        
+
     </Grid>
 </UserControl>
 

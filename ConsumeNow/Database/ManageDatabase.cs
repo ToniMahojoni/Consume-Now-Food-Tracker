@@ -43,26 +43,27 @@ namespace ConsumeNow.Database
                 }
                 throw new ArgumentException();
             }
-            public static void AddType(string[] input, List<Entry> entries)
+            public static void AddType(string[] input, List<Type> types)
             {
-                entries.Add(DatabaseIO.GenerateEntryInstance(input));
+                if (input[4].Contains(',')) throw new ArgumentException();
+                types.Add(DatabaseIO.GenerateTypeInstance(input));
             }
-            public static void EditType(string[] input, List<Type> types, uint ID)
+            public static void EditType(string[] input, List<Type> types, string Name)
             {
-                Type type = SelectType(types, ID);
+                Type type = SelectType(types, Name);
                 Type newType = DatabaseIO.GenerateTypeInstance(input);
                 type.SetValues(newType.Name, newType.StoreLocation, newType.WhenToAddToShoppingList, newType.BestBeforeDateChange, newType.Subnames, newType.AmountOnShoppinglist);
             }
-            public static void DeleteType(List<Type> types, uint ID)
+            public static void DeleteType(List<Type> types, string Name)
             {
-                Type type = SelectType(types, ID);
+                Type type = SelectType(types, Name);
                 types.Remove(type);
             }
-            private static Type SelectType(List<Type> types, uint ID)
+            private static Type SelectType(List<Type> types, string Name)
             {
                 var SelectedType =
                     from type in types
-                    where type.ID == ID
+                    where type.Name == Name
                     select type;
                 foreach (Type type in SelectedType)
                 {

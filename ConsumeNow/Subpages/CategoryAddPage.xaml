@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:ConsumeNow.Subpages"
              mc:Ignorable="d" 
              d:DesignHeight="868" d:DesignWidth="1300"
-             Background="#6E8B5C">
+             Background="#6E8B5C"
+             Loaded="Window_Loaded_CategoryAddPage">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="68*" />
@@ -34,21 +35,40 @@
             <Label Content="Kategorie" FontFamily="Cascadia Mono Semibold" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
 
-        <!-- neuer Typ text label -->
+        <!-- Name text label -->
 
-        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1" Margin="0,136,0,146" Grid.RowSpan="3" >
-            <Label Content="neuer Typ" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" 
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1" Grid.Row="1">
+            <Label Content="Name" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" 
+                   VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        </Border>
+        
+        <!-- Lagerort text label -->
+
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1" Grid.Row="2">
+            <Label Content="Lagerort" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" 
                    VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         </Border>
 
+        <!-- EinkaufslisteHinzufügen text label -->
 
-        <!-- neuer Name text label -->
-
-        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1"  Grid.Row="2" Margin="0,0,0,146" Grid.RowSpan="2">
-            <Label Content="neuer Name" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" 
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1" Grid.Row="3">
+            <Label Content="Nachschub bei" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" 
                    VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         </Border>
 
+        <!-- ÄnderungMhD text label -->
+
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1" Grid.Row="4">
+            <Label Content="Änderung des MhD" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" 
+                   VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        </Border>
+        
+        <!-- Produkte text label -->
+
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1" Grid.Row="5">
+            <Label Content="Produkte" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" 
+                   VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        </Border>
 
 
         <!-- SpeichernButton -->
@@ -57,15 +77,29 @@
 
         <!-- Name TextBox -->
 
-        <TextBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="3" Margin="323,146,323,146" BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="NameTB"/>
+        <TextBox Grid.Column="2" Grid.Row="1" BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="NameTB"/>
 
-        <!-- neuer Typ TextBox -->
+        <!-- Lagerort TextBox -->
 
-        <TextBox Grid.Column="1" Grid.ColumnSpan="3" Margin="323,136,323,1" BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="MengeTB" Grid.RowSpan="2"/>
+        <TextBox Grid.Column="2" Grid.Row="2" BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="LagerortTB"/>
+
+        <!-- EinkaufslisteHinzufügen TextBox -->
+
+        <TextBox Grid.Column="2" Grid.Row="3" BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="EinkaufslisteHinzufügenTB"/>
+
+        <!-- ÄnderungMhD TextBox -->
+
+        <TextBox Grid.Column="2" Grid.Row="4" BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="ÄnderungMhDTB"/>
+
+        <!-- Produkte TextBox -->
+        <TextBox Grid.Column="2" Grid.Row="5" BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="ProdukteTB"/>
+
+        <!-- <DataGrid Name="ProduktTable" Grid.Column="3" Grid.Row="1" Grid.RowSpan="4" FontSize="30"/> -->
+        
 
         <!-- SaveInfo text label -->
 
-        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="5" Visibility="Collapsed" Name="SaveInfoBorder">
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="4" Visibility="Collapsed" Name="SaveInfoBorder">
             <Label Content="" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" Name="SaveInfo"  HorizontalContentAlignment="Center" Foreground="Black"/>
         </Border>
 

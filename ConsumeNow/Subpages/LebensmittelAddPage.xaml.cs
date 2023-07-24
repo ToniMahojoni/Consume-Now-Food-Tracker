@@ -87,8 +87,6 @@ namespace ConsumeNow.Subpages
             SaveInfo.Content = "gespeichert!";
             SaveInfo.Foreground = Brushes.Green;
 
-            DatabaseIO.SaveToDatabase<Entry>(MainWindow.entries, "../../../Database/Data/ExampleEntries.csv");
-
             OpenableChecked(sender, e);
 
             LebensmittelAddReset();
@@ -163,6 +161,7 @@ namespace ConsumeNow.Subpages
                     ManageDatabase.AddEntry(EntryData, MainWindow.entries);
                     
                 }
+                DatabaseIO.SaveToDatabase<Entry>(MainWindow.entries, MainWindow.entryfilepath);
                 SuccessfullSave(sender, e);
             }
             catch

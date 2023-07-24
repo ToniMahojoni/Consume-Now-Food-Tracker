@@ -74,7 +74,7 @@ namespace ConsumeNow.Database
             }
             private static void TestForValidEntryArguments(Entry entry)
             {
-                if (entry.BestBeforeDate < DateOnly.FromDateTime(DateTime.Today)) throw new ArgumentException();
+                //if (entry.BestBeforeDate < DateOnly.FromDateTime(DateTime.Today)) throw new ArgumentException();
                 if (entry.Prize != null & entry.Prize <= 0) throw new ArgumentException();
                 if (entry.BuyDate > DateOnly.FromDateTime(DateTime.Today)) throw new ArgumentException();
                 AdvancedEntry? AdvEntry = entry as AdvancedEntry;

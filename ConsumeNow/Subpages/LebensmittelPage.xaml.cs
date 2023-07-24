@@ -62,7 +62,7 @@ namespace ConsumeNow
                 ManageDatabase.DeleteEntry(MainWindow.entries, Convert.ToUInt32(LöschenIDTB.Text.ToString()));
                 LöschenLabel.Content = String.Empty;
                 LöschenIDTB.Text = String.Empty;
-                DatabaseIO.SaveToDatabase<Entry>(MainWindow.entries, "../../../Database/Data/ExampleEntries.csv");
+                DatabaseIO.SaveToDatabase<Entry>(MainWindow.entries, "./Database/Data/ExampleEntries.csv");
                 Window_Loaded_LebensmittelPage(sender, e);
                 
 

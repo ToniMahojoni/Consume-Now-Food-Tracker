@@ -1,4 +1,5 @@
-﻿using ConsumeNow.Subpages;
+﻿using ConsumeNow.Database.Data;
+using ConsumeNow.Subpages;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -29,17 +30,21 @@ namespace ConsumeNow
 
         public void Window_Loaded_EinkaufslistePage(object sender, RoutedEventArgs e)
         {
-            System.Data.DataTable dt2 = new System.Data.DataTable();
+            System.Data.DataTable dt3 = new System.Data.DataTable();
 
-            string[] ColumnNames2 = { "Typ", "Menge" };
+            string[] ColumnNames2 = { "Menge", "Typ"};
 
             foreach (string ColumnName in ColumnNames2)
             {
-                dt2.Columns.Add(ColumnName, typeof(string));
+                dt3.Columns.Add(ColumnName, typeof(string));
+            }
+            foreach(var rowData in ShoppingList.GetShoppingList(MainWindow.types))
+            {
+                dt3.Rows.Add(rowData.Split(' '));
             }
 
-            DataView dv2 = new DataView(dt2);
-            EinkaufslisteTable.ItemsSource = dv2;
+            DataView dv3 = new DataView(dt3);
+            EinkaufslisteTable.ItemsSource = dv3;
         }
 
     }
