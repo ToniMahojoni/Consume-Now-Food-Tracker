@@ -1,3 +1,4 @@
+using ConsumeNow.Database;
 using System.Data;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,7 +26,7 @@ namespace ConsumeNow
             }
             
             //creation of the rows
-            foreach(var rowData in ShoppingList.GetShoppingList(MainWindow.types))
+            foreach(var rowData in Database.ShoppingList.GetShoppingList(MainWindow.types))
             {
                 dt3.Rows.Add(rowData.Split(' '));
             }
@@ -34,5 +35,19 @@ namespace ConsumeNow
             EinkaufslisteDG.ItemsSource = dv3;
         }
 
+        private void GenerierenButtonClick(object sender, RoutedEventArgs e)
+        {
+            //clear current list, generate and reload page
+            ShoppingList.ClearShoppingList(MainWindow.types);
+            ShoppingList.GenerateShoppingList(MainWindow.entries, MainWindow.types);
+            WindowLoadedEinkaufslistePage(sender, e);
+        }
+
+        private void LöschenButtonClick(object sender, RoutedEventArgs e)
+        {
+            //clear shopping list and reload page
+            ShoppingList.ClearShoppingList(MainWindow.types);
+            WindowLoadedEinkaufslistePage(sender, e);
+        }
     }
 }

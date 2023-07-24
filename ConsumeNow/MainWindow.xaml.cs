@@ -1,28 +1,19 @@
 ﻿using ConsumeNow.Database;
 using ConsumeNow.Subpages;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ConsumeNow
 {
     
     public partial class MainWindow : Window
     {
+        //filepath for VisualStudio
         public const string entryfilepath = "./../../../Database/Data/ExampleEntries.csv";
         public const string typefilepath = "./../../../Database/Data/ExampleTypes.csv";
 
+        //filepath for console
         //public const string entryfilepath = "./Database/Data/ExampleEntries.csv";
         //public const string typefilepath = "./Database/Data/ExampleTypes.csv";
 

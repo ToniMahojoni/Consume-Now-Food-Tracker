@@ -125,7 +125,7 @@ namespace ConsumeNow.Subpages
                 {
                     //editing mode
                     //saving changes the general entries list
-                    ManageDatabase.EditEntry(EntryData, MainWindow.entries,
+                    ManageDatabase.EditEntry(EntryData, MainWindow.entries, MainWindow.types,
                         Convert.ToUInt32(IDTB.Text.ToString()));
                     //clear ID TextBox
                     IDTB.Text = String.Empty;
