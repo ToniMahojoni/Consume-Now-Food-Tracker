@@ -65,10 +65,10 @@
         
         <!-- Produkte text label -->
 
-        <!--<Border BorderBrush="Black" BorderThickness="5" Grid.Column="1" Grid.Row="5">
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1" Grid.Row="5">
             <Label Content="Produkte" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" 
                    VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        </Border>-->
+        </Border>
 
 
         <!-- SpeichernButton -->
@@ -92,10 +92,9 @@
         <TextBox Grid.Column="2" Grid.Row="4" BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="ÄnderungMhDTB"/>
 
         <!-- Produkte TextBox -->
+        <TextBox Grid.Column="2" Grid.Row="5" BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="ProdukteTB"/>
 
-        <!--<TextBox Grid.Column="2" Grid.Row="5" BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="ProdukteTB"/>-->
-
-        <DataGrid Name="ProduktTable" Grid.Column="3" Grid.Row="1" Grid.RowSpan="4" FontSize="30"/>
+        <!-- <DataGrid Name="ProduktTable" Grid.Column="3" Grid.Row="1" Grid.RowSpan="4" FontSize="30"/> -->
         
 
         <!-- SaveInfo text label -->

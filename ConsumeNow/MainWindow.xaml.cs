@@ -32,8 +32,8 @@ namespace ConsumeNow
         EinkaufslisteAddPage einkaufslisteaddpage = new EinkaufslisteAddPage();
         CategoryAddPage categoryaddpage = new CategoryAddPage();
 
-        public static List<Entry> entries = DatabaseIO.LoadFromEntryDatabase("./Database/Data/ExampleEntries.csv");
-        public static List<ConsumeNow.Database.Type> types = DatabaseIO.LoadFromTypeDatabase("./Database/Data/ExampleTypes.csv");
+        public static List<Entry> entries = DatabaseIO.LoadFromEntryDatabase("./../../../Database/Data/ExampleEntries.csv");
+        public static List<ConsumeNow.Database.Type> types = DatabaseIO.LoadFromTypeDatabase("./../../../Database/Data/ExampleTypes.csv");
 
 
 
