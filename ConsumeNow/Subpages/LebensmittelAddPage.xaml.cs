@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace ConsumeNow.Subpages
 {
-    /// <summary>
-    /// Interaction logic for LebensmittelAddPage.xaml
-    /// </summary>
     public partial class LebensmittelAddPage : UserControl
     {
         public LebensmittelAddPage()
@@ -28,6 +25,14 @@ namespace ConsumeNow.Subpages
         }
 
         private bool mode = false;
+
+        private void WindowLoadedLebensmittelAddPage(object sender, RoutedEventArgs e)
+        {
+            foreach (var element in MainWindow.types)
+            {
+                TypCB.Items.Add(element.Name);
+            }
+        }
 
         private void OpenableChecked(object sender, RoutedEventArgs e)
         {
@@ -49,22 +54,7 @@ namespace ConsumeNow.Subpages
                         verbleibendTB.Visibility = Visibility.Collapsed;
                     }
                 }
-                
-
-                
-            
-
-
         }
-
-        private void WindowLoadedLebensmittelAddPage(object sender, RoutedEventArgs e)
-        {
-            foreach (var element in MainWindow.types)
-            {
-                TypCB.Items.Add(element.Name);
-            }
-        }
-
 
         private void EmptyData()
         {
@@ -79,25 +69,7 @@ namespace ConsumeNow.Subpages
             verbleibendTB.Text = string.Empty;
         }
 
-        private void SuccessfullSave(object sender, RoutedEventArgs e)
-        {
-            EmptyData();
-
-            SaveInfoTL.Visibility = Visibility.Visible;
-            SaveInfo.Content = "gespeichert!";
-            SaveInfo.Foreground = Brushes.Green;
-
-            OpenableChecked(sender, e);
-
-            LebensmittelAddReset();
-
-            MainWindow.lebensmittelpage.WindowLoadedLebensmittelPage(sender, e);
-
-            SpeichernButton.Visibility = Visibility.Collapsed;
-
-        }
-
-        private void SaveButton(object sender, RoutedEventArgs e)
+        private void SaveButtonClick(object sender, RoutedEventArgs e)
         {
             
             string[] EntryData;
@@ -172,7 +144,7 @@ namespace ConsumeNow.Subpages
             }
         }
 
-        private void BESTÄTIGENButtonClick(object sender, RoutedEventArgs e)
+        private void BestätigenButtonClick(object sender, RoutedEventArgs e)
         {
             if (TypCB.SelectedItem != null)
             {
@@ -203,8 +175,69 @@ namespace ConsumeNow.Subpages
                 mode = false;
 
                 fillComboBox();
-
             }
+        }
+
+        private void EditierenButtonClick(object sender, RoutedEventArgs e)
+        {
+            SaveInfoTL.Visibility = Visibility.Collapsed;
+            
+            try
+            {
+            LoadEditData(Convert.ToUInt32(IDTB.Text.ToString()), sender, e);
+            TypCB.Visibility = Visibility.Visible;
+            TypCB.IsEnabled = true;
+            NameCB.Visibility = Visibility.Visible;
+            HaltbarkeitTB.Visibility = Visibility.Visible;
+            KaufdatumTB.Visibility = Visibility.Visible;
+            MengeTB.Visibility = Visibility.Visible;
+            PreisTB.Visibility = Visibility.Visible;
+            openableCB.Visibility = Visibility.Visible;
+
+            NameTL.Visibility = Visibility.Visible;
+            HaltbarkeitTL.Visibility = Visibility.Visible;
+            KaufdatumTL.Visibility = Visibility.Visible;
+            MengeTL.Visibility = Visibility.Visible;
+            PreisTL.Visibility = Visibility.Visible;
+            openableTL.Visibility = Visibility.Visible;
+
+            SpeichernButton.Visibility = Visibility.Visible;
+            IDTB.Visibility = Visibility.Collapsed;
+            IDTL.Visibility = Visibility.Collapsed;
+            EditierenTL.Visibility = Visibility.Collapsed;
+            BestätigenButton.Visibility = Visibility.Collapsed;
+            EditierenButton.Visibility = Visibility.Collapsed;
+
+            hinzufügenTL.Visibility = Visibility.Collapsed;
+            fillComboBox();
+            }
+            catch
+            {
+                SaveInfo.Content = "fehlgeschlagen!";
+                SaveInfo.Visibility = Visibility.Visible;
+                SaveInfoTL.Visibility = Visibility.Visible;
+                SaveInfo.Foreground = Brushes.Red;
+            }
+            
+
+            mode = true;
+        }
+
+        private void SuccessfullSave(object sender, RoutedEventArgs e)
+        {
+            EmptyData();
+
+            SaveInfoTL.Visibility = Visibility.Visible;
+            SaveInfo.Content = "gespeichert!";
+            SaveInfo.Foreground = Brushes.Green;
+
+            OpenableChecked(sender, e);
+
+            LebensmittelAddReset();
+
+            MainWindow.lebensmittelpage.WindowLoadedLebensmittelPage(sender, e);
+
+            SpeichernButton.Visibility = Visibility.Collapsed;
         }
 
         private void fillComboBox()
@@ -258,51 +291,6 @@ namespace ConsumeNow.Subpages
             TypCB.IsEnabled = true;
             BestätigenButton.Visibility = Visibility.Visible;
             
-        }
-
-        private void EditierenButtonClick(object sender, RoutedEventArgs e)
-        {
-            SaveInfoTL.Visibility = Visibility.Collapsed;
-            
-            try
-            {
-            LoadEditData(Convert.ToUInt32(IDTB.Text.ToString()), sender, e);
-            TypCB.Visibility = Visibility.Visible;
-            TypCB.IsEnabled = true;
-            NameCB.Visibility = Visibility.Visible;
-            HaltbarkeitTB.Visibility = Visibility.Visible;
-            KaufdatumTB.Visibility = Visibility.Visible;
-            MengeTB.Visibility = Visibility.Visible;
-            PreisTB.Visibility = Visibility.Visible;
-            openableCB.Visibility = Visibility.Visible;
-
-            NameTL.Visibility = Visibility.Visible;
-            HaltbarkeitTL.Visibility = Visibility.Visible;
-            KaufdatumTL.Visibility = Visibility.Visible;
-            MengeTL.Visibility = Visibility.Visible;
-            PreisTL.Visibility = Visibility.Visible;
-            openableTL.Visibility = Visibility.Visible;
-
-            SpeichernButton.Visibility = Visibility.Visible;
-            IDTB.Visibility = Visibility.Collapsed;
-            IDTL.Visibility = Visibility.Collapsed;
-            EditierenTL.Visibility = Visibility.Collapsed;
-            BestätigenButton.Visibility = Visibility.Collapsed;
-            EditierenButton.Visibility = Visibility.Collapsed;
-
-            hinzufügenTL.Visibility = Visibility.Collapsed;
-            fillComboBox();
-            }
-            catch
-            {
-                SaveInfo.Content = "fehlgeschlagen!";
-                SaveInfo.Visibility = Visibility.Visible;
-                SaveInfoTL.Visibility = Visibility.Visible;
-                SaveInfo.Foreground = Brushes.Red;
-            }
-            
-
-            mode = true;
         }
 
         private void LoadEditData(uint ID, object sender, RoutedEventArgs e)

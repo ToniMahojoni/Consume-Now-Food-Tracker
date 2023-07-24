@@ -7,8 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="868" d:DesignWidth="1300"
              Background="#6E8B5C"
-             Loaded="WindowLoadedLebensmittelAddPage"
-             >
+             Loaded="WindowLoadedLebensmittelAddPage">
+             
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="68*" />
@@ -95,7 +95,7 @@
 
         <!-- SpeichernButton -->
 
-        <Button Name="SpeichernButton" Content="SPEICHERN" FontSize="50" FontFamily="Cascadia Mono Semibold" Background="#6495ED" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" Margin="323,0,0,0" BorderThickness="5" Click="SaveButton" Visibility="Collapsed"/>
+        <Button Name="SpeichernButton" Content="SPEICHERN" FontSize="50" FontFamily="Cascadia Mono Semibold" Background="#6495ED" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" Margin="323,0,0,0" BorderThickness="5" Click="SaveButtonClick" Visibility="Collapsed"/>
 
         <!-- TypComboBox -->
 
@@ -155,7 +155,7 @@
         <!-- BestätigenButton -->
 
         <Button Name="BestätigenButton" Content="BESTÄTIGEN" FontSize="50" FontFamily="Cascadia Mono Semibold" Background="#6495ED" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" 
-                Margin="323,0,0,0" BorderThickness="5" Visibility="Visible" Click="BESTÄTIGENButtonClick"/>
+                Margin="323,0,0,0" BorderThickness="5" Visibility="Visible" Click="BestätigenButtonClick"/>
 
         <!-- EditierenButton -->
 

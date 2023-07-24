@@ -8,6 +8,7 @@
              d:DesignHeight="868" d:DesignWidth="1300"
              Background="#6E8B3D"
              Loaded="WindowLoadedLebensmittelPage">
+             
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*" />
@@ -26,12 +27,10 @@
 
         <!-- Lebensmittel TextLabel at the top -->
 
-
         <Border BorderBrush="White" BorderThickness="0,0,3,3"  Grid.Row="0" Margin="0,0,720,0" Grid.ColumnSpan="2" >
             <Label Content="Lebensmittel"  FontFamily="Cascadia Mono Semibold" FontSize="80" Margin="0,0,0,-2" 
                    VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" />
         </Border>
-
 
         <!-- DataTable with the Lebensmittel entries -->
 
@@ -54,11 +53,6 @@
             HorizontalAlignment="Left" Margin="386,717,0,0" Grid.Row="1"
             VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
             VerticalAlignment="Top" Height="50" Width="312"/>
-
-
-
-
-
 
     </Grid>
 </UserControl>
