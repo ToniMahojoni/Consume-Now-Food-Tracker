@@ -29,7 +29,7 @@ namespace ConsumeNow
             InitializeComponent();
         }
 
-        public void Window_Loaded(object sender, RoutedEventArgs e)
+        public void WindowLoadedÜbersichtPage(object sender, RoutedEventArgs e)
         {
             System.Data.DataTable dt4 = new System.Data.DataTable();
 
@@ -49,30 +49,27 @@ namespace ConsumeNow
             }
 
             DataView dv4 = new DataView(dt4);
-            ÜbersichtTable.ItemsSource = dv4;
+            ÜbersichtDG.ItemsSource = dv4;
         }
 
-        private void LöschenButton_Click(object sender, RoutedEventArgs e)
+        private void LöschenButtonClick(object sender, RoutedEventArgs e)
         {
             try
             {
                 ManageDatabase.DeleteType(MainWindow.types, LöschenIDTB.Text.ToString());
-                LöschenLabel.Content = String.Empty;
+                LöschenTL.Content = String.Empty;
                 LöschenIDTB.Text = String.Empty;
                 DatabaseIO.SaveToDatabase<Database.Type>(MainWindow.types, MainWindow.typefilepath);
-                MainWindow.übersichtpage.Window_Loaded(sender, e);
-                LöschenLabel.Visibility = Visibility.Collapsed;
+                MainWindow.übersichtpage.WindowLoadedÜbersichtPage(sender, e);
+                LöschenTL.Visibility = Visibility.Collapsed;
 
 
             }
             catch
             {
-                LöschenLabel.Visibility = Visibility.Visible;
-                LöschenLabel.Content = "fehlgeschlagen!";
+                LöschenTL.Visibility = Visibility.Visible;
+                LöschenTL.Content = "fehlgeschlagen!";
             }
-
-
         }
-
     }
 }
