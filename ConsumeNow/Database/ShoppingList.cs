@@ -8,7 +8,7 @@ namespace ConsumeNow.Database
 {
     public static class ShoppingList
     {
-        public static List<string> GetShoppingList(List<Type> types)
+        public static List<string> GetShoppingList(List<Type> types) // for printing the shopping list
         {
             List<string> result = new List<string>();
             foreach (Type type in types)
@@ -20,7 +20,7 @@ namespace ConsumeNow.Database
             }
             return result;
         }
-        public static void GenerateShoppingList(List<Entry> entries, List<Type> types)
+        public static void GenerateShoppingList(List<Entry> entries, List<Type> types) // automatically generate shopping list according to the data from Type list when to add to the shopping list
         {
             foreach (Type type in types)
             {

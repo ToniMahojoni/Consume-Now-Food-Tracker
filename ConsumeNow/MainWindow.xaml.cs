@@ -10,12 +10,13 @@ namespace ConsumeNow
     public partial class MainWindow : Window
     {
         //filepath for VisualStudio
-        public const string entryfilepath = "./../../../Database/Data/ExampleEntries.csv";
-        public const string typefilepath = "./../../../Database/Data/ExampleTypes.csv";
+        
+        //public const string entryfilepath = "./../../../Database/Data/ExampleEntries.csv";
+        //public const string typefilepath = "./../../../Database/Data/ExampleTypes.csv";
 
         //filepath for console
-        //public const string entryfilepath = "./Database/Data/ExampleEntries.csv";
-        //public const string typefilepath = "./Database/Data/ExampleTypes.csv";
+        public const string entryfilepath = "./Database/Data/ExampleEntries.csv";
+        public const string typefilepath = "./Database/Data/ExampleTypes.csv";
 
         public MainWindow()
         {

@@ -9,7 +9,7 @@ namespace ConsumeNow.Database
 {
         public static class DatabaseIO
         {
-            public static void SaveToDatabase<T>(List<T> input, string path)
+            public static void SaveToDatabase<T>(List<T> input, string path) //Saving into csv file
             {
                 using (StreamWriter file = new StreamWriter(path))
                 {
@@ -19,7 +19,7 @@ namespace ConsumeNow.Database
                     }
                 }
             }
-            public static List<Entry> LoadFromEntryDatabase(string path)
+            public static List<Entry> LoadFromEntryDatabase(string path) //Loading from csv file
             {
                 List<Entry> result = new List<Entry>();
                 foreach (string line in ReadFile(path))
@@ -72,7 +72,7 @@ namespace ConsumeNow.Database
                 }
                 return result;
             }
-            private static void TestForValidEntryArguments(Entry entry)
+            private static void TestForValidEntryArguments(Entry entry) //prevent nonsensical content form written into Entry list
             {
                 //if (entry.BestBeforeDate < DateOnly.FromDateTime(DateTime.Today)) throw new ArgumentException();
                 if (entry.Prize != null & entry.Prize <= 0) throw new ArgumentException();
@@ -100,7 +100,8 @@ namespace ConsumeNow.Database
                 return result;
 
             }
-            private static void TestForValidTypeArguments(Type type,List<Type> types) {
+            private static void TestForValidTypeArguments(Type type,List<Type> types)  //prevent nonsensical content form written into Type list
+            {
                 if(type.Name == "") throw new ArgumentException();
                 if(type.BestBeforeDateChange < 0) throw new ArgumentException();
                 if(type.WhenToAddToShoppingList < 0) throw new ArgumentException();
