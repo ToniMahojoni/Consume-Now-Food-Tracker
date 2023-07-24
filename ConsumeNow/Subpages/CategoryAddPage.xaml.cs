@@ -43,6 +43,7 @@ namespace ConsumeNow.Subpages
             TypeData[5] = "0";
             try {
                 Database.ManageDatabase.AddType(TypeData,MainWindow.types);
+                Database.DatabaseIO.SaveToDatabase<Database.Type>(MainWindow.types, MainWindow.typefilepath);
                 NameTB.Text = string.Empty;
                 LagerortTB.Text = string.Empty;
                 EinkaufslisteHinzufügenTB.Text = string.Empty;

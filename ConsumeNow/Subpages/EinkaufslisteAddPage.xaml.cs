@@ -40,8 +40,10 @@ namespace ConsumeNow.Subpages
                     {
                         type.AddToShoppingList(Convert.ToUInt32(MengeTB.Text));
                     }
+                    Database.DatabaseIO.SaveToDatabase<Database.Type>(MainWindow.types, MainWindow.typefilepath);
                     SuccessfullSave(sender, e);
                     MainWindow.einkaufslistepage.Window_Loaded_EinkaufslistePage(sender, e);
+                    
                 }
                 
                 

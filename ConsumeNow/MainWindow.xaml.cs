@@ -17,8 +17,14 @@ using System.Windows.Shapes;
 
 namespace ConsumeNow
 {
+    
     public partial class MainWindow : Window
     {
+        public const string entryfilepath = "./../../../Database/Data/ExampleEntries.csv";
+        public const string typefilepath = "./../../../Database/Data/ExampleTypes.csv";
+        //public const string entryfilepath = "./Database/Data/ExampleEntries.csv";
+        //public const string typefilepath = "./Database/Data/ExampleTypes.csv";
+
         public MainWindow()
         {
             InitializeComponent();
@@ -32,8 +38,8 @@ namespace ConsumeNow
         EinkaufslisteAddPage einkaufslisteaddpage = new EinkaufslisteAddPage();
         CategoryAddPage categoryaddpage = new CategoryAddPage();
 
-        public static List<Entry> entries = DatabaseIO.LoadFromEntryDatabase("./../../../Database/Data/ExampleEntries.csv");
-        public static List<ConsumeNow.Database.Type> types = DatabaseIO.LoadFromTypeDatabase("./../../../Database/Data/ExampleTypes.csv");
+        public static List<Entry> entries = DatabaseIO.LoadFromEntryDatabase(entryfilepath);
+        public static List<ConsumeNow.Database.Type> types = DatabaseIO.LoadFromTypeDatabase(typefilepath);
 
 
 
