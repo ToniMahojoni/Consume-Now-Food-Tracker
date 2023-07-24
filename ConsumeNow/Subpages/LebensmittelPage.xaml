@@ -33,19 +33,19 @@
 
         <!-- data table with the Lebensmittel entries -->
 
-        <DataGrid Name="LebensmittelTable" Grid.Column="1" Margin="0,101,0,50" Grid.RowSpan="2" FontSize="25"/>
+        <DataGrid Name="LebensmittelTable" Grid.Column="1" Margin="0,101,0,65" Grid.RowSpan="2" FontSize="25"/>
 
         <!-- remove button -->
 
-        <Button Grid.Column="1" Content="LÖSCHEN" HorizontalAlignment="Left" Margin="0,717,0,0" Grid.Row="1" Name="LöschenButton"
+        <Button Grid.Column="1" Content="LÖSCHEN" HorizontalAlignment="Left" Margin="0,707,0,0" Grid.Row="1" Name="LöschenButton"
                 VerticalAlignment="Top" Height="50" Width="212"
                 BorderThickness="3" Background="Red" FontSize="30" FontFamily="Cascadia Mono Semibold" 
                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="LöschenButton_Click"/>
         <Label Grid.Column="1" Content="ID:" FontSize="35" FontFamily="Cascadia Mono Semibold" 
-               HorizontalAlignment="Left" Margin="212,717,0,0" Grid.Row="1"
+               HorizontalAlignment="Left" Margin="212,707,0,0" Grid.Row="1"
                VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                VerticalAlignment="Top" Height="50" Width="65"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="277,717,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" FontSize="35" Name="LöschenIDTB"  
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="277,707,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" FontSize="35" Name="LöschenIDTB"  
                  BorderThickness="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                  VerticalAlignment="Top" Width="109" Height="50" />
         <Label Grid.Column="1" Content="" FontSize="35" FontFamily="Cascadia Mono Semibold" Foreground="red" Name="LöschenLabel"
