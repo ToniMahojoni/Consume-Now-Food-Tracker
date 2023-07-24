@@ -1,27 +1,11 @@
 ﻿using ConsumeNow.Database;
-using ConsumeNow.Database.Data;
-using ConsumeNow.Subpages;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ConsumeNow
 {
-    /// <summary>
-    /// Interaction logic for ÜbersichtPage.xaml
-    /// </summary>
     public partial class ÜbersichtPage : UserControl
     {
         public ÜbersichtPage()
@@ -35,16 +19,18 @@ namespace ConsumeNow
 
             string[] ColumnNames3 = { "Name", "Lagerort", "Zur Einkaufsliste hinzufügen \n wenn Menge kleiner als", "Änderung des MhD \n bei Öffnung", "Produkte"};
 
+            //fill table columns
             foreach (string ColumnName in ColumnNames3)
             {
                 dt4.Columns.Add(ColumnName, typeof(string));
             }
             
+            //fill table rows 
             foreach (var type in MainWindow.types)
             {
+                //show type data without the amount on shopping list 
                 string[] rowData = type.ToString().Split(',');
                 Array.Resize(ref rowData,rowData.Length-1);
-                //Array.Copy(rowData, 0, rowData, 0, rowData.Length - 1);
                 dt4.Rows.Add(rowData);
             }
 
@@ -56,17 +42,25 @@ namespace ConsumeNow
         {
             try
             {
+                //delete type from general type list
                 ManageDatabase.DeleteType(MainWindow.types, LöschenIDTB.Text.ToString());
+
+                //hide error message and clear Name input-field
                 LöschenTL.Content = String.Empty;
                 LöschenIDTB.Text = String.Empty;
+
+                //save changes to the type file
                 DatabaseIO.SaveToDatabase<Database.Type>(MainWindow.types, MainWindow.typefilepath);
                 MainWindow.übersichtpage.WindowLoadedÜbersichtPage(sender, e);
+
+                //hide error message
                 LöschenTL.Visibility = Visibility.Collapsed;
 
 
             }
             catch
             {
+                //show error message
                 LöschenTL.Visibility = Visibility.Visible;
                 LöschenTL.Content = "fehlgeschlagen!";
             }
