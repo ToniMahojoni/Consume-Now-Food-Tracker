@@ -152,7 +152,7 @@ namespace ConsumeNow.Subpages
             {
                 if (mode)
                 {
-                    ManageDatabase.EditEntry(EntryData, MainWindow.entries,
+                    ManageDatabase.EditEntry(EntryData, MainWindow.entries, MainWindow.types,
                         Convert.ToUInt32(IDTB.Text.ToString()));
                     IDTB.Text = String.Empty;
                 }
