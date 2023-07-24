@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace ConsumeNow.Subpages
 {
-    /// <summary>
-    /// Interaction logic for EinkaufslisteAddPage.xaml
-    /// </summary>
     public partial class EinkaufslisteAddPage : UserControl
     {
         public EinkaufslisteAddPage()
@@ -25,7 +22,7 @@ namespace ConsumeNow.Subpages
             InitializeComponent();
         }
 
-        private void SaveButton(object sender, RoutedEventArgs e) 
+        private void SaveButtonClick(object sender, RoutedEventArgs e) 
         {
             try
             {
@@ -50,9 +47,9 @@ namespace ConsumeNow.Subpages
             }
             catch
             {
-                SaveInfo.Content = "fehlgeschlagen!";
-                SaveInfo.Foreground = Brushes.Red;
-                SaveInfoBorder.Visibility = Visibility.Visible;
+                SaveInfoTL.Content = "fehlgeschlagen!";
+                SaveInfoTL.Foreground = Brushes.Red;
+                SaveInfoBR.Visibility = Visibility.Visible;
             }
             
 
@@ -63,9 +60,9 @@ namespace ConsumeNow.Subpages
         {
             TypCB.SelectedItem = null;
             MengeTB.Text = string.Empty;
-            SaveInfo.Content = "gespeichert!";
-            SaveInfo.Foreground = Brushes.Green;
-            SaveInfoBorder.Visibility = Visibility.Visible;
+            SaveInfoTL.Content = "gespeichert!";
+            SaveInfoTL.Foreground = Brushes.Green;
+            SaveInfoBR.Visibility = Visibility.Visible;
 
         }
 
@@ -73,7 +70,7 @@ namespace ConsumeNow.Subpages
         {
             TypCB.SelectedItem = null;
             MengeTB.Text = string.Empty;
-            SaveInfoBorder.Visibility = Visibility.Collapsed;
+            SaveInfoBR.Visibility = Visibility.Collapsed;
         }
 
         private void fillComboBox()
@@ -84,7 +81,7 @@ namespace ConsumeNow.Subpages
             }
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void WindowLoadedEinkaufslisteAddPage(object sender, RoutedEventArgs e)
         {
             fillComboBox();
         }
