@@ -25,7 +25,45 @@ namespace ConsumeNow.Subpages
             InitializeComponent();
         }
 
-        private void SaveButton(object sender, RoutedEventArgs e) { }
+        private void SaveButton(object sender, RoutedEventArgs e) { 
+            string[] TypeData = new string[6];
+            TypeData[0] = NameTB.Text.ToString();
+            TypeData[1] = LagerortTB.Text.ToString();
+            TypeData[2] = EinkaufslisteHinzufügenTB.Text.ToString();
+            TypeData[3] = ÄnderungMhDTB.Text.ToString();
+            //TypeData[4] = "";
+            List<string> names = new List<string>();
+            
+            foreach (System.Data.DataRowView row in ProduktTable.Items) {
+                names.Add(row.Row.ItemArray[0].ToString());
+
+            }
+            string.Join(TypeData[4],names); 
+            //TypeData[4] = ProdukteTB.Text.ToString();
+            TypeData[5] = "0";
+            try {
+                Database.ManageDatabase.AddType(TypeData,MainWindow.types);
+                NameTB.Text = string.Empty;
+                LagerortTB.Text = string.Empty;
+                EinkaufslisteHinzufügenTB.Text = string.Empty;
+                ÄnderungMhDTB.Text = string.Empty;
+                //ProdukteTB.Text = string.Empty;
+                SaveInfoBorder.Visibility = Visibility.Visible;
+                SaveInfo.Content = "erfolgreich";
+            } catch {
+                SaveInfoBorder.Visibility = Visibility.Visible;
+                SaveInfo.Content = "fehlgeschlagen";
+            }
+            //Database.DatabaseIO.SaveToDatabase<Entry>(MainWindow.entries, "./Database/Data/ExampleEntries.csv");
+            
+        }
+        private void Window_Loaded_CategoryAddPage(object sender, RoutedEventArgs e)
+        {
+            System.Data.DataTable dt = new System.Data.DataTable();
+            dt.Columns.Add("Produktbezeichnungen",typeof(string));
+            System.Data.DataView dv = new System.Data.DataView(dt);
+            ProduktTable.ItemsSource = dv;
+        }
 
     }
 }

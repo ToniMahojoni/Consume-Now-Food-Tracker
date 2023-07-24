@@ -43,9 +43,9 @@ namespace ConsumeNow.Database
                 }
                 throw new ArgumentException();
             }
-            public static void AddType(string[] input, List<Entry> entries)
+            public static void AddType(string[] input, List<Type> types)
             {
-                entries.Add(DatabaseIO.GenerateEntryInstance(input));
+                types.Add(DatabaseIO.GenerateTypeInstance(input));
             }
             public static void EditType(string[] input, List<Type> types, uint ID)
             {
