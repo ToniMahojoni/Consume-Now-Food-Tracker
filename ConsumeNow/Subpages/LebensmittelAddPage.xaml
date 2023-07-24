@@ -7,8 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="868" d:DesignWidth="1300"
              Background="#6E8B5C"
-             Loaded="Window_Loaded"
-             >
+             Loaded="WindowLoadedLebensmittelAddPage">
+             
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="68*" />
@@ -29,114 +29,100 @@
             <ColumnDefinition Width="78*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- white bar in column 0 and row 0 -->
-        <Border BorderBrush="White" BorderThickness="1" Grid.Column="0" Grid.Row="0"/>
+        <!-- White bar at the left edge -->
 
-        <!-- white bar in column 0 and row 1 -->
-        <Border BorderBrush="White" BorderThickness="1" Grid.Column="0" Grid.Row="1"/>
+        <Border BorderBrush="White" BorderThickness="2" Grid.RowSpan="6"/>
 
-        <!-- white bar in column 0 and row 2 -->
-        <Border BorderBrush="White" BorderThickness="1" Grid.Column="0" Grid.Row="2"/>
-
-        <!-- white bar in column 0 and row 3 -->
-        <Border BorderBrush="White" BorderThickness="1" Grid.Column="0" Grid.Row="3"/>
-
-        <!-- white bar in column 0 and row 4 -->
-        <Border BorderBrush="White" BorderThickness="1" Grid.Column="0" Grid.Row="4"/>
-
-        <!-- white bar in column 0 and row 5 -->
-        <Border BorderBrush="White" BorderThickness="1" Grid.Column="0" Grid.Row="5"/>
-
-        <!-- hinzufügen Text label in the top left corner -->
-        <Border BorderBrush="White" BorderThickness="5" Grid.Column="1" Grid.Row="0" Name="hinzufügenLabel">
+        <!-- hinzufügen TextLabel in the top left corner -->
+        <Border BorderBrush="White" BorderThickness="5" Grid.Column="1" Grid.Row="0" Name="hinzufügenTL">
             <Label Content="hinzufügen" FontFamily="Cascadia Mono Semibold" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
 
-        <!-- Typ text label -->
+        <!-- TypTextLabel -->
 
         <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1"  Grid.Row="1" Name="TypTL">
             <Label Content="Lebensmitteltyp" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center"/>
         </Border>
 
 
-        <!-- Name text label -->
+        <!-- NameTextLabel -->
 
         <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1"  Grid.Row="2" Visibility="Collapsed" Name="NameTL">
             <Label Content="Lebensmittelname" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" />
         </Border>
 
-        <!-- Haltbarkeit text label -->
+        <!-- HaltbarkeitTextLabel -->
 
         <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1"  Grid.Row="3" Visibility="Collapsed" Name="HaltbarkeitTL">
             <Label Content="Haltbarkeit" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         </Border>
 
-        <!-- Kaufdatum text label -->
+        <!-- KaufdatumTextLabel -->
 
         <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1"  Grid.Row="4" Visibility="Collapsed" Name="KaufdatumTL">
             <Label Content="Kaufdatum" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         </Border>
 
-        <!-- Menge text label -->
+        <!-- MengeTextLabel -->
 
         <Border BorderBrush="Black" BorderThickness="5" Grid.Column="1"  Grid.Row="5" Visibility="Collapsed" Name="MengeTL">
             <Label Content="Menge" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         </Border>
 
-        <!-- Preis text label -->
+        <!-- PreisTextLabel -->
 
         <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="1" Visibility="Collapsed" Name="PreisTL">
             <Label Content="Preis" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
         </Border>
 
-        <!-- Kann man öffnen text label -->
+        <!-- Kann-man-öffnen-TextLabel -->
 
         <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="2" Visibility="Collapsed" Name="openableTL">
             <Label Content="kann man öffnen" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" />
         </Border>
 
-        <!-- geöffnet text label -->
+        <!-- geöffnetTextLabel -->
 
-        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="3" Name="geöffnettextborder" Visibility="Collapsed">
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="3" Name="geöffnetTL" Visibility="Collapsed">
             <Label Content="geöffnet" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" Name="geöffnettextlabel" HorizontalContentAlignment="Center" />
         </Border>
 
-        <!-- verbleibend text label -->
+        <!-- verbleibendTextLabel -->
 
-        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="4" Name="verbleibendtextborder" Visibility="Collapsed">
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="4" Name="verbleibendTL" Visibility="Collapsed">
             <Label Content="verbleibend" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" Name="verbleibendtextlabel" HorizontalContentAlignment="Center" />
         </Border>
 
         <!-- SpeichernButton -->
 
-        <Button Name="SpeichernButton" Content="SPEICHERN" FontSize="50" FontFamily="Cascadia Mono Semibold" Background="#6495ED" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" Margin="323,0,0,0" BorderThickness="5" Click="SaveButton" Visibility="Collapsed"/>
+        <Button Name="SpeichernButton" Content="SPEICHERN" FontSize="50" FontFamily="Cascadia Mono Semibold" Background="#6495ED" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="2" Margin="323,0,0,0" BorderThickness="5" Click="SaveButtonClick" Visibility="Collapsed"/>
 
-        <!-- Typ ComboBox -->
+        <!-- TypComboBox -->
 
         <ComboBox Grid.Column="1" Grid.RowSpan="3" Margin="323,136,323,146" FontSize="50" BorderThickness="5" Grid.ColumnSpan="3" Name="TypCB" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-        <!-- Name ComboBox -->
+        <!-- NameComboBox -->
 
         <ComboBox Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Margin="323,136,323,146" FontSize="50" BorderThickness="5" Grid.ColumnSpan="3" Name="NameCB" HorizontalContentAlignment="Center" 
                   VerticalContentAlignment="Center" Visibility="Collapsed"/>
 
-        <!-- Haltbarkeitsdatum TextBox -->
+        <!-- HaltbarkeitsdatumTextBox -->
 
         <TextBox Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="323,0,323,146" BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="HaltbarkeitTB" Visibility="Collapsed"/>
 
-        <!-- Kaufdatum TextBox -->
+        <!-- KaufdatumTextBox -->
 
         <TextBox Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="323,0,323,146"  BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="KaufdatumTB" Visibility="Collapsed"/>
 
-        <!-- Menge TextBox -->
+        <!-- MengeTextBox -->
 
         <TextBox Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Margin="323,0,323,0"  BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="MengeTB" Visibility="Collapsed"/>
 
-        <!-- Kaufpreis TextBox -->
+        <!-- KaufpreisTextBox -->
 
         <TextBox Grid.Column="3" Grid.Row="0"  Margin="323,136,0,146"  BorderThickness="5" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="3" FontSize="50" VerticalContentAlignment="Center" Name="PreisTB" Visibility="Collapsed"/>
 
-        <!-- kann man öffnen CheckBox -->
+        <!-- kann-man-öffnenCheckBox -->
 
         <CheckBox Name="openableCB" Content="ja/nein" FontFamily="Cascadia Mono Semibold"  Click="OpenableChecked" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" Margin="323,0,0,146" Grid.RowSpan="2" 
                   FontSize="8" VerticalContentAlignment="Center" Visibility="Collapsed">
@@ -145,7 +131,7 @@
             </CheckBox.LayoutTransform>
         </CheckBox>
 
-        <!-- geöffnet CheckBox -->
+        <!-- geöffnetCheckBox -->
 
         <CheckBox Name="openedCB" Content="ja/nein" FontFamily="Cascadia Mono Semibold" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="2" Margin="323,0,0,146" Grid.RowSpan="2" 
                   FontSize="8" VerticalContentAlignment="Center" Visibility="Collapsed">
@@ -155,40 +141,40 @@
         </CheckBox>
 
 
-        <!-- verbleibend TextBox -->
+        <!-- verbleibendTextBox -->
 
         <TextBox Name="verbleibendTB" Grid.Column="3" Grid.Row="4"  Margin="323,1,0,146"  
                  BorderThickness="5" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" Visibility="Collapsed" FontSize="50" VerticalContentAlignment="Center"/>
 
-        <!-- SaveInfo text label -->
+        <!-- SaveInfoTextLabel -->
 
-        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="5" Visibility="Collapsed" Name="SaveInfoBorder">
+        <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="5" Visibility="Collapsed" Name="SaveInfoTL">
             <Label Content="" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" VerticalContentAlignment="Center" Name="SaveInfo"  HorizontalContentAlignment="Center" Foreground="Black"/>
         </Border>
 
-        <!-- Bestätigen Button -->
+        <!-- BestätigenButton -->
 
         <Button Name="BestätigenButton" Content="BESTÄTIGEN" FontSize="50" FontFamily="Cascadia Mono Semibold" Background="#6495ED" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" 
-                Margin="323,0,0,0" BorderThickness="5" Visibility="Visible" Click="BESTÄTIGENButtonClick"/>
+                Margin="323,0,0,0" BorderThickness="5" Visibility="Visible" Click="BestätigenButtonClick"/>
 
-        <!-- Editieren Button -->
+        <!-- EditierenButton -->
 
         <Button Name="EditierenButton" Content="EDITIEREN" FontSize="50" FontFamily="Cascadia Mono Semibold" Background="#6495ED" Grid.Column="3" Grid.Row="0" Grid.ColumnSpan="2" 
                 Margin="323,0,0,0" BorderThickness="5" Visibility="Visible" Click="EditierenButtonClick"/>
 
-        <!-- ID text label -->
+        <!-- IDTextLabel -->
 
         <Border BorderBrush="Black" BorderThickness="5" Grid.Column="3"  Grid.Row="1" Name="IDTL">
             <Label Content="ID" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" 
                    VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         </Border>
 
-        <!-- ID TextBox -->
+        <!-- IDTextBox -->
 
         <TextBox Grid.Column="4" Grid.RowSpan="3" Margin="1,136,1,146" BorderThickness="5" FontSize="50" VerticalContentAlignment="Center" Name="IDTB" RenderTransformOrigin="0.5,0.5" />
 
-        <!-- editieren Text label -->
-        <Border BorderBrush="White" BorderThickness="5" Grid.Column="3" Grid.Row="0" Name="editierenLabel">
+        <!-- EditierenTextLabel -->
+        <Border BorderBrush="White" BorderThickness="5" Grid.Column="3" Grid.Row="0" Name="EditierenTL">
             <Label Content="editieren" FontFamily="Cascadia Mono Semibold" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" />
         </Border>
 

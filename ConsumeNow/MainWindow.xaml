@@ -10,23 +10,21 @@
         WindowStyle="SingleBorderWindow"
         Background="#6E8B3D"
         ResizeMode="CanMinimize">
+    
     <Grid>
 
-        <!-- 
-        Creation of columns that divide the grid into the sidebar on the left
-        and the space for the subpages on the right.
-        -->
+        <!-- Creation of columns that divide the grid into the sidebar on the left and the space for the subpages on the right -->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="18.75*" Name="SideBar">
+            <ColumnDefinition Width="18.75*" >
             </ColumnDefinition>
-            <ColumnDefinition Width="81.25*" Name="Pages"/>
+            <ColumnDefinition Width="81.25*"/>
         </Grid.ColumnDefinitions>
 
+        <!-- StackPanel for the menu buttons -->
 
-        <!-- Creation of a panel for the menu buttons. -->
         <StackPanel Background="#6E8B3D">
 
-            <!-- Logo image in the top left corner -->
+            <!-- logo image in the top left corner -->
 
             <Viewbox Stretch="UniformToFill">
                 <Image Height="50" Width="150" Source="/Images/Logo.png"/>
@@ -35,6 +33,7 @@
             <!-- Buttons on the sidebar-->
 
             <!-- Lebensmittel button-->
+
             <Viewbox Stretch="UniformToFill">
                 <Button x:Name="LebensmittelButton" Content="      Lebensmittel" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique" 
                     Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
@@ -46,6 +45,7 @@
             </Viewbox>
 
             <!-- Einkaufsliste button-->
+
             <Viewbox Stretch="UniformToFill">
                 <Button Name="EinkaufslisteButton" Content="       Einkaufsliste" BorderBrush="White" FontFamily="Cascadia Mono Semibold" FontStyle="Oblique"  
                     Foreground="White" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Height="50" 
@@ -91,21 +91,14 @@
                 </Button>
             </Viewbox>
 
-
-
         </StackPanel>
 
-
-
-
         <!-- Content Control needed for opening the subpages on the right column -->
-        <ContentControl x:Name="CC" Grid.Column="1" >
+        <ContentControl x:Name="SubpageCC" Grid.Column="1" >
             <Viewbox Stretch="UniformToFill">
                 <local:StartPage HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="650"/>
             </Viewbox>
         </ContentControl>
-
-
 
     </Grid>
 </Window>
