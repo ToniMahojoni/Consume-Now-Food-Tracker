@@ -1,28 +1,137 @@
 @startuml Classes
+left to right direction
 class Entry {
-    +Type : string <<get>>
-    +Name : string <<get>>
-    +BestBeforeDate : DateOnly <<get>>
-    +BuyDate : DateOnly? <<get>>
-    +Amount : int <<get>>
-    +Prize : double? <<get>>
+    +Type : string <<get>> <<private set>>
+    +Name : string <<get>> <<private set>>
+    +BestBeforeDate : DateOnly <<get>> <<private set>>
+    +BuyDate : DateOnly? <<get>> <<private set>>
+    +Amount : int <<get>> <<private set>>
+    +Prize : double? <<get>> <<private set>>
+    +SetValues(string Type, string Name, DateOnly BestBeforeDate, DateOnly BuyDate, uint Amount, double? Prize,bool IsOpened, double? RemainingAmount): string
 }
 
 class AdvancedEntry {
-    +IsOpened : bool <<get>>
-    +RemainingAmount : double? <<get>>
+    +IsOpened : bool <<get>> <<private set>>
+    +RemainingAmount : double? <<get>> <<private set>>
 }
 
 class DatabaseIO {
-    +SaveToDatabase(entries:List<Entry>,path:string):void
-    +LoadFromDatabase(path:string):List<Entry>
+    +SaveToDatabase<T>(List<T> input, string path): void
+    +LoadFromEntryDatabase(string path): List<Entry>
+    +LoadFromTypeDatabase(string path): List<Type>
+    -ConvertToNullableDouble(string input): double?
+    -ConvertToNullableInt(string input): int?
+    -ReadFile(string path):List<string> 
+    -TestForValidEntryArguments(Entry entry):void
+    +GenerateEntryInstance(string[] input):Entry
+    +GenerateTypeInstance(string[] input):Type
 }
 
-class ManageDatabaseEntries {
-    +AddEntry(entry:Entry):void
-    +EditEntry(OldEntry:Entry,NewEntry:Entry):void
-    +DeleteEntry(entry:Entry):void
+class ManageDatabase {
+    +AddEntry(string[] input,List<Entry> entries): void
+    +EditEntry(string[] input,List<Entry> entries,uint ID): void
+    +DeleteEntry(List<Entry> entries,uint ID): void
+    -SelectEntry(List<Entry> entries,uint ID):Entry
+    +AddType(string[] input,List<Type> types): void
+    +EditType(string[] input,List<Type> types,uint ID): void
+    +DeleteType(List<Type> types,uint ID): void
+    -SelectType(List<Type> types,uint ID):Type
 }
+
+class Type {
+    +Name : string <<get>> <<private set>>
+    +StoreLocation : string <<get>> <<private set>>
+    +WhenToAddToShoppingList : double? <<get>> <<private set>>
+    +BestBeforeDateChange : double? <<get>> <<private set>>
+    +Subnames : string[] <<get>> <<private set>>
+    +AmountOnShoppinglist : uint <<get>> <<private set>>
+    +SetValues(string Name, string StoreLocation, double? WhenToAddToShoppingList, int? BestBeforeDateChange, string[] Subnames): void
+    +AddToShoppingList(uint Amount) : void
+    +RemoveFromShoppingList() : void
+}
+
+class ShoppingList {
+    +GetShoppingList(List<Type> types) : List<string>   
+    +GenerateShoppingList(List<Entry> entries, List<Type> types) : void
+    +ClearShoppingList(List<Type> types) : void
+}
+
+class MainWindow {
+    +entryfilepath : string
+    +typefilepath : string
+    +lebensmittelpage : LebensmittelPage
+    +einkaufslistepage : EinkaufslistePage
+    +übersichtpage : ÜbersichtPage
+    -lebensmitteladdpage : LebensmittelAddPage
+    -einkaufslisteaddpage : EinkaufslisteAddPage
+    -kategorieaddpage : KategorieAddPage
+    +entries : List<Entry>
+    +types : List<Type>
+    +ButtonClick(object sender,RoutedEventArgs e) : void
+}
+
+class LebensmittelPage {
+    +WindowLoadedLebensmittelPage(object sender, RoutedEventArgs e) : void
+    +LöschenbuttonClick(object sender, RoutedEventArgs e) : void
+}
+
+class EinkaufslisteAddPage {
+    -WindowLoadedEinkaufslisteAddPage(object sender, RoutedEventArgs e) : void
+    +SaveButtonClick(object sender, RoutedEventArgs e) : void
+    -SuccessfullSave(object sender, RoutedEventArgs e)
+    +EinkaufslisteAddReset() : void
+    -fillComboBox() : void
+}
+
+class EinkaufslistePage {
+    +WindowLoadedEinkaufslistePage(object sender, RoutedEventArgs e) : void
+    -GenerierenButtonClick(object sender, RoutedEventArgs e) : void
+    -LöschenButtonClick(object sender, RoutedEventArgs e) : void
+
+}
+
+class KategorieAddPage {
+    -SaveButtonClick(object sender, RoutedEventArgs e) : void
+}
+class LebensmittelAddPage {
+    -WindowLoadedLebensmittelAddPage(object sender, RoutedEventArgs e) : void
+    -OpenableChecked(object sender, RoutedEventArgs e) : void
+    -EmptyData() : void
+    -SaveButtonClick(object sender, RoutedEventArgs e) : void
+    -BestätigenButtonClick(object sender, RoutedEventArgs e) : void
+    -EditierenButtonClick(object sender, RoutedEventArgs e) : void
+    -SuccessfullSave(object sender, RoutedEventArgs e) : void
+    -fillNameComboBox() : void
+    -fillTypComboBox() : void
+    +LebensmittelAddReset() : void
+    -LoadEditData(uint ID, object sender, RoutedEventArgs e) : void
+}
+
+class ÜbersichtPage {
+    +WindowLoadedÜbersichtPage(object sender, RoutedEventArgs e) : void
+    -LöschenButtonClick(object sender, RoutedEventArgs e) : void
+}
+
+
+
+
 
 Entry <|-- AdvancedEntry
+Entry <-- DatabaseIO
+Entry <-- ManageDatabase
+Type <-- DatabaseIO
+Type <-- ManageDatabase
+Entry <-- MainWindow
+Type <-- MainWindow
+Entry <-- ShoppingList
+Type <-- ShoppingList
+LebensmittelPage "1" *-- "1" MainWindow
+LebensmittelAddPage "1" *-- "1" MainWindow
+EinkaufslistePage "1" *-- "1" MainWindow
+EinkaufslisteAddPage "1" *-- "1" MainWindow
+ÜbersichtPage "1" *-- "1" MainWindow
+KategorieAddPage "1" *-- "1" MainWindow
+MainWindow <-- DatabaseIO
+MainWindow <-- ManageDatabase
+MainWindow <-- ShoppingList
 @enduml
