@@ -15,12 +15,9 @@ using System.Windows.Shapes;
 
 namespace ConsumeNow.Subpages
 {
-    /// <summary>
-    /// Interaction logic for CategoryAddPage.xaml
-    /// </summary>
-    public partial class CategoryAddPage : UserControl
+    public partial class KategorieAddPage : UserControl
     {
-        public CategoryAddPage()
+        public void KategorieAddPageAddPage()
         {
             InitializeComponent();
         }
@@ -60,7 +57,7 @@ namespace ConsumeNow.Subpages
             //Database.DatabaseIO.SaveToDatabase<Entry>(MainWindow.entries, "./Database/Data/ExampleEntries.csv");
             
         }
-        private void Window_Loaded_CategoryAddPage(object sender, RoutedEventArgs e)
+        private void Window_Loaded_KategorieAddPage(object sender, RoutedEventArgs e)
         {
             
         }

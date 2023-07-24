@@ -37,7 +37,7 @@ namespace ConsumeNow
 
         LebensmittelAddPage lebensmitteladdpage = new LebensmittelAddPage();
         EinkaufslisteAddPage einkaufslisteaddpage = new EinkaufslisteAddPage();
-        CategoryAddPage categoryaddpage = new CategoryAddPage();
+        KategorieAddPage kategorieaddpage = new KategorieAddPage();
 
         public static List<Entry> entries = DatabaseIO.LoadFromEntryDatabase(entryfilepath);
         public static List<ConsumeNow.Database.Type> types = DatabaseIO.LoadFromTypeDatabase(typefilepath);
@@ -72,9 +72,9 @@ namespace ConsumeNow
                     einkaufslisteaddpage.EinkaufslisteAddReset();
                     break;
                 case "AddTypButton":
-                    SubpageCC.Content = categoryaddpage;
+                    SubpageCC.Content = kategorieaddpage;
                     lebensmitteladdpage.LebensmittelAddReset();
-                    categoryaddpage.SaveInfoBorder.Visibility = Visibility.Collapsed;
+                    kategorieaddpage.SaveInfoBorder.Visibility = Visibility.Collapsed;
                     break;
                 default: break;
             }
