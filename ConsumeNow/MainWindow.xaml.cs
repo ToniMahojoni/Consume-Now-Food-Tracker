@@ -42,9 +42,6 @@ namespace ConsumeNow
         public static List<Entry> entries = DatabaseIO.LoadFromEntryDatabase(entryfilepath);
         public static List<ConsumeNow.Database.Type> types = DatabaseIO.LoadFromTypeDatabase(typefilepath);
 
-
-
-
         public void ButtonClick(object sender, RoutedEventArgs e)
         {
             string senderName = (sender as Button).Name;

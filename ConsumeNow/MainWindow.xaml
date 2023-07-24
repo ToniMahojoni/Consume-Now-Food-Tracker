@@ -20,7 +20,6 @@
             <ColumnDefinition Width="81.25*"/>
         </Grid.ColumnDefinitions>
 
-
         <!-- StackPanel for the menu buttons -->
 
         <StackPanel Background="#6E8B3D">
@@ -30,7 +29,6 @@
             <Viewbox Stretch="UniformToFill">
                 <Image Height="50" Width="150" Source="/Images/Logo.png"/>
             </Viewbox>
-
 
             <!-- Buttons on the sidebar-->
 
@@ -93,10 +91,7 @@
                 </Button>
             </Viewbox>
 
-
-
         </StackPanel>
-
 
         <!-- Content Control needed for opening the subpages on the right column -->
         <ContentControl x:Name="SubpageCC" Grid.Column="1" >
@@ -104,8 +99,6 @@
                 <local:StartPage HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="650"/>
             </Viewbox>
         </ContentControl>
-
-
 
     </Grid>
 </Window>
