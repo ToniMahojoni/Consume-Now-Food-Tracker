@@ -100,11 +100,19 @@ namespace ConsumeNow.Database
                 return result;
 
             }
+            private static void TestForValidTypeArguments(Type type) {
+                if(type.Name == "") throw new ArgumentException();
+                if(type.BestBeforeDateChange < 0) throw new ArgumentException();
+                if(type.WhenToAddToShoppingList < 0) throw new ArgumentException();
+                if(type.Subnames.Length == 1 & type.Subnames[0] == "") throw new ArgumentException();        
+            }
             public static Type GenerateTypeInstance(string[] input)
             {
                 if (input.Length == 6)
                 {
-                    return new Type(input[0], input[1], ConvertToNullableDouble(input[2]), ConvertToNullableInt(input[3]), input[4].Split(';'), Convert.ToUInt32(input[5]));
+                    Type result = new Type(input[0], input[1], ConvertToNullableDouble(input[2]), ConvertToNullableInt(input[3]), input[4].Split(';'), Convert.ToUInt32(input[5]));
+                    TestForValidTypeArguments(result);
+                    return result;
                 }
                 else
                 {

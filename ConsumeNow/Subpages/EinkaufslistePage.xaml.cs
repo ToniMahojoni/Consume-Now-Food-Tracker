@@ -1,4 +1,4 @@
-﻿using ConsumeNow.Database.Data;
+﻿using ConsumeNow.Database;
 using ConsumeNow.Subpages;
 using System;
 using System.Collections.Generic;
@@ -38,7 +38,7 @@ namespace ConsumeNow
             {
                 dt3.Columns.Add(ColumnName, typeof(string));
             }
-            foreach(var rowData in ShoppingList.GetShoppingList(MainWindow.types))
+            foreach(var rowData in Database.ShoppingList.GetShoppingList(MainWindow.types))
             {
                 dt3.Rows.Add(rowData.Split(' '));
             }

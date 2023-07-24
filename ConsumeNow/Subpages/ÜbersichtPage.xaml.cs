@@ -1,5 +1,4 @@
 ﻿using ConsumeNow.Database;
-using ConsumeNow.Database.Data;
 using ConsumeNow.Subpages;
 using System;
 using System.Collections.Generic;
