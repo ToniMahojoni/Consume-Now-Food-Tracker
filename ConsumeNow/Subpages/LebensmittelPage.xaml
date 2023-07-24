@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="868" d:DesignWidth="1300"
              Background="#6E8B3D"
-             Loaded="Window_Loaded_LebensmittelPage">
+             Loaded="WindowLoadedLebensmittelPage">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*" />
@@ -42,7 +42,7 @@
         <Button Grid.Column="1" Content="LÖSCHEN" HorizontalAlignment="Left" Margin="0,707,0,0" Grid.Row="1" Name="LöschenButton"
                 VerticalAlignment="Top" Height="50" Width="212"
                 BorderThickness="3" Background="Red" FontSize="30" FontFamily="Cascadia Mono Semibold" 
-                HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="LöschenButton_Click"/>
+                HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="LöschenButtonClick"/>
         <Label Grid.Column="1" Content="ID:" FontSize="35" FontFamily="Cascadia Mono Semibold" 
                HorizontalAlignment="Left" Margin="212,707,0,0" Grid.Row="1"
                VerticalContentAlignment="Center" HorizontalContentAlignment="Center"

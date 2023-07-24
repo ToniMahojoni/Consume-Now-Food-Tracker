@@ -64,7 +64,7 @@ namespace ConsumeNow
                     break;
                 case "AddLebensmittelButton":
                     SubpageCC.Content = lebensmitteladdpage;
-                    lebensmitteladdpage.SaveInfoBorder.Visibility = Visibility.Collapsed;
+                    lebensmitteladdpage.SaveInfoTL.Visibility = Visibility.Collapsed;
                     break;
                 case "AddEinkaufButton":
                     SubpageCC.Content = einkaufslisteaddpage;

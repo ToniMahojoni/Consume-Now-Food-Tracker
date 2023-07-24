@@ -36,15 +36,15 @@ namespace ConsumeNow.Subpages
                 {
                     if (openableCB.IsChecked == true)
                     {
-                        geöffnettextborder.Visibility = Visibility.Visible;
-                        verbleibendtextborder.Visibility = Visibility.Visible;
+                        geöffnetTL.Visibility = Visibility.Visible;
+                        verbleibendTL.Visibility = Visibility.Visible;
                         openedCB.Visibility = Visibility.Visible;
                         verbleibendTB.Visibility = Visibility.Visible;
                     }
                     else
                     {
-                        geöffnettextborder.Visibility = Visibility.Collapsed;
-                        verbleibendtextborder.Visibility = Visibility.Collapsed;
+                        geöffnetTL.Visibility = Visibility.Collapsed;
+                        verbleibendTL.Visibility = Visibility.Collapsed;
                         openedCB.Visibility = Visibility.Collapsed;
                         verbleibendTB.Visibility = Visibility.Collapsed;
                     }
@@ -57,7 +57,7 @@ namespace ConsumeNow.Subpages
 
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void WindowLoadedLebensmittelAddPage(object sender, RoutedEventArgs e)
         {
             foreach (var element in MainWindow.types)
             {
@@ -83,7 +83,7 @@ namespace ConsumeNow.Subpages
         {
             EmptyData();
 
-            SaveInfoBorder.Visibility = Visibility.Visible;
+            SaveInfoTL.Visibility = Visibility.Visible;
             SaveInfo.Content = "gespeichert!";
             SaveInfo.Foreground = Brushes.Green;
 
@@ -91,7 +91,7 @@ namespace ConsumeNow.Subpages
 
             LebensmittelAddReset();
 
-            MainWindow.lebensmittelpage.Window_Loaded_LebensmittelPage(sender, e);
+            MainWindow.lebensmittelpage.WindowLoadedLebensmittelPage(sender, e);
 
             SpeichernButton.Visibility = Visibility.Collapsed;
 
@@ -166,7 +166,7 @@ namespace ConsumeNow.Subpages
             }
             catch
             {
-                SaveInfoBorder.Visibility = Visibility.Visible;
+                SaveInfoTL.Visibility = Visibility.Visible;
                 SaveInfo.Content = "fehlgeschlagen!";
                 SaveInfo.Foreground = Brushes.Red;
             }
@@ -194,11 +194,11 @@ namespace ConsumeNow.Subpages
                 EditierenButton.Visibility = Visibility.Collapsed;
                 IDTB.Visibility = Visibility.Collapsed;
                 IDTL.Visibility = Visibility.Collapsed;
-                editierenLabel.Visibility = Visibility.Collapsed;
+                EditierenTL.Visibility = Visibility.Collapsed;
 
                 TypCB.IsEnabled = false;
                 BestätigenButton.Visibility = Visibility.Collapsed;
-                SaveInfoBorder.Visibility = Visibility.Collapsed;
+                SaveInfoTL.Visibility = Visibility.Collapsed;
 
                 mode = false;
 
@@ -227,7 +227,7 @@ namespace ConsumeNow.Subpages
         {
             EmptyData();
 
-            hinzufügenLabel.Visibility = Visibility.Visible;
+            hinzufügenTL.Visibility = Visibility.Visible;
             NameCB.Visibility = Visibility.Collapsed;
             HaltbarkeitTB.Visibility = Visibility.Collapsed;
             KaufdatumTB.Visibility = Visibility.Collapsed;
@@ -235,9 +235,9 @@ namespace ConsumeNow.Subpages
             PreisTB.Visibility = Visibility.Collapsed;
             openableCB.Visibility = Visibility.Collapsed;
             openedCB.Visibility = Visibility.Collapsed;
-            geöffnettextborder.Visibility = Visibility.Collapsed;
+            geöffnetTL.Visibility = Visibility.Collapsed;
             verbleibendTB.Visibility = Visibility.Collapsed;
-            verbleibendtextborder.Visibility = Visibility.Collapsed;
+            verbleibendTL.Visibility = Visibility.Collapsed;
 
 
 
@@ -253,7 +253,7 @@ namespace ConsumeNow.Subpages
             EditierenButton.Visibility = Visibility.Visible;
             IDTB.Visibility = Visibility.Visible;
             IDTL.Visibility = Visibility.Visible;
-            editierenLabel.Visibility = Visibility.Visible;
+            EditierenTL.Visibility = Visibility.Visible;
 
             TypCB.IsEnabled = true;
             BestätigenButton.Visibility = Visibility.Visible;
@@ -262,7 +262,7 @@ namespace ConsumeNow.Subpages
 
         private void EditierenButtonClick(object sender, RoutedEventArgs e)
         {
-            SaveInfoBorder.Visibility = Visibility.Collapsed;
+            SaveInfoTL.Visibility = Visibility.Collapsed;
             
             try
             {
@@ -286,18 +286,18 @@ namespace ConsumeNow.Subpages
             SpeichernButton.Visibility = Visibility.Visible;
             IDTB.Visibility = Visibility.Collapsed;
             IDTL.Visibility = Visibility.Collapsed;
-            editierenLabel.Visibility = Visibility.Collapsed;
+            EditierenTL.Visibility = Visibility.Collapsed;
             BestätigenButton.Visibility = Visibility.Collapsed;
             EditierenButton.Visibility = Visibility.Collapsed;
 
-            hinzufügenLabel.Visibility = Visibility.Collapsed;
+            hinzufügenTL.Visibility = Visibility.Collapsed;
             fillComboBox();
             }
             catch
             {
                 SaveInfo.Content = "fehlgeschlagen!";
                 SaveInfo.Visibility = Visibility.Visible;
-                SaveInfoBorder.Visibility = Visibility.Visible;
+                SaveInfoTL.Visibility = Visibility.Visible;
                 SaveInfo.Foreground = Brushes.Red;
             }
             
