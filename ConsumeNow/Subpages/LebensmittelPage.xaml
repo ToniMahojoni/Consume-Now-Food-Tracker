@@ -20,9 +20,11 @@
             <ColumnDefinition Width="648*"/>
         </Grid.ColumnDefinitions>
 
+        <!-- White bar at the left edge -->
+
         <Border BorderBrush="White" BorderThickness="2" Grid.RowSpan="2"/>
 
-        <!-- Lebensmittel text label at the top -->
+        <!-- Lebensmittel TextLabel at the top -->
 
 
         <Border BorderBrush="White" BorderThickness="0,0,3,3"  Grid.Row="0" Margin="0,0,720,0" Grid.ColumnSpan="2" >
@@ -31,11 +33,11 @@
         </Border>
 
 
-        <!-- data table with the Lebensmittel entries -->
+        <!-- DataTable with the Lebensmittel entries -->
 
         <DataGrid Name="LebensmittelTable" Grid.Column="1" Margin="0,101,0,65" Grid.RowSpan="2" FontSize="25"/>
 
-        <!-- remove button -->
+        <!-- RemoveButton -->
 
         <Button Grid.Column="1" Content="LÖSCHEN" HorizontalAlignment="Left" Margin="0,707,0,0" Grid.Row="1" Name="LöschenButton"
                 VerticalAlignment="Top" Height="50" Width="212"
@@ -48,7 +50,7 @@
         <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="277,707,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" FontSize="35" Name="LöschenIDTB"  
                  BorderThickness="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
                  VerticalAlignment="Top" Width="109" Height="50" />
-        <Label Grid.Column="1" Content="" FontSize="35" FontFamily="Cascadia Mono Semibold" Foreground="red" Name="LöschenLabel"
+        <Label Grid.Column="1" Content="" FontSize="35" FontFamily="Cascadia Mono Semibold" Foreground="red" Name="LöschenTL"
             HorizontalAlignment="Left" Margin="386,717,0,0" Grid.Row="1"
             VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
             VerticalAlignment="Top" Height="50" Width="312"/>

@@ -18,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace ConsumeNow
 {
-    /// <summary>
-    /// Interaction logic for LebensmittelPage.xaml
-    /// </summary>
     public partial class LebensmittelPage : UserControl
     {
         public LebensmittelPage()
@@ -28,7 +25,7 @@ namespace ConsumeNow
             InitializeComponent();
         }
  
-        public void Window_Loaded_LebensmittelPage(object sender, RoutedEventArgs e)
+        public void WindowLoadedLebensmittelPage(object sender, RoutedEventArgs e)
         {    
             DataTable dt1 = new DataTable();
 
@@ -55,21 +52,21 @@ namespace ConsumeNow
 
         }
 
-        private void LöschenButton_Click(object sender, RoutedEventArgs e)
+        private void LöschenButtonClick(object sender, RoutedEventArgs e)
         {
             try
             {
                 ManageDatabase.DeleteEntry(MainWindow.entries, Convert.ToUInt32(LöschenIDTB.Text.ToString()));
-                LöschenLabel.Content = String.Empty;
+                LöschenTL.Content = String.Empty;
                 LöschenIDTB.Text = String.Empty;
                 DatabaseIO.SaveToDatabase<Entry>(MainWindow.entries, "./Database/Data/ExampleEntries.csv");
-                Window_Loaded_LebensmittelPage(sender, e);
+                WindowLoadedLebensmittelPage(sender, e);
                 
 
             }
             catch
             {
-                LöschenLabel.Content = "fehlgeschlagen!";
+                LöschenTL.Content = "fehlgeschlagen!";
             }
 
            

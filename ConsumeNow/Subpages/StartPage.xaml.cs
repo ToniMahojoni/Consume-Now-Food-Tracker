@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace ConsumeNow
 {
-    /// <summary>
-    /// Interaction logic for StartPage.xaml
-    /// </summary>
     public partial class StartPage : UserControl
     {
         public StartPage()
