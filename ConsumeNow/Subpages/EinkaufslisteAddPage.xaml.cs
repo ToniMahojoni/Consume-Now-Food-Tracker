@@ -86,7 +86,6 @@ namespace ConsumeNow.Subpages
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Database.ShoppingList.GenerateShoppingList(MainWindow.entries,MainWindow.types);
             fillComboBox();
         }
 

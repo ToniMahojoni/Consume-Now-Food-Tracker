@@ -33,7 +33,7 @@ namespace ConsumeNow.Database
                 List<Type> result = new List<Type>();
                 foreach (string line in ReadFile(path))
                 {
-                    result.Add(GenerateTypeInstance(line.Split(',')));
+                    result.Add(GenerateTypeInstance(line.Split(','),result));
                 }
                 return result;
             }
@@ -100,18 +100,24 @@ namespace ConsumeNow.Database
                 return result;
 
             }
-            private static void TestForValidTypeArguments(Type type) {
+            private static void TestForValidTypeArguments(Type type,List<Type> types) {
                 if(type.Name == "") throw new ArgumentException();
                 if(type.BestBeforeDateChange < 0) throw new ArgumentException();
                 if(type.WhenToAddToShoppingList < 0) throw new ArgumentException();
-                if(type.Subnames.Length == 1 & type.Subnames[0] == "") throw new ArgumentException();        
+                if(type.Subnames.Length == 1 & type.Subnames[0] == "") throw new ArgumentException(); 
+                bool TypeNameAlreadyExists = false;
+                try {
+                    Type existing_type = ManageDatabase.SelectType(types,type.Name);
+                    TypeNameAlreadyExists = true;
+                } catch {}
+                if(TypeNameAlreadyExists) throw new ArgumentException();
             }
-            public static Type GenerateTypeInstance(string[] input)
+            public static Type GenerateTypeInstance(string[] input,List<Type> types)
             {
                 if (input.Length == 6)
                 {
                     Type result = new Type(input[0], input[1], ConvertToNullableDouble(input[2]), ConvertToNullableInt(input[3]), input[4].Split(';'), Convert.ToUInt32(input[5]));
-                    TestForValidTypeArguments(result);
+                    TestForValidTypeArguments(result,types);
                     return result;
                 }
                 else
