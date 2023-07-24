@@ -22,6 +22,7 @@ namespace ConsumeNow
     {
         public const string entryfilepath = "./../../../Database/Data/ExampleEntries.csv";
         public const string typefilepath = "./../../../Database/Data/ExampleTypes.csv";
+
         //public const string entryfilepath = "./Database/Data/ExampleEntries.csv";
         //public const string typefilepath = "./Database/Data/ExampleTypes.csv";
 
@@ -50,28 +51,28 @@ namespace ConsumeNow
             switch (senderName)
             {
                 case "LebensmittelButton":
-                    CC.Content = lebensmittelpage;
+                    SubpageCC.Content = lebensmittelpage;
                     lebensmitteladdpage.LebensmittelAddReset(); 
                     break;
                 case "EinkaufslisteButton":
-                    CC.Content = einkaufslistepage;
+                    SubpageCC.Content = einkaufslistepage;
                     lebensmitteladdpage.LebensmittelAddReset();
                     break;
                 case "ÜbersichtButton":
-                    CC.Content = übersichtpage;
+                    SubpageCC.Content = übersichtpage;
                     lebensmitteladdpage.LebensmittelAddReset();
                     break;
                 case "AddLebensmittelButton":
-                    CC.Content = lebensmitteladdpage;
+                    SubpageCC.Content = lebensmitteladdpage;
                     lebensmitteladdpage.SaveInfoBorder.Visibility = Visibility.Collapsed;
                     break;
                 case "AddEinkaufButton":
-                    CC.Content = einkaufslisteaddpage;
+                    SubpageCC.Content = einkaufslisteaddpage;
                     lebensmitteladdpage.LebensmittelAddReset();
                     einkaufslisteaddpage.EinkaufslisteAddReset();
                     break;
                 case "AddTypButton":
-                    CC.Content = categoryaddpage;
+                    SubpageCC.Content = categoryaddpage;
                     lebensmitteladdpage.LebensmittelAddReset();
                     categoryaddpage.SaveInfoBorder.Visibility = Visibility.Collapsed;
                     break;
