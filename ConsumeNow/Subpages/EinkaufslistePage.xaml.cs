@@ -18,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace ConsumeNow
 {
-    /// <summary>
-    /// Interaction logic for EinkaufslistePage.xaml
-    /// </summary>
     public partial class EinkaufslistePage : UserControl
     {
         public EinkaufslistePage()
@@ -28,13 +25,13 @@ namespace ConsumeNow
             InitializeComponent();
         }
 
-        public void Window_Loaded_EinkaufslistePage(object sender, RoutedEventArgs e)
+        public void WindowLoadedEinkaufslistePage(object sender, RoutedEventArgs e)
         {
             System.Data.DataTable dt3 = new System.Data.DataTable();
 
-            string[] ColumnNames2 = { "Menge", "Typ"};
+            string[] ColumnNames3 = { "Menge", "Typ"};
 
-            foreach (string ColumnName in ColumnNames2)
+            foreach (string ColumnName in ColumnNames3)
             {
                 dt3.Columns.Add(ColumnName, typeof(string));
             }
@@ -44,7 +41,7 @@ namespace ConsumeNow
             }
 
             DataView dv3 = new DataView(dt3);
-            EinkaufslisteTable.ItemsSource = dv3;
+            EinkaufslisteDG.ItemsSource = dv3;
         }
 
     }

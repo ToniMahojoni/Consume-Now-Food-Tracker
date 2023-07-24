@@ -42,7 +42,7 @@ namespace ConsumeNow.Subpages
                     }
                     Database.DatabaseIO.SaveToDatabase<Database.Type>(MainWindow.types, MainWindow.typefilepath);
                     SuccessfullSave(sender, e);
-                    MainWindow.einkaufslistepage.Window_Loaded_EinkaufslistePage(sender, e);
+                    MainWindow.einkaufslistepage.WindowLoadedEinkaufslistePage(sender, e);
                     
                 }
                 
