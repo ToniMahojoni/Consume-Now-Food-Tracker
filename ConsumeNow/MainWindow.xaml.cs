@@ -73,8 +73,7 @@ namespace ConsumeNow
                     break;
                 case "AddTypButton":
                     SubpageCC.Content = kategorieaddpage;
-                    lebensmitteladdpage.LebensmittelAddReset();
-                    kategorieaddpage.SaveInfoBorder.Visibility = Visibility.Collapsed;
+                    lebensmitteladdpage.LebensmittelAddReset();   
                     break;
                 default: break;
             }

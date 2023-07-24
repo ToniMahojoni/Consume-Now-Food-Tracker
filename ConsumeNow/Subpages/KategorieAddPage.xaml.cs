@@ -17,12 +17,12 @@ namespace ConsumeNow.Subpages
 {
     public partial class KategorieAddPage : UserControl
     {
-        public void KategorieAddPageAddPage()
+        public KategorieAddPage()
         {
             InitializeComponent();
         }
 
-        private void SaveButton(object sender, RoutedEventArgs e) { 
+        private void SaveButtonClick(object sender, RoutedEventArgs e) { 
             string[] TypeData = new string[6];
             TypeData[0] = NameTB.Text.ToString();
             TypeData[1] = LagerortTB.Text.ToString();
@@ -46,19 +46,15 @@ namespace ConsumeNow.Subpages
                 EinkaufslisteHinzufügenTB.Text = string.Empty;
                 ÄnderungMhDTB.Text = string.Empty;
                 ProdukteTB.Text = string.Empty;
-                SaveInfoBorder.Visibility = Visibility.Visible;
-                SaveInfo.Content = "erfolgreich!";
-                SaveInfo.Foreground = Brushes.Green;
+                SaveInfoBR.Visibility = Visibility.Visible;
+                SaveInfoTL.Content = "erfolgreich!";
+                SaveInfoTL.Foreground = Brushes.Green;
             } catch {
-                SaveInfoBorder.Visibility = Visibility.Visible;
-                SaveInfo.Content = "fehlgeschlagen!";
-                SaveInfo.Foreground = Brushes.Red;
+                SaveInfoBR.Visibility = Visibility.Visible;
+                SaveInfoTL.Content = "fehlgeschlagen!";
+                SaveInfoTL.Foreground = Brushes.Red;
             }
             //Database.DatabaseIO.SaveToDatabase<Entry>(MainWindow.entries, "./Database/Data/ExampleEntries.csv");
-            
-        }
-        private void Window_Loaded_KategorieAddPage(object sender, RoutedEventArgs e)
-        {
             
         }
 
