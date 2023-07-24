@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ConsumeNow.Subpages
 {
@@ -20,6 +11,10 @@ namespace ConsumeNow.Subpages
         public EinkaufslisteAddPage()
         {
             InitializeComponent();
+        }
+        private void WindowLoadedEinkaufslisteAddPage(object sender, RoutedEventArgs e)
+        {
+            fillComboBox();
         }
 
         private void SaveButtonClick(object sender, RoutedEventArgs e) 
@@ -42,8 +37,6 @@ namespace ConsumeNow.Subpages
                     MainWindow.einkaufslistepage.WindowLoadedEinkaufslistePage(sender, e);
                     
                 }
-                
-                
             }
             catch
             {
@@ -51,9 +44,6 @@ namespace ConsumeNow.Subpages
                 SaveInfoTL.Foreground = Brushes.Red;
                 SaveInfoBR.Visibility = Visibility.Visible;
             }
-            
-
-            
         }
 
         private void SuccessfullSave(object sender, RoutedEventArgs e)
@@ -80,11 +70,5 @@ namespace ConsumeNow.Subpages
                 TypCB.Items.Add(type.Name);
             }
         }
-
-        private void WindowLoadedEinkaufslisteAddPage(object sender, RoutedEventArgs e)
-        {
-            fillComboBox();
-        }
-
     }
 }
