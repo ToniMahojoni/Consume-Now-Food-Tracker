@@ -7,6 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="868" d:DesignWidth="1300"
              Background="#6E8B5C">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="68*" />
@@ -15,8 +16,6 @@
             <RowDefinition Height="73*" />
             <RowDefinition Height="73*" />
             <RowDefinition Height="73*" />
-
-
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -70,7 +69,6 @@
             <Label Content="Produkte" FontSize="32" FontFamily="Cascadia Mono Semibold" Background="#E0EEEE" 
                    VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         </Border>
-
 
         <!-- SpeichernButton -->
 
