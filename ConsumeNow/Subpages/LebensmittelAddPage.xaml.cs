@@ -1,4 +1,4 @@
-﻿using ConsumeNow.Database;
+using ConsumeNow.Database;
 using System;
 using System.Linq;
 using System.Windows;
@@ -355,8 +355,3 @@ namespace ConsumeNow.Subpages
         }
     }
 }
-    
-
-        
-
-
