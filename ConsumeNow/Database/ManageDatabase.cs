@@ -8,11 +8,11 @@ namespace ConsumeNow.Database
 {
         public static class ManageDatabase
         {
-            public static void AddEntry(string[] input, List<Entry> entries)
+            public static void AddEntry(string[] input, List<Entry> entries) //add Entry to list
             {
                 entries.Add(DatabaseIO.GenerateEntryInstance(input));
             }
-            public static void EditEntry(string[] input, List<Entry> entries, List<Type> types, uint ID)
+            public static void EditEntry(string[] input, List<Entry> entries, List<Type> types, uint ID) //edit specific Entry specified by its ID
             {
                 Entry entry = SelectEntry(entries, ID);
                 Entry newEntry = DatabaseIO.GenerateEntryInstance(input);
@@ -28,8 +28,11 @@ namespace ConsumeNow.Database
                 Type type = SelectType(types,newEntry.Type);
                 int BestBeforeDateChange = -1;
                 if (type.BestBeforeDateChange != null) BestBeforeDateChange = (int) type.BestBeforeDateChange;
-                if (IsOpened & type.BestBeforeDateChange > -1) {
-                    BestBeforeDate = DateOnly.FromDateTime(DateTime.Today.AddDays(BestBeforeDateChange));
+                AdvancedEntry? OldAdvEntry = entry as AdvancedEntry;
+                if (OldAdvEntry != null) {
+                    if (IsOpened & !OldAdvEntry.IsOpened) {
+                        BestBeforeDate = DateOnly.FromDateTime(DateTime.Today.AddDays(BestBeforeDateChange));
+                    }
                 }
                 if (AdvEntry != null) {
                     (entry as AdvancedEntry).SetValues(newEntry.Type, newEntry.Name, BestBeforeDate, newEntry.BuyDate, newEntry.Amount, newEntry.Prize, IsOpened, RemainingAmount);
@@ -37,7 +40,7 @@ namespace ConsumeNow.Database
                     entry.SetValues(newEntry.Type, newEntry.Name, BestBeforeDate, newEntry.BuyDate, newEntry.Amount, newEntry.Prize, IsOpened, RemainingAmount);
                 }
             }
-            public static void DeleteEntry(List<Entry> entries, uint ID)
+            public static void DeleteEntry(List<Entry> entries, uint ID) // delete specific Entry specified by its ID
             {
                 Entry entry = SelectEntry(entries, ID);
                 entries.Remove(entry);
@@ -54,18 +57,12 @@ namespace ConsumeNow.Database
                 }
                 throw new ArgumentException();
             }
-            public static void AddType(string[] input, List<Type> types)
+            public static void AddType(string[] input, List<Type> types) // add Type to list
             {
                 if (input[4].Contains(',')) throw new ArgumentException();
                 types.Add(DatabaseIO.GenerateTypeInstance(input,types));
             }
-            public static void EditType(string[] input, List<Type> types, string Name)
-            {
-                Type type = SelectType(types, Name);
-                Type newType = DatabaseIO.GenerateTypeInstance(input,types);
-                type.SetValues(newType.Name, newType.StoreLocation, newType.WhenToAddToShoppingList, newType.BestBeforeDateChange, newType.Subnames, newType.AmountOnShoppinglist);
-            }
-            public static void DeleteType(List<Type> types, string Name)
+            public static void DeleteType(List<Type> types, string Name) // delete specific Type identified by its Name
             {
                 Type type = SelectType(types, Name);
                 types.Remove(type);

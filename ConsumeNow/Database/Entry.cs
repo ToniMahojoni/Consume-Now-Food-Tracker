@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsumeNow
 {
-    public class Entry
+    public class Entry // represents a row in LebensmittelPage
     {
         public Entry(string Type, string Name, DateOnly BestBeforeDate, DateOnly BuyDate, uint Amount, double? Prize)
         {

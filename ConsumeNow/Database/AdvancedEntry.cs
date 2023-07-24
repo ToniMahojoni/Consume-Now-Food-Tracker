@@ -12,7 +12,7 @@ namespace ConsumeNow.Database
             base(Type, Name, BestBeforeDate, BuyDate, Amount, Prize)
             {
                 this.IsOpened = IsOpened;
-                this.RemainingAmount = RemainingAmount;
+                this.RemainingAmount = RemainingAmount; //represents the portion of the produkt that is still available (between 0 and 1)
             }
             public bool IsOpened { get; private set; }
             public double? RemainingAmount { get; private set; }
