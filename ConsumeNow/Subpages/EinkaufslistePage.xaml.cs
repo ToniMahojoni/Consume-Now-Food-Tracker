@@ -1,4 +1,3 @@
-﻿using ConsumeNow.Database.Data;
 using System.Data;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,7 +23,7 @@ namespace ConsumeNow
             {
                 dt3.Columns.Add(ColumnName, typeof(string));
             }
-
+            
             //creation of the rows
             foreach(var rowData in ShoppingList.GetShoppingList(MainWindow.types))
             {

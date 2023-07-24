@@ -57,12 +57,12 @@ namespace ConsumeNow.Database
             public static void AddType(string[] input, List<Type> types)
             {
                 if (input[4].Contains(',')) throw new ArgumentException();
-                types.Add(DatabaseIO.GenerateTypeInstance(input));
+                types.Add(DatabaseIO.GenerateTypeInstance(input,types));
             }
             public static void EditType(string[] input, List<Type> types, string Name)
             {
                 Type type = SelectType(types, Name);
-                Type newType = DatabaseIO.GenerateTypeInstance(input);
+                Type newType = DatabaseIO.GenerateTypeInstance(input,types);
                 type.SetValues(newType.Name, newType.StoreLocation, newType.WhenToAddToShoppingList, newType.BestBeforeDateChange, newType.Subnames, newType.AmountOnShoppinglist);
             }
             public static void DeleteType(List<Type> types, string Name)
@@ -70,7 +70,7 @@ namespace ConsumeNow.Database
                 Type type = SelectType(types, Name);
                 types.Remove(type);
             }
-            private static Type SelectType(List<Type> types, string Name)
+            public static Type SelectType(List<Type> types, string Name)
             {
                 var SelectedType =
                     from type in types

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsumeNow.Database.Data
+namespace ConsumeNow.Database
 {
     public static class ShoppingList
     {
