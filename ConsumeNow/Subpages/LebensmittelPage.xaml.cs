@@ -19,12 +19,13 @@ namespace ConsumeNow
 
             string[] ColumnNames1 = { "ID", "Typ", "Name", "Mindesthaltbarkeitsdatum", "Kaufdatum", "Menge", "Preis", "geöffnet", "verbleibend" };
 
+            //fill the columns of the table
             foreach (string ColumnName in ColumnNames1)
             {
                 dt1.Columns.Add(ColumnName, typeof(string));
             }
            
-
+            //fill the rows of table with each entry from the general entries list
             foreach (Entry element in MainWindow.entries)
             {
                 string[] rowcontent = element.ToString().Split(',');
@@ -33,7 +34,6 @@ namespace ConsumeNow
                 rowcontent[0] = Convert.ToString(element.ID);
                 dt1.Rows.Add(rowcontent);
             }
-
 
             DataView dv1 = new DataView(dt1);
             LebensmittelTable.ItemsSource = dv1;
@@ -44,16 +44,22 @@ namespace ConsumeNow
         {
             try
             {
+                //delete entry from general entries list and 
                 ManageDatabase.DeleteEntry(MainWindow.entries, Convert.ToUInt32(LöschenIDTB.Text.ToString()));
+
+                //hide failed message and clear ID input-field
                 LöschenTL.Content = String.Empty;
                 LöschenIDTB.Text = String.Empty;
-                DatabaseIO.SaveToDatabase<Entry>(MainWindow.entries, "./Database/Data/ExampleEntries.csv");
-                WindowLoadedLebensmittelPage(sender, e);
-                
 
+                //save changes to entries file
+                DatabaseIO.SaveToDatabase<Entry>(MainWindow.entries, MainWindow.entryfilepath);
+
+                //reload LebensmittelPage
+                WindowLoadedLebensmittelPage(sender, e);
             }
             catch
             {
+                //show failed message
                 LöschenTL.Content = "fehlgeschlagen!";
             }
         }
