@@ -8,7 +8,13 @@
              d:DesignHeight="434" d:DesignWidth="650"
              Background="#6E8B3D">
     <Grid>
+        
+        <!-- white bar at the left edge -->
+        
         <Image Source="/Images/border.png" Margin="0,0,648,0"/>
+        
+        <!-- StartPage image -->
+        
         <Image Source="/Images/StartseitePage.png"/>
     </Grid>
 </UserControl>

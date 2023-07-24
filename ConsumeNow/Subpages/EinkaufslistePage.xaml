@@ -7,7 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="868" d:DesignWidth="1300"
              Background="#6E8B3D"
-             Loaded="Window_Loaded_EinkaufslistePage">
+             Loaded="WindowLoadedEinkaufslistePage">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*" />
@@ -19,29 +20,9 @@
             <ColumnDefinition Width="648*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- white bar in column 0 and row 0 -->
+        <!-- White bar at the left edge -->
 
-        <Viewbox Stretch="UniformToFill" Grid.Column="0" Grid.Row="0">
-            <Image Source="/Images/border.png"/>
-        </Viewbox>
-
-        <!-- white bar in column 0 and row 1 -->
-
-        <Viewbox Stretch="UniformToFill" Grid.Column="0" Grid.Row="1">
-            <Image Source="/Images/border.png"/>
-        </Viewbox>
-
-        <!-- white bar in column 0 and row 2 -->
-
-        <Viewbox Stretch="UniformToFill" Grid.Column="0" Grid.Row="2">
-            <Image Source="/Images/border.png"/>
-        </Viewbox>
-
-        <!-- white bar in column 0 and row 3 -->
-        
-        <Viewbox Stretch="UniformToFill" Grid.Column="0" Grid.Row="3">
-            <Image Source="/Images/border.png"/>
-        </Viewbox>
+        <Border BorderBrush="White" BorderThickness="2" Grid.RowSpan="2"/>
 
         <!-- Einkaufsliste text label at the top -->
 
@@ -51,11 +32,9 @@
             </Border>
         </Viewbox>
 
-        <!-- data table with the Einkaufsliste entries -->
+        <!-- DataTable with the Einkaufsliste entries -->
 
-
-        <DataGrid Name="EinkaufslisteTable" Grid.Column="1" Margin="0,101,0,0" Grid.RowSpan="2" FontSize="26"/>
-           
-
+        <DataGrid Name="EinkaufslisteDG" Grid.Column="1" Margin="0,101,0,0" Grid.RowSpan="2" FontSize="26"/>
+ 
     </Grid>
 </UserControl>

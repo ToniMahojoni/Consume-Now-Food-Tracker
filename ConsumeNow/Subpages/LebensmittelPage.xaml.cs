@@ -1,26 +1,11 @@
 ﻿using ConsumeNow.Database;
-using ConsumeNow.Subpages;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ConsumeNow
 {
-    /// <summary>
-    /// Interaction logic for LebensmittelPage.xaml
-    /// </summary>
     public partial class LebensmittelPage : UserControl
     {
         public LebensmittelPage()
@@ -28,18 +13,19 @@ namespace ConsumeNow
             InitializeComponent();
         }
  
-        public void Window_Loaded_LebensmittelPage(object sender, RoutedEventArgs e)
+        public void WindowLoadedLebensmittelPage(object sender, RoutedEventArgs e)
         {    
             DataTable dt1 = new DataTable();
 
             string[] ColumnNames1 = { "ID", "Typ", "Name", "Mindesthaltbarkeitsdatum", "Kaufdatum", "Menge", "Preis", "geöffnet", "verbleibend" };
 
+            //fill the columns of the table
             foreach (string ColumnName in ColumnNames1)
             {
                 dt1.Columns.Add(ColumnName, typeof(string));
             }
            
-
+            //fill the rows of table with each entry from the general entries list
             foreach (Entry element in MainWindow.entries)
             {
                 string[] rowcontent = element.ToString().Split(',');
@@ -49,30 +35,33 @@ namespace ConsumeNow
                 dt1.Rows.Add(rowcontent);
             }
 
-
             DataView dv1 = new DataView(dt1);
             LebensmittelTable.ItemsSource = dv1;
 
         }
 
-        private void LöschenButton_Click(object sender, RoutedEventArgs e)
+        private void LöschenButtonClick(object sender, RoutedEventArgs e)
         {
             try
             {
+                //delete entry from general entries list and 
                 ManageDatabase.DeleteEntry(MainWindow.entries, Convert.ToUInt32(LöschenIDTB.Text.ToString()));
-                LöschenLabel.Content = String.Empty;
-                LöschenIDTB.Text = String.Empty;
-                DatabaseIO.SaveToDatabase<Entry>(MainWindow.entries, "./Database/Data/ExampleEntries.csv");
-                Window_Loaded_LebensmittelPage(sender, e);
-                
 
+                //hide failed message and clear ID input-field
+                LöschenTL.Content = String.Empty;
+                LöschenIDTB.Text = String.Empty;
+
+                //save changes to entries file
+                DatabaseIO.SaveToDatabase<Entry>(MainWindow.entries, MainWindow.entryfilepath);
+
+                //reload LebensmittelPage
+                WindowLoadedLebensmittelPage(sender, e);
             }
             catch
             {
-                LöschenLabel.Content = "fehlgeschlagen!";
+                //show failed message
+                LöschenTL.Content = "fehlgeschlagen!";
             }
-
-           
         }
     }
 }
