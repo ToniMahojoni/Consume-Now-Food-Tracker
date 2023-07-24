@@ -1,47 +1,45 @@
-# ProjektSoftwareentwicklungSoSe23
-Repository für das Softwareprojekt im Modul Softwareentwicklung im Sommersemester 2023 als Prüfungsleistung von Toni Sand und Lars Wunderlich.
+# ConsumeNow - Food Tracker
 
-## Grobe Idee
-Ein Tracker welcher erfasst, welche Lebensmittel sich im Haushalt befinden und infomiert, wann diese ablaufen / aufgebraucht werden müssen.
+## Features
+### Lebensmittelseite
+- Lebensmittelseite, welche anzeigt, was für Lebensmittel sich im Haushalt befinden
+    - dazu deren konkreten Bezeichnungen, Mindesthaltbarkeitsdatum, Kaufdatum, Menge, Preis
+    - falls man das Lebensmittel offnen kann, ist ebenfalls vermerkt, ob dies bereits geöffnet wurde und wieviel Prozent der Menge noch vorhanden ist
 
-## Realistisch umsetzbare Features
-- Eintragen von Lebensmitteln mit Haltbarkeitsdatum und eine Benachrichtigungs-Funktion, wenn das MhD bald erreicht ist / bereits erreicht ist...
--> Speichern der Einträge in einer Datenbank
-- Markieren, wer welche Lebensmittel aufgebraucht hat
-- Möglichkeit einen Kaufpreis mit anzugeben, um die Lebensmittelausgaben im Blick behalten zu können
-- Graphische Benutzeroberflächen für eine anschauliche und einfache Bedienung (GUIs werden mit WPF erstellt)
-- Automatisches Erstellen einer Einkaufsliste anhand der noch vorrätigen Menge an Lebensmitteln
+### Einkaufslistenseite
+- Einkaufslistenseite, welche die Lebensmittel anzeigt, welche bald eingekauft werden müssen
+    - Löschen-Button leert die Einkaufsliste
+    - Generieren-Button schaut, welche Lebensmittel knapp werden und setzt diese auf die Einkaufsliste
 
-## Detaillierte Umsetzung
-- Jedes gelagerte Produkt gehört einem bestimmten Lebensmitteltyp:
-    - Z.B. Apfel, Birne, Banane, Käse, Wurst, Milch, Joghurt ...
-    - Jeder Lebensmitteltyp hat konkrete Eigenschaften, z.B. 
-        - Lagerort (z.B. Kühlschrank, Tiefkühlfach, Küchenregal, ...)
-        - bei welcher noch vorrätigen Menge des Lebensmittels ein automatischer Eintrag auf die Einkaufsliste erfolgen soll
-        - ob das Lebensmittel beim Öffnen sofort vollständig aufgebraucht wird, wenn nein:
-            - wie sich das Haltbarkeitsdatum nach dem Öffnen verändert
-            - für ein konkretes Produkt soll gespeichert werden können:
-                - ob es geöffnet ist
-                - wie viel des Produktes noch übrig ist
-    - Bezeichnungen von Untertypen (z.B. roter Apfel, gelber Apfel,.../Zitronen-Joghurt,Vanille-Joghurt,.../...)
-    - Der Nutzer kann Lebensmitteltypen hinzufügen, entfernen und dessen Eigenschaften anpassen
-- Speichern der Daten mittels Datenbank, dabei beinhaltet jeder Eintrag folgende Informationen über das Produkt
-    - Typ
-    - Bezeichnung (kann aus den gespeicherten Bezeichnungen des jeweiligen Typs ausgewählt werden)
-    - Haltbarkeitsdatum
-    - Datum des Einkaufs
-    - Anzahl (mehrere Produkte mit gleichen Eigenschaften sollen in einem Eintrag zusammengefasst werden können)
-    - Preis (kann auch leer gelassen werden)
-- Anzeigen der Daten mit GUI, dabei soll möglich sein:
-    - Ausgeben einer Liste aller gelagerten Produkte, die nach gewünschten Kriterien sortiert ist (z.B. nach Mindesthaltbarkeitsdatum, Alphabet, Datum des Einkaufs, Preis, Typ, Lagerort,...)
-    - Übersicht über alle Lebensmitteltypen, für jeden Typ soll
-        - eine Liste aller gelagerten Produkte angezeigt werden
-        - eine Anpassung der Eigenschaften des Typs möglich sein
+### Übersichtsseite
+- Übersichtsseite, welche alle Kategorien von Lebensmitteln anzeigt
+    - dazu deren Lagerort, bei welcher Menge diese zur Einkaufsliste hinzugefügt werden, die Änderung des Haltbarkeitsdatums, wenn diese geöffnet wurden und die konkreten Namen der jeweiligen Produkte einer Kategorie
 
-## Wunschfeatures, welche möglicherweise zu schwer sind umzusetzen
-- Einscannen von Barcodes der Lebensmittel mit Kamera
-- Speichern der Datenbank auf einem Server
+### Lebensmittel-hinzufügen-Seite
+- Lebensmittel-hinzufügen-Seite, welche es ermöglicht neue Lebensmittel hinzuzufügen und bereits eingetragene zu editieren
+    - beim Hinzufügen muss aus der Lebensmitteltyp-Checkbox eine Kategorie gewählt werden und der Bestätigen-Button gedrückt werden
+    - dann öffnen sich die weiteren Eingabefelder, die mit den jeweiligen Daten des neuen Eintrags befüllt werden können
+    - bei der "Haltbarkeit" wird das MhD im Format dd.mm.yyyy verlangt sowie beim "Kaufdatum"
+    - beim "Preis" wird das Format e.cc erwartet
+    der Speichern-Button schließt das Hinzufügen ab
 
-## Nutzung von Bibliotheken
-- Datenbanken
-- Einlesen von Barcodes
+    - beim Editieren eines bereits eingetragenen Lebensmittels muss aus der Lebensmittelseite die ID herausgefunden werden und in das jeweilige Feld eingetragen werden und der Editieren-Button gedrückt werden
+    - dann öffnen sich die weiteren Eingabefelder die bereits die Daten des bisherigen Eintrags beinhalten, wobei diese einfach durch neue Eingaben ersetzt werden können
+    - der Speichern-Button schließt das Editieren ab
+
+### Einkauf-hinzufügen-Seite
+- Einkauf-hinzufügen-Seite, welche es ermöglicht nach dem Generieren der Einkaufsliste noch zusätzliche Lebensmittel auf die Liste hinzuzufügen
+- hinzufügen sollte erst nach dem Generieren geschehen, da sonst die manuellen Einträge überschrieben werden
+
+### Kategorie-hinzufügen-Seite
+- Kategorie-hinzufügen-Seite, welche es ermöglicht allgemeine Lebensmitteltypen zur Übersicht-Seite hinzuzufügen, welche dann auch beim Hinzufügen von neuen Lebensmitteln zur Lebensmittelseite als Kategorie gewählt werden können
+- "Nachschub bei" ist die Anzahl, für die gilt, dass wenn die noch vorhandene Menge des Lebensmittels diese Anzahl unterschreitet, dieses Lebensmittel beim Generieren auf die Einkaufsliste gesetzt wird
+- "Änderung des MhD" ist die Anzahl Tage, wie lang sich das Lebensmittel noch hält, nachdem es geöffnet wurde
+- "Produkte" meint die konkreten Lebensmittel (z.B. für Typ Joghurt sind Produkte Vanille-Joghurt, Erdbeer-Joghurt usw.). Für mehrere Produkte müssen diese ohne Leerzeichen durch Semikolon getrennt eingegeben werden
+
+## Hinweis:
+Falls die Software in VisualStudio ausgeführt wird, muss in der MainWindow.XAML.cs die VSfilepaths genutzt werden (der Debugger startet aus einem anderen Verzeichnis als die MainWindow-Datei).
+Für den Fall, dass die Software gewöhnlich über `dotnet run` im Terminal ausgeführt wird, ist der standardmäßig eingestellte filepath zu verwenden.
+
+## Entwickler von ConsumeNow
+ConsumeNow ist das Softwareprojekt des Moduls Softwareentwicklung im Sommersemester 2023 der TU Freiberg als Prüfungsleistung von Toni Sand und Lars Wunderlich.
